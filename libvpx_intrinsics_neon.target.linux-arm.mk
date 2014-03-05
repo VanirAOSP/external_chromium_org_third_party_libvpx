@@ -23,6 +23,10 @@ GYP_COPIED_SOURCE_ORIGIN_DIRS :=
 
 LOCAL_SRC_FILES := \
 	third_party/libvpx/source/libvpx/vp8/common/arm/neon/bilinearpredict_neon.c \
+	third_party/libvpx/source/libvpx/vp8/common/arm/neon/copymem_neon.c \
+	third_party/libvpx/source/libvpx/vp8/common/arm/neon/dc_only_idct_add_neon.c \
+	third_party/libvpx/source/libvpx/vp8/common/arm/neon/dequant_idct_neon.c \
+	third_party/libvpx/source/libvpx/vp8/common/arm/neon/dequantizeb_neon.c \
 	third_party/libvpx/source/libvpx/vp8/common/arm/neon/idct_blk_neon.c \
 	third_party/libvpx/source/libvpx/vp8/encoder/arm/neon/denoising_neon.c \
 	third_party/libvpx/source/libvpx/vp9/common/arm/neon/vp9_convolve_neon.c \

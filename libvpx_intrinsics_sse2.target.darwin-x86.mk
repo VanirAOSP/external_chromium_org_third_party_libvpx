@@ -29,7 +29,10 @@ LOCAL_SRC_FILES := \
 	third_party/libvpx/source/libvpx/vp8/encoder/x86/quantize_sse2.c \
 	third_party/libvpx/source/libvpx/vp8/encoder/x86/vp8_enc_stubs_sse2.c \
 	third_party/libvpx/source/libvpx/vp9/common/x86/vp9_idct_intrin_sse2.c \
-	third_party/libvpx/source/libvpx/vp9/common/x86/vp9_loopfilter_intrin_sse2.c
+	third_party/libvpx/source/libvpx/vp9/common/x86/vp9_loopfilter_intrin_sse2.c \
+	third_party/libvpx/source/libvpx/vp9/encoder/x86/vp9_dct32x32_sse2.c \
+	third_party/libvpx/source/libvpx/vp9/encoder/x86/vp9_dct_sse2.c \
+	third_party/libvpx/source/libvpx/vp9/encoder/x86/vp9_variance_sse2.c
 
 
 # Flags passed to both C and C++ files.

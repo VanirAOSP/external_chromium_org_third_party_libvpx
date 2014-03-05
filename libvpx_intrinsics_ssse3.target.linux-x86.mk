@@ -22,7 +22,8 @@ LOCAL_GENERATED_SOURCES :=
 GYP_COPIED_SOURCE_ORIGIN_DIRS :=
 
 LOCAL_SRC_FILES := \
-	third_party/libvpx/source/libvpx/vp8/common/x86/variance_ssse3.c
+	third_party/libvpx/source/libvpx/vp8/common/x86/variance_ssse3.c \
+	third_party/libvpx/source/libvpx/vp9/common/x86/vp9_subpixel_8t_intrin_ssse3.c
 
 
 # Flags passed to both C and C++ files.

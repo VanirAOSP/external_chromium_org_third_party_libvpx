@@ -75,7 +75,6 @@ LOCAL_SRC_FILES := \
 	third_party/libvpx/source/libvpx/vp8/encoder/onyx_if.c \
 	third_party/libvpx/source/libvpx/vp8/encoder/pickinter.c \
 	third_party/libvpx/source/libvpx/vp8/encoder/picklpf.c \
-	third_party/libvpx/source/libvpx/vp8/encoder/psnr.c \
 	third_party/libvpx/source/libvpx/vp8/encoder/quantize.c \
 	third_party/libvpx/source/libvpx/vp8/encoder/ratectrl.c \
 	third_party/libvpx/source/libvpx/vp8/encoder/rdopt.c \
@@ -85,7 +84,6 @@ LOCAL_SRC_FILES := \
 	third_party/libvpx/source/libvpx/vp8/encoder/treewriter.c \
 	third_party/libvpx/source/libvpx/vp8/vp8_cx_iface.c \
 	third_party/libvpx/source/libvpx/vp8/vp8_dx_iface.c \
-	third_party/libvpx/source/libvpx/vp9/common/generic/vp9_systemdependent.c \
 	third_party/libvpx/source/libvpx/vp9/common/vp9_alloccommon.c \
 	third_party/libvpx/source/libvpx/vp9/common/vp9_blockd.c \
 	third_party/libvpx/source/libvpx/vp9/common/vp9_common_data.c \
@@ -118,6 +116,33 @@ LOCAL_SRC_FILES := \
 	third_party/libvpx/source/libvpx/vp9/decoder/vp9_onyxd_if.c \
 	third_party/libvpx/source/libvpx/vp9/decoder/vp9_reader.c \
 	third_party/libvpx/source/libvpx/vp9/decoder/vp9_thread.c \
+	third_party/libvpx/source/libvpx/vp9/encoder/vp9_bitstream.c \
+	third_party/libvpx/source/libvpx/vp9/encoder/vp9_dct.c \
+	third_party/libvpx/source/libvpx/vp9/encoder/vp9_encodeframe.c \
+	third_party/libvpx/source/libvpx/vp9/encoder/vp9_encodemb.c \
+	third_party/libvpx/source/libvpx/vp9/encoder/vp9_encodemv.c \
+	third_party/libvpx/source/libvpx/vp9/encoder/vp9_extend.c \
+	third_party/libvpx/source/libvpx/vp9/encoder/vp9_firstpass.c \
+	third_party/libvpx/source/libvpx/vp9/encoder/vp9_lookahead.c \
+	third_party/libvpx/source/libvpx/vp9/encoder/vp9_mbgraph.c \
+	third_party/libvpx/source/libvpx/vp9/encoder/vp9_mcomp.c \
+	third_party/libvpx/source/libvpx/vp9/encoder/vp9_onyx_if.c \
+	third_party/libvpx/source/libvpx/vp9/encoder/vp9_picklpf.c \
+	third_party/libvpx/source/libvpx/vp9/encoder/vp9_pickmode.c \
+	third_party/libvpx/source/libvpx/vp9/encoder/vp9_quantize.c \
+	third_party/libvpx/source/libvpx/vp9/encoder/vp9_ratectrl.c \
+	third_party/libvpx/source/libvpx/vp9/encoder/vp9_rdopt.c \
+	third_party/libvpx/source/libvpx/vp9/encoder/vp9_resize.c \
+	third_party/libvpx/source/libvpx/vp9/encoder/vp9_sad.c \
+	third_party/libvpx/source/libvpx/vp9/encoder/vp9_segmentation.c \
+	third_party/libvpx/source/libvpx/vp9/encoder/vp9_subexp.c \
+	third_party/libvpx/source/libvpx/vp9/encoder/vp9_temporal_filter.c \
+	third_party/libvpx/source/libvpx/vp9/encoder/vp9_tokenize.c \
+	third_party/libvpx/source/libvpx/vp9/encoder/vp9_treewriter.c \
+	third_party/libvpx/source/libvpx/vp9/encoder/vp9_vaq.c \
+	third_party/libvpx/source/libvpx/vp9/encoder/vp9_variance.c \
+	third_party/libvpx/source/libvpx/vp9/encoder/vp9_writer.c \
+	third_party/libvpx/source/libvpx/vp9/vp9_cx_iface.c \
 	third_party/libvpx/source/libvpx/vp9/vp9_dx_iface.c \
 	third_party/libvpx/source/libvpx/vpx_mem/vpx_mem.c \
 	third_party/libvpx/source/libvpx/vpx_scale/generic/gen_scalers.c \
@@ -125,10 +150,12 @@ LOCAL_SRC_FILES := \
 	third_party/libvpx/source/libvpx/vpx_scale/generic/yv12config.c \
 	third_party/libvpx/source/libvpx/vpx_scale/generic/yv12extend.c \
 	third_party/libvpx/source/libvpx/vpx_scale/vpx_scale_rtcd.c \
+	third_party/libvpx/source/libvpx/vpx/src/svc_encodeframe.c \
 	third_party/libvpx/source/libvpx/vpx/src/vpx_codec.c \
 	third_party/libvpx/source/libvpx/vpx/src/vpx_decoder.c \
 	third_party/libvpx/source/libvpx/vpx/src/vpx_encoder.c \
-	third_party/libvpx/source/libvpx/vpx/src/vpx_image.c
+	third_party/libvpx/source/libvpx/vpx/src/vpx_image.c \
+	third_party/libvpx/source/libvpx/vpx/src/vpx_psnr.c
 
 
 # Flags passed to both C and C++ files.
@@ -143,7 +170,6 @@ MY_CFLAGS_Debug := \
 	-fvisibility=hidden \
 	-pipe \
 	-fPIC \
-	-EL -static -mips32 \
 	-Wno-format \
 	-EL \
 	-mhard-float \
@@ -235,7 +261,6 @@ MY_CFLAGS_Release := \
 	-fvisibility=hidden \
 	-pipe \
 	-fPIC \
-	-EL -static -mips32 \
 	-Wno-format \
 	-EL \
 	-mhard-float \
