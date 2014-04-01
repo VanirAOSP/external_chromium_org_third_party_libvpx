@@ -15,6 +15,7 @@
 #
 # !!! It's highly recommended to install yasm before running this script.
 
+export LC_ALL=C
 BASE_DIR=`pwd`
 LIBVPX_SRC_DIR="source/libvpx"
 LIBVPX_CONFIG_DIR="source/config"
@@ -78,11 +79,11 @@ function write_target_definition {
   done
   echo "      ]," >> $2
   echo "      'conditions': [" >> $2
-  echo "        ['os_posix==1 and OS!=\"mac\"', {" >> $2
+  echo "        ['os_posix==1 and OS!=\"mac\" and OS!=\"ios\"', {" >> $2
   echo "          'cflags!': [ '-mfpu=vfpv3-d16' ]," >> $2
   echo "          'cflags': [ '-m$4', ]," >> $2
   echo "        }]," >> $2
-  echo "        ['OS==\"mac\"', {" >> $2
+  echo "        ['OS==\"mac\" or OS==\"ios\"', {" >> $2
   echo "          'xcode_settings': {" >> $2
   echo "            'OTHER_CFLAGS': [ '-m$4', ]," >> $2
   echo "          }," >> $2
