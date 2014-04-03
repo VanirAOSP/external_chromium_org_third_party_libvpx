@@ -28,6 +28,9 @@
               }],
             ],
           }],
+          ['OS=="android" and target_arch=="arm64"', {
+            'target_arch_full': 'generic',
+          }],
         ],
       }],
 
@@ -369,7 +372,13 @@
       ],
       'sources': [
         '<(libvpx_source)/build/make/obj_int_extract.c',
-      ]
+      ],
+      'conditions': [
+        ['android_webview_build==1', {
+          'defines': [ 'FORCE_PARSE_ELF' ],
+          'include_dirs': [ 'include' ],
+        }],
+      ],
     },
     {
       # A library that contains assembly offsets needed.
