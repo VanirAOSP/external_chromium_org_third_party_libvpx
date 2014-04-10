@@ -3,13 +3,14 @@
 include $(CLEAR_VARS)
 
 LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_MODULE := third_party_libvpx_libvpx_obj_int_extract_host_gyp
+LOCAL_MODULE := third_party_libvpx_libvpx_obj_int_extract_$(TARGET_$(GYP_VAR_PREFIX)ARCH)_host_gyp
 LOCAL_MODULE_STEM := libvpx_obj_int_extract
 LOCAL_MODULE_SUFFIX := 
 LOCAL_MODULE_TAGS := optional
 LOCAL_IS_HOST_MODULE := true
-gyp_intermediate_dir := $(call local-intermediates-dir)
-gyp_shared_intermediate_dir := $(call intermediates-dir-for,GYP,shared)
+LOCAL_MODULE_TARGET_ARCH := $(TARGET_$(GYP_VAR_PREFIX)ARCH)
+gyp_intermediate_dir := $(call local-intermediates-dir,,$(GYP_VAR_PREFIX))
+gyp_shared_intermediate_dir := $(call intermediates-dir-for,GYP,shared,,,$(GYP_VAR_PREFIX))
 
 # Make sure our deps are built first.
 GYP_TARGET_DEPENDENCIES :=
@@ -184,11 +185,11 @@ LOCAL_SHARED_LIBRARIES :=
 
 # Add target alias to "gyp_all_modules" target.
 .PHONY: gyp_all_modules
-gyp_all_modules: third_party_libvpx_libvpx_obj_int_extract_host_gyp
+gyp_all_modules: third_party_libvpx_libvpx_obj_int_extract_$(TARGET_$(GYP_VAR_PREFIX)ARCH)_host_gyp
 
 # Alias gyp target name.
 .PHONY: libvpx_obj_int_extract
-libvpx_obj_int_extract: third_party_libvpx_libvpx_obj_int_extract_host_gyp
+libvpx_obj_int_extract: third_party_libvpx_libvpx_obj_int_extract_$(TARGET_$(GYP_VAR_PREFIX)ARCH)_host_gyp
 
 LOCAL_MODULE_PATH := $(gyp_shared_intermediate_dir)
 include $(BUILD_HOST_EXECUTABLE)

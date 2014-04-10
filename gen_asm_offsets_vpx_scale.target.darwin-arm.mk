@@ -7,12 +7,13 @@ LOCAL_MODULE := third_party_libvpx_gen_asm_offsets_vpx_scale_gyp
 LOCAL_MODULE_STEM := gen_asm_offsets_vpx_scale
 LOCAL_MODULE_SUFFIX := .stamp
 LOCAL_MODULE_TAGS := optional
-gyp_intermediate_dir := $(call local-intermediates-dir)
-gyp_shared_intermediate_dir := $(call intermediates-dir-for,GYP,shared)
+LOCAL_MODULE_TARGET_ARCH := $(TARGET_$(GYP_VAR_PREFIX)ARCH)
+gyp_intermediate_dir := $(call local-intermediates-dir,,$(GYP_VAR_PREFIX))
+gyp_shared_intermediate_dir := $(call intermediates-dir-for,GYP,shared,,,$(GYP_VAR_PREFIX))
 
 # Make sure our deps are built first.
 GYP_TARGET_DEPENDENCIES := \
-	$(call intermediates-dir-for,STATIC_LIBRARIES,libvpx_asm_offsets_vpx_scale)/libvpx_asm_offsets_vpx_scale.a \
+	$(call intermediates-dir-for,STATIC_LIBRARIES,libvpx_asm_offsets_vpx_scale,,,$(GYP_VAR_PREFIX))/libvpx_asm_offsets_vpx_scale.a \
 	$(gyp_shared_intermediate_dir)/libvpx_obj_int_extract
 
 ### Rules for action "unpack_lib_posix":
@@ -22,7 +23,7 @@ $(gyp_intermediate_dir)/vpx_scale_asm_offsets.o: gyp_shared_intermediate_dir := 
 $(gyp_intermediate_dir)/vpx_scale_asm_offsets.o: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_intermediate_dir)/vpx_scale_asm_offsets.o: $(LOCAL_PATH)/third_party/libvpx/unpack_lib_posix.sh $(GYP_TARGET_DEPENDENCIES)
 	@echo "Gyp action: third_party_libvpx_libvpx_gyp_gen_asm_offsets_vpx_scale_target_unpack_lib_posix ($@)"
-	$(hide)cd $(gyp_local_path)/third_party/libvpx; mkdir -p $(gyp_intermediate_dir); ../../third_party/libvpx/unpack_lib_posix.sh -d "$(gyp_intermediate_dir)" -f vpx_scale_asm_offsets.o -a "$(gyp_shared_intermediate_dir)/libvpx_asm_offsets_vpx_scale.a" -a "$(obj).$(TOOLSET)/third_party/libvpx/libvpx_asm_offsets_vpx_scale.a" -a "$(obj).$(TOOLSET)/Source/WebKit/chromium/third_party/libvpx/libvpx_asm_offsets_vpx_scale.a" -a "$(PWD)/$(call intermediates-dir-for, STATIC_LIBRARIES, libvpx_asm_offsets_vpx_scale,,,$(GYP_VAR_PREFIX))/libvpx_asm_offsets_vpx_scale.a" -r "$(PWD)/$($(GYP_VAR_PREFIX)TARGET_AR)"
+	$(hide)cd $(gyp_local_path)/third_party/libvpx; mkdir -p $(gyp_intermediate_dir); ../../third_party/libvpx/unpack_lib_posix.sh -d "$(gyp_intermediate_dir)" -f vpx_scale_asm_offsets.o -a "$(gyp_shared_intermediate_dir)/libvpx_asm_offsets_vpx_scale.a" -a "$(obj).$(TOOLSET)/third_party/libvpx/libvpx_asm_offsets_vpx_scale.a" -a "$(obj).$(TOOLSET)/Source/WebKit/chromium/third_party/libvpx/libvpx_asm_offsets_vpx_scale.a" -a "$(PWD)/$(call intermediates-dir-for, STATIC_LIBRARIES, libvpx_asm_offsets_vpx_scale,,, $(GYP_VAR_PREFIX))/libvpx_asm_offsets_vpx_scale.a" -r "$(PWD)/$($(GYP_VAR_PREFIX)TARGET_AR)"
 
 
 
@@ -36,10 +37,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vpx_scale_asm_offsets.asm: exp
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vpx_scale_asm_offsets.asm: $(gyp_intermediate_dir)/vpx_scale_asm_offsets.o $(gyp_shared_intermediate_dir)/libvpx_obj_int_extract $(LOCAL_PATH)/third_party/libvpx/obj_int_extract.py $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; python ../../third_party/libvpx/obj_int_extract.py -e "$(gyp_shared_intermediate_dir)/libvpx_obj_int_extract" -f gas -b "$(gyp_intermediate_dir)/vpx_scale_asm_offsets.o" -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/vpx_scale_asm_offsets.asm"
 
-.PHONY: third_party_libvpx_gen_asm_offsets_vpx_scale_gyp_rule_trigger
-third_party_libvpx_gen_asm_offsets_vpx_scale_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/vpx_scale_asm_offsets.asm
 
-### Finished generating for all rules
 
 GYP_GENERATED_OUTPUTS := \
 	$(gyp_intermediate_dir)/vpx_scale_asm_offsets.o \
@@ -48,8 +46,7 @@ GYP_GENERATED_OUTPUTS := \
 # Make sure our deps and generated files are built first.
 LOCAL_ADDITIONAL_DEPENDENCIES := $(GYP_TARGET_DEPENDENCIES) $(GYP_GENERATED_OUTPUTS)
 
-LOCAL_GENERATED_SOURCES := \
-	third_party_libvpx_gen_asm_offsets_vpx_scale_gyp_rule_trigger
+LOCAL_GENERATED_SOURCES :=
 
 GYP_COPIED_SOURCE_ORIGIN_DIRS :=
 
@@ -243,6 +240,7 @@ gen_asm_offsets_vpx_scale: third_party_libvpx_gen_asm_offsets_vpx_scale_gyp
 
 LOCAL_MODULE_PATH := $(PRODUCT_OUT)/gyp_stamp
 LOCAL_UNINSTALLABLE_MODULE := true
+LOCAL_2ND_ARCH_VAR_PREFIX := $(GYP_VAR_PREFIX)
 
 include $(BUILD_SYSTEM)/base_rules.mk
 
@@ -250,3 +248,5 @@ $(LOCAL_BUILT_MODULE): $(LOCAL_ADDITIONAL_DEPENDENCIES)
 	$(hide) echo "Gyp timestamp: $@"
 	$(hide) mkdir -p $(dir $@)
 	$(hide) touch $@
+
+LOCAL_2ND_ARCH_VAR_PREFIX :=

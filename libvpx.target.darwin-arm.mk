@@ -6,13 +6,14 @@ LOCAL_MODULE_CLASS := STATIC_LIBRARIES
 LOCAL_MODULE := third_party_libvpx_libvpx_gyp
 LOCAL_MODULE_SUFFIX := .a
 LOCAL_MODULE_TAGS := optional
-gyp_intermediate_dir := $(call local-intermediates-dir)
-gyp_shared_intermediate_dir := $(call intermediates-dir-for,GYP,shared)
+LOCAL_MODULE_TARGET_ARCH := $(TARGET_$(GYP_VAR_PREFIX)ARCH)
+gyp_intermediate_dir := $(call local-intermediates-dir,,$(GYP_VAR_PREFIX))
+gyp_shared_intermediate_dir := $(call intermediates-dir-for,GYP,shared,,,$(GYP_VAR_PREFIX))
 
 # Make sure our deps are built first.
 GYP_TARGET_DEPENDENCIES := \
-	$(call intermediates-dir-for,GYP,third_party_libvpx_gen_asm_offsets_vp8_gyp)/gen_asm_offsets_vp8.stamp \
-	$(call intermediates-dir-for,GYP,third_party_libvpx_gen_asm_offsets_vpx_scale_gyp)/gen_asm_offsets_vpx_scale.stamp
+	$(call intermediates-dir-for,GYP,third_party_libvpx_gen_asm_offsets_vp8_gyp,,,$(GYP_VAR_PREFIX))/gen_asm_offsets_vp8.stamp \
+	$(call intermediates-dir-for,GYP,third_party_libvpx_gen_asm_offsets_vpx_scale_gyp,,,$(GYP_VAR_PREFIX))/gen_asm_offsets_vpx_scale.stamp
 
 
 ### Generated for rule "third_party_libvpx_libvpx_gyp_libvpx_target_convert_asm":
@@ -24,8 +25,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/bilinearfilter_v6.S: export PA
 $(gyp_shared_intermediate_dir)/third_party/libvpx/bilinearfilter_v6.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/armv6/bilinearfilter_v6.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/armv6/bilinearfilter_v6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/bilinearfilter_v6.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/bilinearfilter_v6.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/copymem16x16_v6.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/copymem16x16_v6.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -34,8 +33,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/copymem16x16_v6.S: export PATH
 $(gyp_shared_intermediate_dir)/third_party/libvpx/copymem16x16_v6.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/armv6/copymem16x16_v6.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/armv6/copymem16x16_v6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/copymem16x16_v6.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/copymem16x16_v6.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/copymem8x4_v6.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/copymem8x4_v6.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -44,8 +41,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/copymem8x4_v6.S: export PATH :
 $(gyp_shared_intermediate_dir)/third_party/libvpx/copymem8x4_v6.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/armv6/copymem8x4_v6.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/armv6/copymem8x4_v6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/copymem8x4_v6.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/copymem8x4_v6.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/copymem8x8_v6.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/copymem8x8_v6.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -54,8 +49,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/copymem8x8_v6.S: export PATH :
 $(gyp_shared_intermediate_dir)/third_party/libvpx/copymem8x8_v6.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/armv6/copymem8x8_v6.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/armv6/copymem8x8_v6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/copymem8x8_v6.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/copymem8x8_v6.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/dc_only_idct_add_v6.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/dc_only_idct_add_v6.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -64,8 +57,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/dc_only_idct_add_v6.S: export 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/dc_only_idct_add_v6.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/armv6/dc_only_idct_add_v6.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/armv6/dc_only_idct_add_v6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/dc_only_idct_add_v6.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/dc_only_idct_add_v6.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/dequant_idct_v6.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/dequant_idct_v6.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -74,8 +65,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/dequant_idct_v6.S: export PATH
 $(gyp_shared_intermediate_dir)/third_party/libvpx/dequant_idct_v6.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/armv6/dequant_idct_v6.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/armv6/dequant_idct_v6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/dequant_idct_v6.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/dequant_idct_v6.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/dequantize_v6.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/dequantize_v6.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -84,8 +73,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/dequantize_v6.S: export PATH :
 $(gyp_shared_intermediate_dir)/third_party/libvpx/dequantize_v6.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/armv6/dequantize_v6.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/armv6/dequantize_v6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/dequantize_v6.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/dequantize_v6.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/filter_v6.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/filter_v6.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -94,8 +81,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/filter_v6.S: export PATH := $(
 $(gyp_shared_intermediate_dir)/third_party/libvpx/filter_v6.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/armv6/filter_v6.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/armv6/filter_v6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/filter_v6.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/filter_v6.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/idct_v6.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/idct_v6.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -104,8 +89,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/idct_v6.S: export PATH := $(su
 $(gyp_shared_intermediate_dir)/third_party/libvpx/idct_v6.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/armv6/idct_v6.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/armv6/idct_v6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/idct_v6.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/idct_v6.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/intra4x4_predict_v6.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/intra4x4_predict_v6.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -114,8 +97,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/intra4x4_predict_v6.S: export 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/intra4x4_predict_v6.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/armv6/intra4x4_predict_v6.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/armv6/intra4x4_predict_v6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/intra4x4_predict_v6.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/intra4x4_predict_v6.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/iwalsh_v6.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/iwalsh_v6.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -124,8 +105,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/iwalsh_v6.S: export PATH := $(
 $(gyp_shared_intermediate_dir)/third_party/libvpx/iwalsh_v6.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/armv6/iwalsh_v6.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/armv6/iwalsh_v6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/iwalsh_v6.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/iwalsh_v6.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/loopfilter_v6.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/loopfilter_v6.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -134,8 +113,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/loopfilter_v6.S: export PATH :
 $(gyp_shared_intermediate_dir)/third_party/libvpx/loopfilter_v6.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/armv6/loopfilter_v6.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/armv6/loopfilter_v6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/loopfilter_v6.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/loopfilter_v6.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/simpleloopfilter_v6.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/simpleloopfilter_v6.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -144,8 +121,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/simpleloopfilter_v6.S: export 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/simpleloopfilter_v6.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/armv6/simpleloopfilter_v6.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/armv6/simpleloopfilter_v6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/simpleloopfilter_v6.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/simpleloopfilter_v6.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict8x4_v6.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict8x4_v6.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -154,8 +129,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict8x4_v6.S: export 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict8x4_v6.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/armv6/sixtappredict8x4_v6.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/armv6/sixtappredict8x4_v6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict8x4_v6.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict8x4_v6.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_sad16x16_armv6.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_sad16x16_armv6.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -164,8 +137,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_sad16x16_armv6.S: export P
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_sad16x16_armv6.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/armv6/vp8_sad16x16_armv6.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/armv6/vp8_sad16x16_armv6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_sad16x16_armv6.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_sad16x16_armv6.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance16x16_armv6.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance16x16_armv6.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -174,8 +145,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance16x16_armv6.S: exp
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance16x16_armv6.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/armv6/vp8_variance16x16_armv6.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/armv6/vp8_variance16x16_armv6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance16x16_armv6.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance16x16_armv6.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance8x8_armv6.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance8x8_armv6.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -184,8 +153,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance8x8_armv6.S: expor
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance8x8_armv6.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/armv6/vp8_variance8x8_armv6.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/armv6/vp8_variance8x8_armv6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance8x8_armv6.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance8x8_armv6.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance_halfpixvar16x16_h_armv6.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance_halfpixvar16x16_h_armv6.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -194,8 +161,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance_halfpixvar16x16_h
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance_halfpixvar16x16_h_armv6.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/armv6/vp8_variance_halfpixvar16x16_h_armv6.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/armv6/vp8_variance_halfpixvar16x16_h_armv6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance_halfpixvar16x16_h_armv6.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance_halfpixvar16x16_h_armv6.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance_halfpixvar16x16_hv_armv6.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance_halfpixvar16x16_hv_armv6.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -204,8 +169,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance_halfpixvar16x16_h
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance_halfpixvar16x16_hv_armv6.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/armv6/vp8_variance_halfpixvar16x16_hv_armv6.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/armv6/vp8_variance_halfpixvar16x16_hv_armv6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance_halfpixvar16x16_hv_armv6.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance_halfpixvar16x16_hv_armv6.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance_halfpixvar16x16_v_armv6.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance_halfpixvar16x16_v_armv6.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -214,8 +177,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance_halfpixvar16x16_v
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance_halfpixvar16x16_v_armv6.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/armv6/vp8_variance_halfpixvar16x16_v_armv6.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/armv6/vp8_variance_halfpixvar16x16_v_armv6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance_halfpixvar16x16_v_armv6.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance_halfpixvar16x16_v_armv6.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/buildintrapredictorsmby_neon.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/buildintrapredictorsmby_neon.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -224,8 +185,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/buildintrapredictorsmby_neon.S
 $(gyp_shared_intermediate_dir)/third_party/libvpx/buildintrapredictorsmby_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/neon/buildintrapredictorsmby_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/neon/buildintrapredictorsmby_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/buildintrapredictorsmby_neon.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/buildintrapredictorsmby_neon.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/idct_dequant_0_2x_neon.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/idct_dequant_0_2x_neon.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -234,8 +193,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/idct_dequant_0_2x_neon.S: expo
 $(gyp_shared_intermediate_dir)/third_party/libvpx/idct_dequant_0_2x_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/neon/idct_dequant_0_2x_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/neon/idct_dequant_0_2x_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/idct_dequant_0_2x_neon.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/idct_dequant_0_2x_neon.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/idct_dequant_full_2x_neon.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/idct_dequant_full_2x_neon.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -244,8 +201,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/idct_dequant_full_2x_neon.S: e
 $(gyp_shared_intermediate_dir)/third_party/libvpx/idct_dequant_full_2x_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/neon/idct_dequant_full_2x_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/neon/idct_dequant_full_2x_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/idct_dequant_full_2x_neon.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/idct_dequant_full_2x_neon.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/iwalsh_neon.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/iwalsh_neon.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -254,8 +209,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/iwalsh_neon.S: export PATH := 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/iwalsh_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/neon/iwalsh_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/neon/iwalsh_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/iwalsh_neon.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/iwalsh_neon.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/loopfilter_neon.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/loopfilter_neon.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -264,8 +217,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/loopfilter_neon.S: export PATH
 $(gyp_shared_intermediate_dir)/third_party/libvpx/loopfilter_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/neon/loopfilter_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/neon/loopfilter_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/loopfilter_neon.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/loopfilter_neon.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/loopfiltersimplehorizontaledge_neon.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/loopfiltersimplehorizontaledge_neon.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -274,8 +225,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/loopfiltersimplehorizontaledge
 $(gyp_shared_intermediate_dir)/third_party/libvpx/loopfiltersimplehorizontaledge_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/neon/loopfiltersimplehorizontaledge_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/neon/loopfiltersimplehorizontaledge_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/loopfiltersimplehorizontaledge_neon.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/loopfiltersimplehorizontaledge_neon.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/loopfiltersimpleverticaledge_neon.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/loopfiltersimpleverticaledge_neon.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -284,8 +233,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/loopfiltersimpleverticaledge_n
 $(gyp_shared_intermediate_dir)/third_party/libvpx/loopfiltersimpleverticaledge_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/neon/loopfiltersimpleverticaledge_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/neon/loopfiltersimpleverticaledge_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/loopfiltersimpleverticaledge_neon.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/loopfiltersimpleverticaledge_neon.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/mbloopfilter_neon.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/mbloopfilter_neon.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -294,8 +241,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/mbloopfilter_neon.S: export PA
 $(gyp_shared_intermediate_dir)/third_party/libvpx/mbloopfilter_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/neon/mbloopfilter_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/neon/mbloopfilter_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/mbloopfilter_neon.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/mbloopfilter_neon.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/sad16_neon.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/sad16_neon.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -304,8 +249,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/sad16_neon.S: export PATH := $
 $(gyp_shared_intermediate_dir)/third_party/libvpx/sad16_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/neon/sad16_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/neon/sad16_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/sad16_neon.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/sad16_neon.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/sad8_neon.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/sad8_neon.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -314,8 +257,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/sad8_neon.S: export PATH := $(
 $(gyp_shared_intermediate_dir)/third_party/libvpx/sad8_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/neon/sad8_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/neon/sad8_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/sad8_neon.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/sad8_neon.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/save_reg_neon.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/save_reg_neon.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -324,8 +265,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/save_reg_neon.S: export PATH :
 $(gyp_shared_intermediate_dir)/third_party/libvpx/save_reg_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/neon/save_reg_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/neon/save_reg_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/save_reg_neon.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/save_reg_neon.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/shortidct4x4llm_neon.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/shortidct4x4llm_neon.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -334,8 +273,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/shortidct4x4llm_neon.S: export
 $(gyp_shared_intermediate_dir)/third_party/libvpx/shortidct4x4llm_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/neon/shortidct4x4llm_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/neon/shortidct4x4llm_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/shortidct4x4llm_neon.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/shortidct4x4llm_neon.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict16x16_neon.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict16x16_neon.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -344,8 +281,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict16x16_neon.S: exp
 $(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict16x16_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/neon/sixtappredict16x16_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/neon/sixtappredict16x16_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict16x16_neon.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict16x16_neon.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict4x4_neon.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict4x4_neon.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -354,8 +289,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict4x4_neon.S: expor
 $(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict4x4_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/neon/sixtappredict4x4_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/neon/sixtappredict4x4_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict4x4_neon.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict4x4_neon.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict8x4_neon.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict8x4_neon.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -364,8 +297,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict8x4_neon.S: expor
 $(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict8x4_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/neon/sixtappredict8x4_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/neon/sixtappredict8x4_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict8x4_neon.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict8x4_neon.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict8x8_neon.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict8x8_neon.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -374,8 +305,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict8x8_neon.S: expor
 $(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict8x8_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/neon/sixtappredict8x8_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/neon/sixtappredict8x8_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict8x8_neon.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict8x8_neon.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/variance_neon.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/variance_neon.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -384,8 +313,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/variance_neon.S: export PATH :
 $(gyp_shared_intermediate_dir)/third_party/libvpx/variance_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/neon/variance_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/neon/variance_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/variance_neon.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/variance_neon.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_subpixelvariance16x16_neon.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_subpixelvariance16x16_neon.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -394,8 +321,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_subpixelvariance16x16_neon
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_subpixelvariance16x16_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/neon/vp8_subpixelvariance16x16_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/neon/vp8_subpixelvariance16x16_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_subpixelvariance16x16_neon.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_subpixelvariance16x16_neon.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_subpixelvariance16x16s_neon.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_subpixelvariance16x16s_neon.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -404,8 +329,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_subpixelvariance16x16s_neo
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_subpixelvariance16x16s_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/neon/vp8_subpixelvariance16x16s_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/neon/vp8_subpixelvariance16x16s_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_subpixelvariance16x16s_neon.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_subpixelvariance16x16s_neon.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_subpixelvariance8x8_neon.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_subpixelvariance8x8_neon.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -414,8 +337,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_subpixelvariance8x8_neon.S
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_subpixelvariance8x8_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/neon/vp8_subpixelvariance8x8_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/neon/vp8_subpixelvariance8x8_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_subpixelvariance8x8_neon.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_subpixelvariance8x8_neon.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/boolhuff_armv5te.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/boolhuff_armv5te.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -424,8 +345,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/boolhuff_armv5te.S: export PAT
 $(gyp_shared_intermediate_dir)/third_party/libvpx/boolhuff_armv5te.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/encoder/arm/armv5te/boolhuff_armv5te.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/encoder/arm/armv5te/boolhuff_armv5te.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/boolhuff_armv5te.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/boolhuff_armv5te.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_packtokens_armv5.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_packtokens_armv5.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -434,8 +353,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_packtokens_armv5.S: export
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_packtokens_armv5.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/encoder/arm/armv5te/vp8_packtokens_armv5.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/encoder/arm/armv5te/vp8_packtokens_armv5.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_packtokens_armv5.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_packtokens_armv5.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_packtokens_mbrow_armv5.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_packtokens_mbrow_armv5.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -444,8 +361,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_packtokens_mbrow_armv5.S: 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_packtokens_mbrow_armv5.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/encoder/arm/armv5te/vp8_packtokens_mbrow_armv5.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/encoder/arm/armv5te/vp8_packtokens_mbrow_armv5.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_packtokens_mbrow_armv5.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_packtokens_mbrow_armv5.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_packtokens_partitions_armv5.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_packtokens_partitions_armv5.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -454,8 +369,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_packtokens_partitions_armv
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_packtokens_partitions_armv5.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/encoder/arm/armv5te/vp8_packtokens_partitions_armv5.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/encoder/arm/armv5te/vp8_packtokens_partitions_armv5.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_packtokens_partitions_armv5.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_packtokens_partitions_armv5.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_fast_quantize_b_armv6.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_fast_quantize_b_armv6.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -464,8 +377,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_fast_quantize_b_armv6.S: e
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_fast_quantize_b_armv6.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/encoder/arm/armv6/vp8_fast_quantize_b_armv6.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/encoder/arm/armv6/vp8_fast_quantize_b_armv6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_fast_quantize_b_armv6.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_fast_quantize_b_armv6.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_mse16x16_armv6.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_mse16x16_armv6.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -474,8 +385,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_mse16x16_armv6.S: export P
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_mse16x16_armv6.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/encoder/arm/armv6/vp8_mse16x16_armv6.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/encoder/arm/armv6/vp8_mse16x16_armv6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_mse16x16_armv6.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_mse16x16_armv6.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_short_fdct4x4_armv6.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_short_fdct4x4_armv6.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -484,8 +393,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_short_fdct4x4_armv6.S: exp
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_short_fdct4x4_armv6.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/encoder/arm/armv6/vp8_short_fdct4x4_armv6.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/encoder/arm/armv6/vp8_short_fdct4x4_armv6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_short_fdct4x4_armv6.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_short_fdct4x4_armv6.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_subtract_armv6.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_subtract_armv6.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -494,8 +401,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_subtract_armv6.S: export P
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_subtract_armv6.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/encoder/arm/armv6/vp8_subtract_armv6.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/encoder/arm/armv6/vp8_subtract_armv6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_subtract_armv6.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_subtract_armv6.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/walsh_v6.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/walsh_v6.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -504,8 +409,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/walsh_v6.S: export PATH := $(s
 $(gyp_shared_intermediate_dir)/third_party/libvpx/walsh_v6.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/encoder/arm/armv6/walsh_v6.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/encoder/arm/armv6/walsh_v6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/walsh_v6.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/walsh_v6.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/fastquantizeb_neon.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/fastquantizeb_neon.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -514,8 +417,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/fastquantizeb_neon.S: export P
 $(gyp_shared_intermediate_dir)/third_party/libvpx/fastquantizeb_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/encoder/arm/neon/fastquantizeb_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/encoder/arm/neon/fastquantizeb_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/fastquantizeb_neon.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/fastquantizeb_neon.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/shortfdct_neon.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/shortfdct_neon.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -524,8 +425,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/shortfdct_neon.S: export PATH 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/shortfdct_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/encoder/arm/neon/shortfdct_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/encoder/arm/neon/shortfdct_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/shortfdct_neon.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/shortfdct_neon.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/subtract_neon.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/subtract_neon.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -534,8 +433,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/subtract_neon.S: export PATH :
 $(gyp_shared_intermediate_dir)/third_party/libvpx/subtract_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/encoder/arm/neon/subtract_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/encoder/arm/neon/subtract_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/subtract_neon.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/subtract_neon.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_memcpy_neon.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_memcpy_neon.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -544,8 +441,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_memcpy_neon.S: export PATH
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_memcpy_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/encoder/arm/neon/vp8_memcpy_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/encoder/arm/neon/vp8_memcpy_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_memcpy_neon.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_memcpy_neon.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_mse16x16_neon.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_mse16x16_neon.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -554,8 +449,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_mse16x16_neon.S: export PA
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_mse16x16_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/encoder/arm/neon/vp8_mse16x16_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/encoder/arm/neon/vp8_mse16x16_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_mse16x16_neon.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_mse16x16_neon.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_shortwalsh4x4_neon.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_shortwalsh4x4_neon.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -564,8 +457,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_shortwalsh4x4_neon.S: expo
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_shortwalsh4x4_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/encoder/arm/neon/vp8_shortwalsh4x4_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/encoder/arm/neon/vp8_shortwalsh4x4_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_shortwalsh4x4_neon.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_shortwalsh4x4_neon.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_avg_neon.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_avg_neon.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -574,8 +465,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_avg_neon.S: export PATH :=
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_avg_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp9/common/arm/neon/vp9_avg_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp9/common/arm/neon/vp9_avg_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_avg_neon.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_avg_neon.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_convolve8_avg_neon.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_convolve8_avg_neon.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -584,8 +473,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_convolve8_avg_neon.S: expo
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_convolve8_avg_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp9/common/arm/neon/vp9_convolve8_avg_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp9/common/arm/neon/vp9_convolve8_avg_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_convolve8_avg_neon.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_convolve8_avg_neon.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_convolve8_neon.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_convolve8_neon.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -594,8 +481,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_convolve8_neon.S: export P
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_convolve8_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp9/common/arm/neon/vp9_convolve8_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp9/common/arm/neon/vp9_convolve8_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_convolve8_neon.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_convolve8_neon.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_copy_neon.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_copy_neon.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -604,8 +489,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_copy_neon.S: export PATH :
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_copy_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp9/common/arm/neon/vp9_copy_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp9/common/arm/neon/vp9_copy_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_copy_neon.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_copy_neon.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_dc_only_idct_add_neon.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_dc_only_idct_add_neon.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -614,8 +497,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_dc_only_idct_add_neon.S: e
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_dc_only_idct_add_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp9/common/arm/neon/vp9_dc_only_idct_add_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp9/common/arm/neon/vp9_dc_only_idct_add_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_dc_only_idct_add_neon.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_dc_only_idct_add_neon.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct16x16_1_add_neon.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct16x16_1_add_neon.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -624,8 +505,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct16x16_1_add_neon.S: ex
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct16x16_1_add_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp9/common/arm/neon/vp9_idct16x16_1_add_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp9/common/arm/neon/vp9_idct16x16_1_add_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct16x16_1_add_neon.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct16x16_1_add_neon.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct16x16_add_neon.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct16x16_add_neon.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -634,8 +513,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct16x16_add_neon.S: expo
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct16x16_add_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp9/common/arm/neon/vp9_idct16x16_add_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp9/common/arm/neon/vp9_idct16x16_add_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct16x16_add_neon.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct16x16_add_neon.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct32x32_1_add_neon.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct32x32_1_add_neon.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -644,8 +521,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct32x32_1_add_neon.S: ex
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct32x32_1_add_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp9/common/arm/neon/vp9_idct32x32_1_add_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp9/common/arm/neon/vp9_idct32x32_1_add_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct32x32_1_add_neon.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct32x32_1_add_neon.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct32x32_add_neon.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct32x32_add_neon.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -654,8 +529,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct32x32_add_neon.S: expo
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct32x32_add_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp9/common/arm/neon/vp9_idct32x32_add_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp9/common/arm/neon/vp9_idct32x32_add_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct32x32_add_neon.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct32x32_add_neon.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct4x4_1_add_neon.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct4x4_1_add_neon.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -664,8 +537,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct4x4_1_add_neon.S: expo
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct4x4_1_add_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp9/common/arm/neon/vp9_idct4x4_1_add_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp9/common/arm/neon/vp9_idct4x4_1_add_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct4x4_1_add_neon.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct4x4_1_add_neon.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct4x4_add_neon.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct4x4_add_neon.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -674,8 +545,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct4x4_add_neon.S: export
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct4x4_add_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp9/common/arm/neon/vp9_idct4x4_add_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp9/common/arm/neon/vp9_idct4x4_add_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct4x4_add_neon.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct4x4_add_neon.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct8x8_1_add_neon.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct8x8_1_add_neon.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -684,8 +553,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct8x8_1_add_neon.S: expo
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct8x8_1_add_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp9/common/arm/neon/vp9_idct8x8_1_add_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp9/common/arm/neon/vp9_idct8x8_1_add_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct8x8_1_add_neon.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct8x8_1_add_neon.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct8x8_add_neon.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct8x8_add_neon.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -694,8 +561,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct8x8_add_neon.S: export
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct8x8_add_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp9/common/arm/neon/vp9_idct8x8_add_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp9/common/arm/neon/vp9_idct8x8_add_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct8x8_add_neon.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct8x8_add_neon.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_iht4x4_add_neon.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_iht4x4_add_neon.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -704,8 +569,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_iht4x4_add_neon.S: export 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_iht4x4_add_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp9/common/arm/neon/vp9_iht4x4_add_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp9/common/arm/neon/vp9_iht4x4_add_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_iht4x4_add_neon.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_iht4x4_add_neon.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_iht8x8_add_neon.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_iht8x8_add_neon.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -714,8 +577,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_iht8x8_add_neon.S: export 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_iht8x8_add_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp9/common/arm/neon/vp9_iht8x8_add_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp9/common/arm/neon/vp9_iht8x8_add_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_iht8x8_add_neon.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_iht8x8_add_neon.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_loopfilter_16_neon.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_loopfilter_16_neon.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -724,8 +585,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_loopfilter_16_neon.S: expo
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_loopfilter_16_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp9/common/arm/neon/vp9_loopfilter_16_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp9/common/arm/neon/vp9_loopfilter_16_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_loopfilter_16_neon.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_loopfilter_16_neon.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_loopfilter_neon.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_loopfilter_neon.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -734,8 +593,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_loopfilter_neon.S: export 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_loopfilter_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp9/common/arm/neon/vp9_loopfilter_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp9/common/arm/neon/vp9_loopfilter_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_loopfilter_neon.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_loopfilter_neon.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_mb_lpf_neon.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_mb_lpf_neon.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -744,8 +601,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_mb_lpf_neon.S: export PATH
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_mb_lpf_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp9/common/arm/neon/vp9_mb_lpf_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp9/common/arm/neon/vp9_mb_lpf_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_mb_lpf_neon.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_mb_lpf_neon.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_reconintra_neon.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_reconintra_neon.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -754,8 +609,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_reconintra_neon.S: export 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_reconintra_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp9/common/arm/neon/vp9_reconintra_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp9/common/arm/neon/vp9_reconintra_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_reconintra_neon.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_reconintra_neon.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_save_reg_neon.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_save_reg_neon.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -764,8 +617,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_save_reg_neon.S: export PA
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_save_reg_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp9/common/arm/neon/vp9_save_reg_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp9/common/arm/neon/vp9_save_reg_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_save_reg_neon.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_save_reg_neon.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_vpxyv12_copy_y_neon.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_vpxyv12_copy_y_neon.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -774,8 +625,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_vpxyv12_copy_y_neon.S: exp
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_vpxyv12_copy_y_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vpx_scale/arm/neon/vp8_vpxyv12_copy_y_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vpx_scale/arm/neon/vp8_vpxyv12_copy_y_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_vpxyv12_copy_y_neon.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_vpxyv12_copy_y_neon.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_vpxyv12_copyframe_func_neon.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_vpxyv12_copyframe_func_neon.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -784,8 +633,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_vpxyv12_copyframe_func_neo
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_vpxyv12_copyframe_func_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vpx_scale/arm/neon/vp8_vpxyv12_copyframe_func_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vpx_scale/arm/neon/vp8_vpxyv12_copyframe_func_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_vpxyv12_copyframe_func_neon.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_vpxyv12_copyframe_func_neon.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_vpxyv12_copysrcframe_func_neon.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_vpxyv12_copysrcframe_func_neon.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -794,8 +641,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_vpxyv12_copysrcframe_func_
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_vpxyv12_copysrcframe_func_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vpx_scale/arm/neon/vp8_vpxyv12_copysrcframe_func_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vpx_scale/arm/neon/vp8_vpxyv12_copysrcframe_func_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_vpxyv12_copysrcframe_func_neon.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_vpxyv12_copysrcframe_func_neon.S
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_vpxyv12_extendframeborders_neon.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_vpxyv12_extendframeborders_neon.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -804,10 +649,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_vpxyv12_extendframeborders
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_vpxyv12_extendframeborders_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vpx_scale/arm/neon/vp8_vpxyv12_extendframeborders_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vpx_scale/arm/neon/vp8_vpxyv12_extendframeborders_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_vpxyv12_extendframeborders_neon.S"
 
-.PHONY: third_party_libvpx_libvpx_gyp_rule_trigger
-third_party_libvpx_libvpx_gyp_rule_trigger: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_vpxyv12_extendframeborders_neon.S
 
-### Finished generating for all rules
 
 ### Generated for copy rule.
 $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/build/make/ads2gas.pl $(GYP_TARGET_DEPENDENCIES) | $(ACP)
@@ -1144,8 +986,7 @@ LOCAL_GENERATED_SOURCES := \
 	$(gyp_intermediate_dir)/vp8_vpxyv12_copy_y_neon.S \
 	$(gyp_intermediate_dir)/vp8_vpxyv12_copyframe_func_neon.S \
 	$(gyp_intermediate_dir)/vp8_vpxyv12_copysrcframe_func_neon.S \
-	$(gyp_intermediate_dir)/vp8_vpxyv12_extendframeborders_neon.S \
-	third_party_libvpx_libvpx_gyp_rule_trigger
+	$(gyp_intermediate_dir)/vp8_vpxyv12_extendframeborders_neon.S
 
 GYP_COPIED_SOURCE_ORIGIN_DIRS := \
 	$(gyp_shared_intermediate_dir)/third_party/libvpx
@@ -1489,9 +1330,9 @@ LOCAL_ASFLAGS := $(LOCAL_CFLAGS)
 ### Rules for final target.
 
 LOCAL_LDFLAGS_Debug := \
-	-Wl,--fatal-warnings \
 	-Wl,-z,now \
 	-Wl,-z,relro \
+	-Wl,--fatal-warnings \
 	-Wl,-z,noexecstack \
 	-fPIC \
 	-Wl,-z,relro \
@@ -1508,9 +1349,9 @@ LOCAL_LDFLAGS_Debug := \
 
 
 LOCAL_LDFLAGS_Release := \
-	-Wl,--fatal-warnings \
 	-Wl,-z,now \
 	-Wl,-z,relro \
+	-Wl,--fatal-warnings \
 	-Wl,-z,noexecstack \
 	-fPIC \
 	-Wl,-z,relro \
