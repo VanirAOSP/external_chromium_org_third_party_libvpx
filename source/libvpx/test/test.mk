@@ -18,6 +18,7 @@ LIBVPX_TEST_SRCS-yes += video_source.h
 LIBVPX_TEST_SRCS-$(CONFIG_DECODERS)    += ../md5_utils.h ../md5_utils.c
 LIBVPX_TEST_SRCS-$(CONFIG_DECODERS)    += ivf_video_source.h
 LIBVPX_TEST_SRCS-$(CONFIG_ENCODERS)    += ../y4minput.h ../y4minput.c
+LIBVPX_TEST_SRCS-$(CONFIG_ENCODERS)    += aq_segment_test.cc
 LIBVPX_TEST_SRCS-$(CONFIG_ENCODERS)    += datarate_test.cc
 LIBVPX_TEST_SRCS-$(CONFIG_ENCODERS)    += error_resilience_test.cc
 LIBVPX_TEST_SRCS-$(CONFIG_ENCODERS)    += i420_video_source.h
@@ -29,6 +30,7 @@ LIBVPX_TEST_SRCS-$(CONFIG_VP8_ENCODER) += cq_test.cc
 LIBVPX_TEST_SRCS-$(CONFIG_VP8_ENCODER) += keyframe_test.cc
 
 LIBVPX_TEST_SRCS-$(CONFIG_VP9_DECODER) += external_frame_buffer_test.cc
+LIBVPX_TEST_SRCS-$(CONFIG_VP9_ENCODER) += active_map_test.cc
 LIBVPX_TEST_SRCS-$(CONFIG_VP9_ENCODER) += borders_test.cc
 LIBVPX_TEST_SRCS-$(CONFIG_VP9_ENCODER) += cpu_speed_test.cc
 LIBVPX_TEST_SRCS-$(CONFIG_VP9_ENCODER) += resize_test.cc
@@ -120,6 +122,7 @@ endif # CONFIG_SHARED
 ## TEST DATA
 ##
 LIBVPX_TEST_DATA-$(CONFIG_ENCODERS) += hantro_collage_w352h288.yuv
+LIBVPX_TEST_DATA-$(CONFIG_ENCODERS) += hantro_collage_w352h288.stat
 LIBVPX_TEST_DATA-$(CONFIG_ENCODERS) += hantro_odd.yuv
 LIBVPX_TEST_DATA-$(CONFIG_VP9_ENCODER) += rush_hour_444.y4m
 
@@ -691,8 +694,14 @@ LIBVPX_TEST_DATA-$(CONFIG_VP9_DECODER) += vp90-2-12-droppable_2.ivf
 LIBVPX_TEST_DATA-$(CONFIG_VP9_DECODER) += vp90-2-12-droppable_2.ivf.md5
 LIBVPX_TEST_DATA-$(CONFIG_VP9_DECODER) += vp90-2-12-droppable_3.ivf
 LIBVPX_TEST_DATA-$(CONFIG_VP9_DECODER) += vp90-2-12-droppable_3.ivf.md5
+LIBVPX_TEST_DATA-$(CONFIG_VP9_DECODER) += vp90-2-13-largescaling.webm
+LIBVPX_TEST_DATA-$(CONFIG_VP9_DECODER) += vp90-2-13-largescaling.webm.md5
 LIBVPX_TEST_DATA-$(CONFIG_VP9_DECODER) += vp91-2-04-yv444.webm
 LIBVPX_TEST_DATA-$(CONFIG_VP9_DECODER) += vp91-2-04-yv444.webm.md5
+LIBVPX_TEST_DATA-$(CONFIG_VP9_DECODER) += vp90-2-14-resize-1280x720-848x480.webm
+LIBVPX_TEST_DATA-$(CONFIG_VP9_DECODER) += vp90-2-14-resize-1280x720-848x480.webm.md5
+LIBVPX_TEST_DATA-$(CONFIG_VP9_DECODER) += vp90-2-14-resize-848x480-1280x720.webm
+LIBVPX_TEST_DATA-$(CONFIG_VP9_DECODER) += vp90-2-14-resize-848x480-1280x720.webm.md5
 
 ifeq ($(CONFIG_DECODE_PERF_TESTS),yes)
 # BBB VP9 streams
