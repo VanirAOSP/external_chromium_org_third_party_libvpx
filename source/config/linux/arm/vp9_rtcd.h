@@ -687,6 +687,7 @@ unsigned int vp9_variance_halfpixvar64x64_v_c(const uint8_t *src_ptr, int source
 #define vp9_variance_halfpixvar64x64_v vp9_variance_halfpixvar64x64_v_c
 
 void vp9_rtcd(void);
+
 #include "vpx_config.h"
 
 #ifdef RTCD_C
@@ -696,7 +697,6 @@ static void setup_rtcd_internal(void)
     int flags = arm_cpu_caps();
 
     (void)flags;
-
 
 }
 #endif

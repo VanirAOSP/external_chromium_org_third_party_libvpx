@@ -111,13 +111,18 @@ LOCAL_SRC_FILES := \
 	third_party/libvpx/source/libvpx/vp9/common/vp9_tile_common.c \
 	third_party/libvpx/source/libvpx/vp9/decoder/vp9_decodeframe.c \
 	third_party/libvpx/source/libvpx/vp9/decoder/vp9_decodemv.c \
+	third_party/libvpx/source/libvpx/vp9/decoder/vp9_decoder.c \
 	third_party/libvpx/source/libvpx/vp9/decoder/vp9_detokenize.c \
 	third_party/libvpx/source/libvpx/vp9/decoder/vp9_dsubexp.c \
 	third_party/libvpx/source/libvpx/vp9/decoder/vp9_dthread.c \
-	third_party/libvpx/source/libvpx/vp9/decoder/vp9_onyxd_if.c \
+	third_party/libvpx/source/libvpx/vp9/decoder/vp9_read_bit_buffer.c \
 	third_party/libvpx/source/libvpx/vp9/decoder/vp9_reader.c \
 	third_party/libvpx/source/libvpx/vp9/decoder/vp9_thread.c \
+	third_party/libvpx/source/libvpx/vp9/encoder/vp9_aq_complexity.c \
+	third_party/libvpx/source/libvpx/vp9/encoder/vp9_aq_cyclicrefresh.c \
+	third_party/libvpx/source/libvpx/vp9/encoder/vp9_aq_variance.c \
 	third_party/libvpx/source/libvpx/vp9/encoder/vp9_bitstream.c \
+	third_party/libvpx/source/libvpx/vp9/encoder/vp9_cost.c \
 	third_party/libvpx/source/libvpx/vp9/encoder/vp9_dct.c \
 	third_party/libvpx/source/libvpx/vp9/encoder/vp9_encodeframe.c \
 	third_party/libvpx/source/libvpx/vp9/encoder/vp9_encodemb.c \
@@ -136,12 +141,14 @@ LOCAL_SRC_FILES := \
 	third_party/libvpx/source/libvpx/vp9/encoder/vp9_resize.c \
 	third_party/libvpx/source/libvpx/vp9/encoder/vp9_sad.c \
 	third_party/libvpx/source/libvpx/vp9/encoder/vp9_segmentation.c \
+	third_party/libvpx/source/libvpx/vp9/encoder/vp9_speed_features.c \
 	third_party/libvpx/source/libvpx/vp9/encoder/vp9_subexp.c \
+	third_party/libvpx/source/libvpx/vp9/encoder/vp9_svc_layercontext.c \
 	third_party/libvpx/source/libvpx/vp9/encoder/vp9_temporal_filter.c \
 	third_party/libvpx/source/libvpx/vp9/encoder/vp9_tokenize.c \
 	third_party/libvpx/source/libvpx/vp9/encoder/vp9_treewriter.c \
-	third_party/libvpx/source/libvpx/vp9/encoder/vp9_vaq.c \
 	third_party/libvpx/source/libvpx/vp9/encoder/vp9_variance.c \
+	third_party/libvpx/source/libvpx/vp9/encoder/vp9_write_bit_buffer.c \
 	third_party/libvpx/source/libvpx/vp9/encoder/vp9_writer.c \
 	third_party/libvpx/source/libvpx/vp9/vp9_cx_iface.c \
 	third_party/libvpx/source/libvpx/vp9/vp9_dx_iface.c \
