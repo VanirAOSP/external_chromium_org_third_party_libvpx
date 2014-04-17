@@ -88,6 +88,15 @@ function write_target_definition {
   echo "            'OTHER_CFLAGS': [ '-m$4', ]," >> $2
   echo "          }," >> $2
   echo "        }]," >> $2
+  if [[ $4 == avx* ]]; then
+  echo "        ['OS==\"win\"', {" >> $2
+  echo "          'msvs_settings': {" >> $2
+  echo "            'VCCLCompilerTool': {" >> $2
+  echo "              'EnableEnhancedInstructionSet': '3', # /arch:AVX" >> $2
+  echo "            }," >> $2
+  echo "          }," >> $2
+  echo "        }]," >> $2
+  fi
   echo "      ]," >> $2
   echo "    }," >> $2
 }
@@ -317,6 +326,7 @@ cp -R $LIBVPX_SRC_DIR $TEMP_DIR
 cd $TEMP_DIR
 
 echo "Generate Config Files"
+# TODO(joeyparrish) Enable AVX2 when broader VS2013 support is available
 all_platforms="--enable-external-build --enable-postproc --disable-install-srcs --enable-multi-res-encoding --enable-temporal-denoising --disable-unit-tests --disable-install-docs --disable-examples --disable-avx2"
 gen_config_files linux/ia32 "--target=x86-linux-gcc --disable-ccache --enable-pic --enable-realtime-only ${all_platforms}"
 gen_config_files linux/x64 "--target=x86_64-linux-gcc --disable-ccache --enable-pic --enable-realtime-only ${all_platforms}"
@@ -325,8 +335,8 @@ gen_config_files linux/arm-neon "--target=armv7-linux-gcc --enable-pic --enable-
 gen_config_files linux/arm-neon-cpu-detect "--target=armv7-linux-gcc --enable-pic --enable-realtime-only --enable-runtime-cpu-detect ${all_platforms}"
 gen_config_files linux/mipsel "--target=mips32-linux-gcc --disable-fast-unaligned ${all_platforms}"
 gen_config_files linux/generic "--target=generic-gnu --enable-pic --enable-realtime-only ${all_platforms}"
-gen_config_files win/ia32 "--target=x86-win32-vs7 --enable-realtime-only ${all_platforms}"
-gen_config_files win/x64 "--target=x86_64-win64-vs9 --enable-realtime-only ${all_platforms}"
+gen_config_files win/ia32 "--target=x86-win32-vs12 --enable-realtime-only ${all_platforms}"
+gen_config_files win/x64 "--target=x86_64-win64-vs12 --enable-realtime-only ${all_platforms}"
 gen_config_files mac/ia32 "--target=x86-darwin9-gcc --enable-pic --enable-realtime-only ${all_platforms}"
 gen_config_files mac/x64 "--target=x86_64-darwin9-gcc --enable-pic --enable-realtime-only ${all_platforms}"
 gen_config_files nacl "--target=generic-gnu --enable-pic --enable-realtime-only ${all_platforms}"
