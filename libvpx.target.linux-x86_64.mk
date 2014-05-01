@@ -730,17 +730,18 @@ LOCAL_SRC_FILES := \
 	third_party/libvpx/source/libvpx/vp9/encoder/vp9_aq_cyclicrefresh.c \
 	third_party/libvpx/source/libvpx/vp9/encoder/vp9_aq_variance.c \
 	third_party/libvpx/source/libvpx/vp9/encoder/vp9_bitstream.c \
+	third_party/libvpx/source/libvpx/vp9/encoder/vp9_context_tree.c \
 	third_party/libvpx/source/libvpx/vp9/encoder/vp9_cost.c \
 	third_party/libvpx/source/libvpx/vp9/encoder/vp9_dct.c \
 	third_party/libvpx/source/libvpx/vp9/encoder/vp9_encodeframe.c \
 	third_party/libvpx/source/libvpx/vp9/encoder/vp9_encodemb.c \
 	third_party/libvpx/source/libvpx/vp9/encoder/vp9_encodemv.c \
+	third_party/libvpx/source/libvpx/vp9/encoder/vp9_encoder.c \
 	third_party/libvpx/source/libvpx/vp9/encoder/vp9_extend.c \
 	third_party/libvpx/source/libvpx/vp9/encoder/vp9_firstpass.c \
 	third_party/libvpx/source/libvpx/vp9/encoder/vp9_lookahead.c \
 	third_party/libvpx/source/libvpx/vp9/encoder/vp9_mbgraph.c \
 	third_party/libvpx/source/libvpx/vp9/encoder/vp9_mcomp.c \
-	third_party/libvpx/source/libvpx/vp9/encoder/vp9_onyx_if.c \
 	third_party/libvpx/source/libvpx/vp9/encoder/vp9_picklpf.c \
 	third_party/libvpx/source/libvpx/vp9/encoder/vp9_pickmode.c \
 	third_party/libvpx/source/libvpx/vp9/encoder/vp9_quantize.c \
