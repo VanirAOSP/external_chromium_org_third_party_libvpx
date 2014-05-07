@@ -1132,8 +1132,8 @@ MY_CFLAGS_Debug := \
 	-fvisibility=hidden \
 	-pipe \
 	-fPIC \
-	-Wa,-I,/src/android_master-chromium/external/chromium_org/third_party/libvpx/source/config/linux/arm-neon-cpu-detect \
-	-Wa,-I,/src/android_master-chromium/external/chromium_org/third_party/libvpx/source/config \
+	-Wa,-I,/automerger/android-src/external/chromium_org/third_party/libvpx/source/config/linux/arm-neon-cpu-detect \
+	-Wa,-I,/automerger/android-src/external/chromium_org/third_party/libvpx/source/config \
 	-Wa,-I,$(gyp_shared_intermediate_dir)/third_party/libvpx \
 	-Wa,-mfpu=neon \
 	-Wno-format \
@@ -1224,8 +1224,8 @@ MY_CFLAGS_Release := \
 	-fvisibility=hidden \
 	-pipe \
 	-fPIC \
-	-Wa,-I,/src/android_master-chromium/external/chromium_org/third_party/libvpx/source/config/linux/arm-neon-cpu-detect \
-	-Wa,-I,/src/android_master-chromium/external/chromium_org/third_party/libvpx/source/config \
+	-Wa,-I,/automerger/android-src/external/chromium_org/third_party/libvpx/source/config/linux/arm-neon-cpu-detect \
+	-Wa,-I,/automerger/android-src/external/chromium_org/third_party/libvpx/source/config \
 	-Wa,-I,$(gyp_shared_intermediate_dir)/third_party/libvpx \
 	-Wa,-mfpu=neon \
 	-Wno-format \
