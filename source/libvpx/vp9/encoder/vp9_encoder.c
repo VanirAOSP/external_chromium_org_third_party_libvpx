@@ -162,6 +162,7 @@ void vp9_initialize_enc() {
     vp9_rc_init_minq_luts();
     vp9_entropy_mv_init();
     vp9_entropy_mode_init();
+    vp9_temporal_filter_init();
     init_done = 1;
   }
 }
@@ -536,7 +537,6 @@ static void set_tile_limits(VP9_COMP *cpi) {
 
 static void init_config(struct VP9_COMP *cpi, VP9EncoderConfig *oxcf) {
   VP9_COMMON *const cm = &cpi->common;
-  int i;
 
   cpi->oxcf = *oxcf;
 
@@ -571,10 +571,6 @@ static void init_config(struct VP9_COMP *cpi, VP9EncoderConfig *oxcf) {
   cpi->alt_fb_idx = 2;
 
   set_tile_limits(cpi);
-
-  cpi->fixed_divide[0] = 0;
-  for (i = 1; i < 512; i++)
-    cpi->fixed_divide[i] = 0x80000 / i;
 }
 
 static int get_pass(MODE mode) {
@@ -1054,10 +1050,6 @@ VP9_COMP *vp9_create_compressor(VP9EncoderConfig *oxcf) {
 
   cm->error.setjmp = 0;
 
-#ifdef MODE_TEST_HIT_STATS
-  vp9_zero(cpi->mode_test_hits);
-#endif
-
   return cpi;
 }
 
@@ -1114,34 +1106,6 @@ void vp9_remove_compressor(VP9_COMP *cpi) {
       fclose(f);
     }
 
-#endif
-
-#ifdef MODE_TEST_HIT_STATS
-    if (cpi->pass != 1) {
-      double norm_per_pixel_mode_tests = 0;
-      double norm_counts[BLOCK_SIZES];
-      int i;
-      int sb64_per_frame;
-      int norm_factors[BLOCK_SIZES] =
-        {256, 128, 128, 64, 32, 32, 16, 8, 8, 4, 2, 2, 1};
-      FILE *f = fopen("mode_hit_stats.stt", "a");
-
-      // On average, how many mode tests do we do
-      for (i = 0; i < BLOCK_SIZES; ++i) {
-        norm_counts[i] = (double)cpi->mode_test_hits[i] /
-                         (double)norm_factors[i];
-        norm_per_pixel_mode_tests += norm_counts[i];
-      }
-      // Convert to a number per 64x64 and per frame
-      sb64_per_frame = ((cpi->common.height + 63) / 64) *
-                       ((cpi->common.width + 63) / 64);
-      norm_per_pixel_mode_tests =
-        norm_per_pixel_mode_tests /
-        (double)(cpi->common.current_video_frame * sb64_per_frame);
-
-      fprintf(f, "%6.4f\n", norm_per_pixel_mode_tests);
-      fclose(f);
-    }
 #endif
 
 #if 0
@@ -2097,7 +2061,7 @@ static void encode_frame_to_data_rate(VP9_COMP *cpi,
   cm->lf.mode_ref_delta_update = 0;
 
   // Initialize cpi->mv_step_param to default based on max resolution.
-  cpi->mv_step_param = vp9_init_search_range(cpi, max_mv_def);
+  cpi->mv_step_param = vp9_init_search_range(sf, max_mv_def);
   // Initialize cpi->max_mv_magnitude and cpi->mv_step_param if appropriate.
   if (sf->auto_mv_step_size) {
     if (frame_is_intra_only(cm)) {
@@ -2109,7 +2073,7 @@ static void encode_frame_to_data_rate(VP9_COMP *cpi,
         // Allow mv_steps to correspond to twice the max mv magnitude found
         // in the previous frame, capped by the default max_mv_magnitude based
         // on resolution.
-        cpi->mv_step_param = vp9_init_search_range(cpi, MIN(max_mv_def, 2 *
+        cpi->mv_step_param = vp9_init_search_range(sf, MIN(max_mv_def, 2 *
                                  cpi->max_mv_magnitude));
       cpi->max_mv_magnitude = 0;
     }
