@@ -29,6 +29,15 @@ LOCAL_SRC_FILES := \
 	third_party/libvpx/source/libvpx/vp8/common/arm/neon/dequant_idct_neon.c \
 	third_party/libvpx/source/libvpx/vp8/common/arm/neon/dequantizeb_neon.c \
 	third_party/libvpx/source/libvpx/vp8/common/arm/neon/idct_blk_neon.c \
+	third_party/libvpx/source/libvpx/vp8/common/arm/neon/idct_dequant_0_2x_neon.c \
+	third_party/libvpx/source/libvpx/vp8/common/arm/neon/idct_dequant_full_2x_neon.c \
+	third_party/libvpx/source/libvpx/vp8/common/arm/neon/iwalsh_neon.c \
+	third_party/libvpx/source/libvpx/vp8/common/arm/neon/loopfiltersimplehorizontaledge_neon.c \
+	third_party/libvpx/source/libvpx/vp8/common/arm/neon/mbloopfilter_neon.c \
+	third_party/libvpx/source/libvpx/vp8/common/arm/neon/sad_neon.c \
+	third_party/libvpx/source/libvpx/vp8/common/arm/neon/shortidct4x4llm_neon.c \
+	third_party/libvpx/source/libvpx/vp8/common/arm/neon/sixtappredict_neon.c \
+	third_party/libvpx/source/libvpx/vp8/common/arm/neon/variance_neon.c \
 	third_party/libvpx/source/libvpx/vp8/encoder/arm/neon/denoising_neon.c \
 	third_party/libvpx/source/libvpx/vp9/common/arm/neon/vp9_convolve_neon.c \
 	third_party/libvpx/source/libvpx/vp9/common/arm/neon/vp9_idct16x16_neon.c \

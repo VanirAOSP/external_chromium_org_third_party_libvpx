@@ -17,7 +17,7 @@ GYP_TARGET_DEPENDENCIES := \
 
 
 ### Generated for rule "third_party_libvpx_libvpx_gyp_libvpx_target_convert_asm":
-# "{'inputs': ['$(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl', '$(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm'], 'extension': 'asm', 'process_outputs_as_sources': '1', 'outputs': ['$(gyp_shared_intermediate_dir)/third_party/libvpx/%(INPUT_ROOT)s.S'], 'rule_name': 'convert_asm', 'rule_sources': ['source/libvpx/vp8/common/arm/armv6/bilinearfilter_v6.asm', 'source/libvpx/vp8/common/arm/armv6/copymem16x16_v6.asm', 'source/libvpx/vp8/common/arm/armv6/copymem8x4_v6.asm', 'source/libvpx/vp8/common/arm/armv6/copymem8x8_v6.asm', 'source/libvpx/vp8/common/arm/armv6/dc_only_idct_add_v6.asm', 'source/libvpx/vp8/common/arm/armv6/dequant_idct_v6.asm', 'source/libvpx/vp8/common/arm/armv6/dequantize_v6.asm', 'source/libvpx/vp8/common/arm/armv6/filter_v6.asm', 'source/libvpx/vp8/common/arm/armv6/idct_v6.asm', 'source/libvpx/vp8/common/arm/armv6/intra4x4_predict_v6.asm', 'source/libvpx/vp8/common/arm/armv6/iwalsh_v6.asm', 'source/libvpx/vp8/common/arm/armv6/loopfilter_v6.asm', 'source/libvpx/vp8/common/arm/armv6/simpleloopfilter_v6.asm', 'source/libvpx/vp8/common/arm/armv6/sixtappredict8x4_v6.asm', 'source/libvpx/vp8/common/arm/armv6/vp8_sad16x16_armv6.asm', 'source/libvpx/vp8/common/arm/armv6/vp8_variance16x16_armv6.asm', 'source/libvpx/vp8/common/arm/armv6/vp8_variance8x8_armv6.asm', 'source/libvpx/vp8/common/arm/armv6/vp8_variance_halfpixvar16x16_h_armv6.asm', 'source/libvpx/vp8/common/arm/armv6/vp8_variance_halfpixvar16x16_hv_armv6.asm', 'source/libvpx/vp8/common/arm/armv6/vp8_variance_halfpixvar16x16_v_armv6.asm', 'source/libvpx/vp8/common/arm/neon/buildintrapredictorsmby_neon.asm', 'source/libvpx/vp8/common/arm/neon/idct_dequant_0_2x_neon.asm', 'source/libvpx/vp8/common/arm/neon/idct_dequant_full_2x_neon.asm', 'source/libvpx/vp8/common/arm/neon/iwalsh_neon.asm', 'source/libvpx/vp8/common/arm/neon/loopfilter_neon.asm', 'source/libvpx/vp8/common/arm/neon/loopfiltersimplehorizontaledge_neon.asm', 'source/libvpx/vp8/common/arm/neon/loopfiltersimpleverticaledge_neon.asm', 'source/libvpx/vp8/common/arm/neon/mbloopfilter_neon.asm', 'source/libvpx/vp8/common/arm/neon/sad16_neon.asm', 'source/libvpx/vp8/common/arm/neon/sad8_neon.asm', 'source/libvpx/vp8/common/arm/neon/shortidct4x4llm_neon.asm', 'source/libvpx/vp8/common/arm/neon/sixtappredict16x16_neon.asm', 'source/libvpx/vp8/common/arm/neon/sixtappredict4x4_neon.asm', 'source/libvpx/vp8/common/arm/neon/sixtappredict8x4_neon.asm', 'source/libvpx/vp8/common/arm/neon/sixtappredict8x8_neon.asm', 'source/libvpx/vp8/common/arm/neon/variance_neon.asm', 'source/libvpx/vp8/common/arm/neon/vp8_subpixelvariance16x16_neon.asm', 'source/libvpx/vp8/common/arm/neon/vp8_subpixelvariance16x16s_neon.asm', 'source/libvpx/vp8/common/arm/neon/vp8_subpixelvariance8x8_neon.asm', 'source/libvpx/vp8/encoder/arm/armv5te/boolhuff_armv5te.asm', 'source/libvpx/vp8/encoder/arm/armv5te/vp8_packtokens_armv5.asm', 'source/libvpx/vp8/encoder/arm/armv5te/vp8_packtokens_mbrow_armv5.asm', 'source/libvpx/vp8/encoder/arm/armv5te/vp8_packtokens_partitions_armv5.asm', 'source/libvpx/vp8/encoder/arm/armv6/vp8_fast_quantize_b_armv6.asm', 'source/libvpx/vp8/encoder/arm/armv6/vp8_mse16x16_armv6.asm', 'source/libvpx/vp8/encoder/arm/armv6/vp8_short_fdct4x4_armv6.asm', 'source/libvpx/vp8/encoder/arm/armv6/vp8_subtract_armv6.asm', 'source/libvpx/vp8/encoder/arm/armv6/walsh_v6.asm', 'source/libvpx/vp8/encoder/arm/neon/fastquantizeb_neon.asm', 'source/libvpx/vp8/encoder/arm/neon/shortfdct_neon.asm', 'source/libvpx/vp8/encoder/arm/neon/subtract_neon.asm', 'source/libvpx/vp8/encoder/arm/neon/vp8_memcpy_neon.asm', 'source/libvpx/vp8/encoder/arm/neon/vp8_mse16x16_neon.asm', 'source/libvpx/vp8/encoder/arm/neon/vp8_shortwalsh4x4_neon.asm', 'source/libvpx/vp9/common/arm/neon/vp9_avg_neon.asm', 'source/libvpx/vp9/common/arm/neon/vp9_convolve8_avg_neon.asm', 'source/libvpx/vp9/common/arm/neon/vp9_convolve8_neon.asm', 'source/libvpx/vp9/common/arm/neon/vp9_copy_neon.asm', 'source/libvpx/vp9/common/arm/neon/vp9_dc_only_idct_add_neon.asm', 'source/libvpx/vp9/common/arm/neon/vp9_idct16x16_1_add_neon.asm', 'source/libvpx/vp9/common/arm/neon/vp9_idct16x16_add_neon.asm', 'source/libvpx/vp9/common/arm/neon/vp9_idct32x32_1_add_neon.asm', 'source/libvpx/vp9/common/arm/neon/vp9_idct32x32_add_neon.asm', 'source/libvpx/vp9/common/arm/neon/vp9_idct4x4_1_add_neon.asm', 'source/libvpx/vp9/common/arm/neon/vp9_idct4x4_add_neon.asm', 'source/libvpx/vp9/common/arm/neon/vp9_idct8x8_1_add_neon.asm', 'source/libvpx/vp9/common/arm/neon/vp9_idct8x8_add_neon.asm', 'source/libvpx/vp9/common/arm/neon/vp9_iht4x4_add_neon.asm', 'source/libvpx/vp9/common/arm/neon/vp9_iht8x8_add_neon.asm', 'source/libvpx/vp9/common/arm/neon/vp9_loopfilter_16_neon.asm', 'source/libvpx/vp9/common/arm/neon/vp9_loopfilter_neon.asm', 'source/libvpx/vp9/common/arm/neon/vp9_mb_lpf_neon.asm', 'source/libvpx/vp9/common/arm/neon/vp9_reconintra_neon.asm', 'source/libvpx/vp9/common/arm/neon/vp9_save_reg_neon.asm', 'source/libvpx/vpx_scale/arm/neon/vp8_vpxyv12_copyframe_func_neon.asm', 'source/libvpx/vpx_scale/arm/neon/vp8_vpxyv12_copysrcframe_func_neon.asm', 'source/libvpx/vpx_scale/arm/neon/vp8_vpxyv12_extendframeborders_neon.asm'], 'action': ['bash', '-c', 'cat $(RULE_SOURCES) | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/%(INPUT_ROOT)s.S'], 'message': 'Convert libvpx asm file for ARM $(RULE_SOURCES)'}":
+# "{'inputs': ['$(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl', '$(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm'], 'extension': 'asm', 'process_outputs_as_sources': '1', 'outputs': ['$(gyp_shared_intermediate_dir)/third_party/libvpx/%(INPUT_ROOT)s.S'], 'rule_name': 'convert_asm', 'rule_sources': ['source/libvpx/vp8/common/arm/armv6/bilinearfilter_v6.asm', 'source/libvpx/vp8/common/arm/armv6/copymem16x16_v6.asm', 'source/libvpx/vp8/common/arm/armv6/copymem8x4_v6.asm', 'source/libvpx/vp8/common/arm/armv6/copymem8x8_v6.asm', 'source/libvpx/vp8/common/arm/armv6/dc_only_idct_add_v6.asm', 'source/libvpx/vp8/common/arm/armv6/dequant_idct_v6.asm', 'source/libvpx/vp8/common/arm/armv6/dequantize_v6.asm', 'source/libvpx/vp8/common/arm/armv6/filter_v6.asm', 'source/libvpx/vp8/common/arm/armv6/idct_v6.asm', 'source/libvpx/vp8/common/arm/armv6/intra4x4_predict_v6.asm', 'source/libvpx/vp8/common/arm/armv6/iwalsh_v6.asm', 'source/libvpx/vp8/common/arm/armv6/loopfilter_v6.asm', 'source/libvpx/vp8/common/arm/armv6/simpleloopfilter_v6.asm', 'source/libvpx/vp8/common/arm/armv6/sixtappredict8x4_v6.asm', 'source/libvpx/vp8/common/arm/armv6/vp8_sad16x16_armv6.asm', 'source/libvpx/vp8/common/arm/armv6/vp8_variance16x16_armv6.asm', 'source/libvpx/vp8/common/arm/armv6/vp8_variance8x8_armv6.asm', 'source/libvpx/vp8/common/arm/armv6/vp8_variance_halfpixvar16x16_h_armv6.asm', 'source/libvpx/vp8/common/arm/armv6/vp8_variance_halfpixvar16x16_hv_armv6.asm', 'source/libvpx/vp8/common/arm/armv6/vp8_variance_halfpixvar16x16_v_armv6.asm', 'source/libvpx/vp8/common/arm/neon/buildintrapredictorsmby_neon.asm', 'source/libvpx/vp8/common/arm/neon/loopfilter_neon.asm', 'source/libvpx/vp8/common/arm/neon/loopfiltersimpleverticaledge_neon.asm', 'source/libvpx/vp8/common/arm/neon/vp8_subpixelvariance16x16_neon.asm', 'source/libvpx/vp8/common/arm/neon/vp8_subpixelvariance16x16s_neon.asm', 'source/libvpx/vp8/common/arm/neon/vp8_subpixelvariance8x8_neon.asm', 'source/libvpx/vp8/encoder/arm/armv5te/boolhuff_armv5te.asm', 'source/libvpx/vp8/encoder/arm/armv5te/vp8_packtokens_armv5.asm', 'source/libvpx/vp8/encoder/arm/armv5te/vp8_packtokens_mbrow_armv5.asm', 'source/libvpx/vp8/encoder/arm/armv5te/vp8_packtokens_partitions_armv5.asm', 'source/libvpx/vp8/encoder/arm/armv6/vp8_fast_quantize_b_armv6.asm', 'source/libvpx/vp8/encoder/arm/armv6/vp8_mse16x16_armv6.asm', 'source/libvpx/vp8/encoder/arm/armv6/vp8_short_fdct4x4_armv6.asm', 'source/libvpx/vp8/encoder/arm/armv6/vp8_subtract_armv6.asm', 'source/libvpx/vp8/encoder/arm/armv6/walsh_v6.asm', 'source/libvpx/vp8/encoder/arm/neon/fastquantizeb_neon.asm', 'source/libvpx/vp8/encoder/arm/neon/shortfdct_neon.asm', 'source/libvpx/vp8/encoder/arm/neon/subtract_neon.asm', 'source/libvpx/vp8/encoder/arm/neon/vp8_memcpy_neon.asm', 'source/libvpx/vp8/encoder/arm/neon/vp8_mse16x16_neon.asm', 'source/libvpx/vp8/encoder/arm/neon/vp8_shortwalsh4x4_neon.asm', 'source/libvpx/vp9/common/arm/neon/vp9_avg_neon.asm', 'source/libvpx/vp9/common/arm/neon/vp9_convolve8_avg_neon.asm', 'source/libvpx/vp9/common/arm/neon/vp9_convolve8_neon.asm', 'source/libvpx/vp9/common/arm/neon/vp9_copy_neon.asm', 'source/libvpx/vp9/common/arm/neon/vp9_dc_only_idct_add_neon.asm', 'source/libvpx/vp9/common/arm/neon/vp9_idct16x16_1_add_neon.asm', 'source/libvpx/vp9/common/arm/neon/vp9_idct16x16_add_neon.asm', 'source/libvpx/vp9/common/arm/neon/vp9_idct32x32_1_add_neon.asm', 'source/libvpx/vp9/common/arm/neon/vp9_idct32x32_add_neon.asm', 'source/libvpx/vp9/common/arm/neon/vp9_idct4x4_1_add_neon.asm', 'source/libvpx/vp9/common/arm/neon/vp9_idct4x4_add_neon.asm', 'source/libvpx/vp9/common/arm/neon/vp9_idct8x8_1_add_neon.asm', 'source/libvpx/vp9/common/arm/neon/vp9_idct8x8_add_neon.asm', 'source/libvpx/vp9/common/arm/neon/vp9_iht4x4_add_neon.asm', 'source/libvpx/vp9/common/arm/neon/vp9_iht8x8_add_neon.asm', 'source/libvpx/vp9/common/arm/neon/vp9_loopfilter_16_neon.asm', 'source/libvpx/vp9/common/arm/neon/vp9_loopfilter_neon.asm', 'source/libvpx/vp9/common/arm/neon/vp9_mb_lpf_neon.asm', 'source/libvpx/vp9/common/arm/neon/vp9_reconintra_neon.asm', 'source/libvpx/vp9/common/arm/neon/vp9_save_reg_neon.asm', 'source/libvpx/vpx_scale/arm/neon/vp8_vpxyv12_copyframe_func_neon.asm', 'source/libvpx/vpx_scale/arm/neon/vp8_vpxyv12_copysrcframe_func_neon.asm', 'source/libvpx/vpx_scale/arm/neon/vp8_vpxyv12_extendframeborders_neon.asm'], 'action': ['bash', '-c', 'cat $(RULE_SOURCES) | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/%(INPUT_ROOT)s.S'], 'message': 'Convert libvpx asm file for ARM $(RULE_SOURCES)'}":
 $(gyp_shared_intermediate_dir)/third_party/libvpx/bilinearfilter_v6.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/bilinearfilter_v6.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/bilinearfilter_v6.S: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
@@ -186,30 +186,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/buildintrapredictorsmby_neon.S
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/neon/buildintrapredictorsmby_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/buildintrapredictorsmby_neon.S"
 
 
-$(gyp_shared_intermediate_dir)/third_party/libvpx/idct_dequant_0_2x_neon.S: gyp_local_path := $(LOCAL_PATH)
-$(gyp_shared_intermediate_dir)/third_party/libvpx/idct_dequant_0_2x_neon.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
-$(gyp_shared_intermediate_dir)/third_party/libvpx/idct_dequant_0_2x_neon.S: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
-$(gyp_shared_intermediate_dir)/third_party/libvpx/idct_dequant_0_2x_neon.S: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
-$(gyp_shared_intermediate_dir)/third_party/libvpx/idct_dequant_0_2x_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/neon/idct_dequant_0_2x_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/neon/idct_dequant_0_2x_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/idct_dequant_0_2x_neon.S"
-
-
-$(gyp_shared_intermediate_dir)/third_party/libvpx/idct_dequant_full_2x_neon.S: gyp_local_path := $(LOCAL_PATH)
-$(gyp_shared_intermediate_dir)/third_party/libvpx/idct_dequant_full_2x_neon.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
-$(gyp_shared_intermediate_dir)/third_party/libvpx/idct_dequant_full_2x_neon.S: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
-$(gyp_shared_intermediate_dir)/third_party/libvpx/idct_dequant_full_2x_neon.S: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
-$(gyp_shared_intermediate_dir)/third_party/libvpx/idct_dequant_full_2x_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/neon/idct_dequant_full_2x_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/neon/idct_dequant_full_2x_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/idct_dequant_full_2x_neon.S"
-
-
-$(gyp_shared_intermediate_dir)/third_party/libvpx/iwalsh_neon.S: gyp_local_path := $(LOCAL_PATH)
-$(gyp_shared_intermediate_dir)/third_party/libvpx/iwalsh_neon.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
-$(gyp_shared_intermediate_dir)/third_party/libvpx/iwalsh_neon.S: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
-$(gyp_shared_intermediate_dir)/third_party/libvpx/iwalsh_neon.S: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
-$(gyp_shared_intermediate_dir)/third_party/libvpx/iwalsh_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/neon/iwalsh_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/neon/iwalsh_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/iwalsh_neon.S"
-
-
 $(gyp_shared_intermediate_dir)/third_party/libvpx/loopfilter_neon.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/loopfilter_neon.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/loopfilter_neon.S: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
@@ -218,92 +194,12 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/loopfilter_neon.S: $(LOCAL_PAT
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/neon/loopfilter_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/loopfilter_neon.S"
 
 
-$(gyp_shared_intermediate_dir)/third_party/libvpx/loopfiltersimplehorizontaledge_neon.S: gyp_local_path := $(LOCAL_PATH)
-$(gyp_shared_intermediate_dir)/third_party/libvpx/loopfiltersimplehorizontaledge_neon.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
-$(gyp_shared_intermediate_dir)/third_party/libvpx/loopfiltersimplehorizontaledge_neon.S: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
-$(gyp_shared_intermediate_dir)/third_party/libvpx/loopfiltersimplehorizontaledge_neon.S: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
-$(gyp_shared_intermediate_dir)/third_party/libvpx/loopfiltersimplehorizontaledge_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/neon/loopfiltersimplehorizontaledge_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/neon/loopfiltersimplehorizontaledge_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/loopfiltersimplehorizontaledge_neon.S"
-
-
 $(gyp_shared_intermediate_dir)/third_party/libvpx/loopfiltersimpleverticaledge_neon.S: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/loopfiltersimpleverticaledge_neon.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/loopfiltersimpleverticaledge_neon.S: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/loopfiltersimpleverticaledge_neon.S: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/loopfiltersimpleverticaledge_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/neon/loopfiltersimpleverticaledge_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/neon/loopfiltersimpleverticaledge_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/loopfiltersimpleverticaledge_neon.S"
-
-
-$(gyp_shared_intermediate_dir)/third_party/libvpx/mbloopfilter_neon.S: gyp_local_path := $(LOCAL_PATH)
-$(gyp_shared_intermediate_dir)/third_party/libvpx/mbloopfilter_neon.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
-$(gyp_shared_intermediate_dir)/third_party/libvpx/mbloopfilter_neon.S: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
-$(gyp_shared_intermediate_dir)/third_party/libvpx/mbloopfilter_neon.S: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
-$(gyp_shared_intermediate_dir)/third_party/libvpx/mbloopfilter_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/neon/mbloopfilter_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/neon/mbloopfilter_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/mbloopfilter_neon.S"
-
-
-$(gyp_shared_intermediate_dir)/third_party/libvpx/sad16_neon.S: gyp_local_path := $(LOCAL_PATH)
-$(gyp_shared_intermediate_dir)/third_party/libvpx/sad16_neon.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
-$(gyp_shared_intermediate_dir)/third_party/libvpx/sad16_neon.S: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
-$(gyp_shared_intermediate_dir)/third_party/libvpx/sad16_neon.S: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
-$(gyp_shared_intermediate_dir)/third_party/libvpx/sad16_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/neon/sad16_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/neon/sad16_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/sad16_neon.S"
-
-
-$(gyp_shared_intermediate_dir)/third_party/libvpx/sad8_neon.S: gyp_local_path := $(LOCAL_PATH)
-$(gyp_shared_intermediate_dir)/third_party/libvpx/sad8_neon.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
-$(gyp_shared_intermediate_dir)/third_party/libvpx/sad8_neon.S: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
-$(gyp_shared_intermediate_dir)/third_party/libvpx/sad8_neon.S: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
-$(gyp_shared_intermediate_dir)/third_party/libvpx/sad8_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/neon/sad8_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/neon/sad8_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/sad8_neon.S"
-
-
-$(gyp_shared_intermediate_dir)/third_party/libvpx/shortidct4x4llm_neon.S: gyp_local_path := $(LOCAL_PATH)
-$(gyp_shared_intermediate_dir)/third_party/libvpx/shortidct4x4llm_neon.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
-$(gyp_shared_intermediate_dir)/third_party/libvpx/shortidct4x4llm_neon.S: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
-$(gyp_shared_intermediate_dir)/third_party/libvpx/shortidct4x4llm_neon.S: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
-$(gyp_shared_intermediate_dir)/third_party/libvpx/shortidct4x4llm_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/neon/shortidct4x4llm_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/neon/shortidct4x4llm_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/shortidct4x4llm_neon.S"
-
-
-$(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict16x16_neon.S: gyp_local_path := $(LOCAL_PATH)
-$(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict16x16_neon.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
-$(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict16x16_neon.S: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
-$(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict16x16_neon.S: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
-$(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict16x16_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/neon/sixtappredict16x16_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/neon/sixtappredict16x16_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict16x16_neon.S"
-
-
-$(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict4x4_neon.S: gyp_local_path := $(LOCAL_PATH)
-$(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict4x4_neon.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
-$(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict4x4_neon.S: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
-$(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict4x4_neon.S: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
-$(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict4x4_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/neon/sixtappredict4x4_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/neon/sixtappredict4x4_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict4x4_neon.S"
-
-
-$(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict8x4_neon.S: gyp_local_path := $(LOCAL_PATH)
-$(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict8x4_neon.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
-$(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict8x4_neon.S: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
-$(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict8x4_neon.S: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
-$(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict8x4_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/neon/sixtappredict8x4_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/neon/sixtappredict8x4_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict8x4_neon.S"
-
-
-$(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict8x8_neon.S: gyp_local_path := $(LOCAL_PATH)
-$(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict8x8_neon.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
-$(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict8x8_neon.S: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
-$(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict8x8_neon.S: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
-$(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict8x8_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/neon/sixtappredict8x8_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/neon/sixtappredict8x8_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict8x8_neon.S"
-
-
-$(gyp_shared_intermediate_dir)/third_party/libvpx/variance_neon.S: gyp_local_path := $(LOCAL_PATH)
-$(gyp_shared_intermediate_dir)/third_party/libvpx/variance_neon.S: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
-$(gyp_shared_intermediate_dir)/third_party/libvpx/variance_neon.S: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
-$(gyp_shared_intermediate_dir)/third_party/libvpx/variance_neon.S: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
-$(gyp_shared_intermediate_dir)/third_party/libvpx/variance_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/neon/variance_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/neon/variance_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/variance_neon.S"
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_subpixelvariance16x16_neon.S: gyp_local_path := $(LOCAL_PATH)
@@ -670,21 +566,8 @@ GYP_GENERATED_OUTPUTS := \
 	$(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance_halfpixvar16x16_hv_armv6.S \
 	$(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance_halfpixvar16x16_v_armv6.S \
 	$(gyp_shared_intermediate_dir)/third_party/libvpx/buildintrapredictorsmby_neon.S \
-	$(gyp_shared_intermediate_dir)/third_party/libvpx/idct_dequant_0_2x_neon.S \
-	$(gyp_shared_intermediate_dir)/third_party/libvpx/idct_dequant_full_2x_neon.S \
-	$(gyp_shared_intermediate_dir)/third_party/libvpx/iwalsh_neon.S \
 	$(gyp_shared_intermediate_dir)/third_party/libvpx/loopfilter_neon.S \
-	$(gyp_shared_intermediate_dir)/third_party/libvpx/loopfiltersimplehorizontaledge_neon.S \
 	$(gyp_shared_intermediate_dir)/third_party/libvpx/loopfiltersimpleverticaledge_neon.S \
-	$(gyp_shared_intermediate_dir)/third_party/libvpx/mbloopfilter_neon.S \
-	$(gyp_shared_intermediate_dir)/third_party/libvpx/sad16_neon.S \
-	$(gyp_shared_intermediate_dir)/third_party/libvpx/sad8_neon.S \
-	$(gyp_shared_intermediate_dir)/third_party/libvpx/shortidct4x4llm_neon.S \
-	$(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict16x16_neon.S \
-	$(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict4x4_neon.S \
-	$(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict8x4_neon.S \
-	$(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict8x8_neon.S \
-	$(gyp_shared_intermediate_dir)/third_party/libvpx/variance_neon.S \
 	$(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_subpixelvariance16x16_neon.S \
 	$(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_subpixelvariance16x16s_neon.S \
 	$(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_subpixelvariance8x8_neon.S \
@@ -773,35 +656,9 @@ $(gyp_intermediate_dir)/vp8_variance_halfpixvar16x16_v_armv6.S: $(gyp_shared_int
 	mkdir -p $(@D); cp $< $@
 $(gyp_intermediate_dir)/buildintrapredictorsmby_neon.S: $(gyp_shared_intermediate_dir)/third_party/libvpx/buildintrapredictorsmby_neon.S
 	mkdir -p $(@D); cp $< $@
-$(gyp_intermediate_dir)/idct_dequant_0_2x_neon.S: $(gyp_shared_intermediate_dir)/third_party/libvpx/idct_dequant_0_2x_neon.S
-	mkdir -p $(@D); cp $< $@
-$(gyp_intermediate_dir)/idct_dequant_full_2x_neon.S: $(gyp_shared_intermediate_dir)/third_party/libvpx/idct_dequant_full_2x_neon.S
-	mkdir -p $(@D); cp $< $@
-$(gyp_intermediate_dir)/iwalsh_neon.S: $(gyp_shared_intermediate_dir)/third_party/libvpx/iwalsh_neon.S
-	mkdir -p $(@D); cp $< $@
 $(gyp_intermediate_dir)/loopfilter_neon.S: $(gyp_shared_intermediate_dir)/third_party/libvpx/loopfilter_neon.S
 	mkdir -p $(@D); cp $< $@
-$(gyp_intermediate_dir)/loopfiltersimplehorizontaledge_neon.S: $(gyp_shared_intermediate_dir)/third_party/libvpx/loopfiltersimplehorizontaledge_neon.S
-	mkdir -p $(@D); cp $< $@
 $(gyp_intermediate_dir)/loopfiltersimpleverticaledge_neon.S: $(gyp_shared_intermediate_dir)/third_party/libvpx/loopfiltersimpleverticaledge_neon.S
-	mkdir -p $(@D); cp $< $@
-$(gyp_intermediate_dir)/mbloopfilter_neon.S: $(gyp_shared_intermediate_dir)/third_party/libvpx/mbloopfilter_neon.S
-	mkdir -p $(@D); cp $< $@
-$(gyp_intermediate_dir)/sad16_neon.S: $(gyp_shared_intermediate_dir)/third_party/libvpx/sad16_neon.S
-	mkdir -p $(@D); cp $< $@
-$(gyp_intermediate_dir)/sad8_neon.S: $(gyp_shared_intermediate_dir)/third_party/libvpx/sad8_neon.S
-	mkdir -p $(@D); cp $< $@
-$(gyp_intermediate_dir)/shortidct4x4llm_neon.S: $(gyp_shared_intermediate_dir)/third_party/libvpx/shortidct4x4llm_neon.S
-	mkdir -p $(@D); cp $< $@
-$(gyp_intermediate_dir)/sixtappredict16x16_neon.S: $(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict16x16_neon.S
-	mkdir -p $(@D); cp $< $@
-$(gyp_intermediate_dir)/sixtappredict4x4_neon.S: $(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict4x4_neon.S
-	mkdir -p $(@D); cp $< $@
-$(gyp_intermediate_dir)/sixtappredict8x4_neon.S: $(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict8x4_neon.S
-	mkdir -p $(@D); cp $< $@
-$(gyp_intermediate_dir)/sixtappredict8x8_neon.S: $(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict8x8_neon.S
-	mkdir -p $(@D); cp $< $@
-$(gyp_intermediate_dir)/variance_neon.S: $(gyp_shared_intermediate_dir)/third_party/libvpx/variance_neon.S
 	mkdir -p $(@D); cp $< $@
 $(gyp_intermediate_dir)/vp8_subpixelvariance16x16_neon.S: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_subpixelvariance16x16_neon.S
 	mkdir -p $(@D); cp $< $@
@@ -907,21 +764,8 @@ LOCAL_GENERATED_SOURCES := \
 	$(gyp_intermediate_dir)/vp8_variance_halfpixvar16x16_hv_armv6.S \
 	$(gyp_intermediate_dir)/vp8_variance_halfpixvar16x16_v_armv6.S \
 	$(gyp_intermediate_dir)/buildintrapredictorsmby_neon.S \
-	$(gyp_intermediate_dir)/idct_dequant_0_2x_neon.S \
-	$(gyp_intermediate_dir)/idct_dequant_full_2x_neon.S \
-	$(gyp_intermediate_dir)/iwalsh_neon.S \
 	$(gyp_intermediate_dir)/loopfilter_neon.S \
-	$(gyp_intermediate_dir)/loopfiltersimplehorizontaledge_neon.S \
 	$(gyp_intermediate_dir)/loopfiltersimpleverticaledge_neon.S \
-	$(gyp_intermediate_dir)/mbloopfilter_neon.S \
-	$(gyp_intermediate_dir)/sad16_neon.S \
-	$(gyp_intermediate_dir)/sad8_neon.S \
-	$(gyp_intermediate_dir)/shortidct4x4llm_neon.S \
-	$(gyp_intermediate_dir)/sixtappredict16x16_neon.S \
-	$(gyp_intermediate_dir)/sixtappredict4x4_neon.S \
-	$(gyp_intermediate_dir)/sixtappredict8x4_neon.S \
-	$(gyp_intermediate_dir)/sixtappredict8x8_neon.S \
-	$(gyp_intermediate_dir)/variance_neon.S \
 	$(gyp_intermediate_dir)/vp8_subpixelvariance16x16_neon.S \
 	$(gyp_intermediate_dir)/vp8_subpixelvariance16x16s_neon.S \
 	$(gyp_intermediate_dir)/vp8_subpixelvariance8x8_neon.S \
