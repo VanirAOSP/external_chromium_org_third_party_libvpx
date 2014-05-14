@@ -24,6 +24,7 @@ GYP_COPIED_SOURCE_ORIGIN_DIRS :=
 
 LOCAL_SRC_FILES := \
 	third_party/libvpx/source/libvpx/vp8/common/x86/variance_ssse3.c \
+	third_party/libvpx/source/libvpx/vp8/encoder/x86/quantize_ssse3.c \
 	third_party/libvpx/source/libvpx/vp9/common/x86/vp9_subpixel_8t_intrin_ssse3.c
 
 
@@ -43,7 +44,6 @@ MY_CFLAGS_Debug := \
 	-mfpmath=sse \
 	-mmmx \
 	-m32 \
-	-fuse-ld=gold \
 	-ffunction-sections \
 	-funwind-tables \
 	-g \
@@ -132,7 +132,6 @@ MY_CFLAGS_Release := \
 	-mfpmath=sse \
 	-mmmx \
 	-m32 \
-	-fuse-ld=gold \
 	-ffunction-sections \
 	-funwind-tables \
 	-g \
