@@ -38,6 +38,7 @@ MY_CFLAGS_Debug := \
 	-fvisibility=hidden \
 	-pipe \
 	-fPIC \
+	-Wno-unused-local-typedefs \
 	-mssse3 \
 	-Wno-format \
 	-msse2 \
@@ -132,6 +133,7 @@ MY_CFLAGS_Release := \
 	-fvisibility=hidden \
 	-pipe \
 	-fPIC \
+	-Wno-unused-local-typedefs \
 	-mssse3 \
 	-Wno-format \
 	-msse2 \
