@@ -1040,8 +1040,8 @@ MY_CFLAGS_Debug := \
 	-fvisibility=hidden \
 	-pipe \
 	-fPIC \
-	-Wa,-I,/usr/local/google/code/android/lmp-preview-dev/external/chromium_org/third_party/libvpx/source/config/linux/arm-neon-cpu-detect \
-	-Wa,-I,/usr/local/google/code/android/lmp-preview-dev/external/chromium_org/third_party/libvpx/source/config \
+	-Wa,-I,/usr/local/google/code/android/master-chromium/external/chromium_org/third_party/libvpx/source/config/linux/arm-neon-cpu-detect \
+	-Wa,-I,/usr/local/google/code/android/master-chromium/external/chromium_org/third_party/libvpx/source/config \
 	-Wa,-I,$(gyp_shared_intermediate_dir)/third_party/libvpx \
 	-Wa,-mfpu=neon \
 	-Wno-format \
@@ -1087,10 +1087,6 @@ MY_DEFS_Debug := \
 	'-DCLD_VERSION=1' \
 	'-DENABLE_PRINTING=1' \
 	'-DENABLE_MANAGED_USERS=1' \
-	'-DDATA_REDUCTION_FALLBACK_HOST="http://compress.googlezip.net:80/"' \
-	'-DDATA_REDUCTION_DEV_HOST="http://proxy-dev.googlezip.net:80/"' \
-	'-DSPDY_PROXY_AUTH_ORIGIN="https://proxy.googlezip.net:443/"' \
-	'-DDATA_REDUCTION_PROXY_PROBE_URL="http://check.googlezip.net/connect"' \
 	'-DVIDEO_HOLE=1' \
 	'-DUSE_OPENSSL=1' \
 	'-DUSE_OPENSSL_CERTS=1' \
@@ -1137,8 +1133,8 @@ MY_CFLAGS_Release := \
 	-fvisibility=hidden \
 	-pipe \
 	-fPIC \
-	-Wa,-I,/usr/local/google/code/android/lmp-preview-dev/external/chromium_org/third_party/libvpx/source/config/linux/arm-neon-cpu-detect \
-	-Wa,-I,/usr/local/google/code/android/lmp-preview-dev/external/chromium_org/third_party/libvpx/source/config \
+	-Wa,-I,/usr/local/google/code/android/master-chromium/external/chromium_org/third_party/libvpx/source/config/linux/arm-neon-cpu-detect \
+	-Wa,-I,/usr/local/google/code/android/master-chromium/external/chromium_org/third_party/libvpx/source/config \
 	-Wa,-I,$(gyp_shared_intermediate_dir)/third_party/libvpx \
 	-Wa,-mfpu=neon \
 	-Wno-format \
@@ -1184,10 +1180,6 @@ MY_DEFS_Release := \
 	'-DCLD_VERSION=1' \
 	'-DENABLE_PRINTING=1' \
 	'-DENABLE_MANAGED_USERS=1' \
-	'-DDATA_REDUCTION_FALLBACK_HOST="http://compress.googlezip.net:80/"' \
-	'-DDATA_REDUCTION_DEV_HOST="http://proxy-dev.googlezip.net:80/"' \
-	'-DSPDY_PROXY_AUTH_ORIGIN="https://proxy.googlezip.net:443/"' \
-	'-DDATA_REDUCTION_PROXY_PROBE_URL="http://check.googlezip.net/connect"' \
 	'-DVIDEO_HOLE=1' \
 	'-DUSE_OPENSSL=1' \
 	'-DUSE_OPENSSL_CERTS=1' \
