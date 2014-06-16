@@ -126,6 +126,7 @@ MY_DEFS_Debug := \
 
 # Include paths placed before CFLAGS/CPPFLAGS
 LOCAL_C_INCLUDES_Debug := \
+	$(gyp_shared_intermediate_dir) \
 	$(LOCAL_PATH)/third_party/libvpx/source/config/linux/arm-neon-cpu-detect \
 	$(LOCAL_PATH)/third_party/libvpx/source/libvpx \
 	$(PWD)/frameworks/wilhelm/include \
@@ -227,6 +228,7 @@ MY_DEFS_Release := \
 
 # Include paths placed before CFLAGS/CPPFLAGS
 LOCAL_C_INCLUDES_Release := \
+	$(gyp_shared_intermediate_dir) \
 	$(LOCAL_PATH)/third_party/libvpx/source/config/linux/arm-neon-cpu-detect \
 	$(LOCAL_PATH)/third_party/libvpx/source/libvpx \
 	$(PWD)/frameworks/wilhelm/include \

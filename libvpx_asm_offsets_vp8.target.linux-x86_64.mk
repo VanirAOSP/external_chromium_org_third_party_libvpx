@@ -101,6 +101,7 @@ MY_DEFS_Debug := \
 
 # Include paths placed before CFLAGS/CPPFLAGS
 LOCAL_C_INCLUDES_Debug := \
+	$(gyp_shared_intermediate_dir) \
 	$(LOCAL_PATH)/third_party/libvpx/source/config/linux/x64 \
 	$(LOCAL_PATH)/third_party/libvpx/source/config \
 	$(LOCAL_PATH)/third_party/libvpx/source/libvpx \
@@ -195,6 +196,7 @@ MY_DEFS_Release := \
 
 # Include paths placed before CFLAGS/CPPFLAGS
 LOCAL_C_INCLUDES_Release := \
+	$(gyp_shared_intermediate_dir) \
 	$(LOCAL_PATH)/third_party/libvpx/source/config/linux/x64 \
 	$(LOCAL_PATH)/third_party/libvpx/source/config \
 	$(LOCAL_PATH)/third_party/libvpx/source/libvpx \
