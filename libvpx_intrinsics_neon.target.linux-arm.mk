@@ -29,8 +29,6 @@ LOCAL_SRC_FILES := \
 	third_party/libvpx/source/libvpx/vp8/common/arm/neon/dequant_idct_neon.c \
 	third_party/libvpx/source/libvpx/vp8/common/arm/neon/dequantizeb_neon.c \
 	third_party/libvpx/source/libvpx/vp8/common/arm/neon/idct_blk_neon.c \
-	third_party/libvpx/source/libvpx/vp8/common/arm/neon/idct_dequant_0_2x_neon.c \
-	third_party/libvpx/source/libvpx/vp8/common/arm/neon/idct_dequant_full_2x_neon.c \
 	third_party/libvpx/source/libvpx/vp8/common/arm/neon/iwalsh_neon.c \
 	third_party/libvpx/source/libvpx/vp8/common/arm/neon/loopfiltersimplehorizontaledge_neon.c \
 	third_party/libvpx/source/libvpx/vp8/common/arm/neon/mbloopfilter_neon.c \
