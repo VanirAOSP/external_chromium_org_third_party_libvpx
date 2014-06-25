@@ -29,7 +29,7 @@
             ],
           }],
           ['target_arch=="arm64"', {
-            'target_arch_full': 'generic',
+            'target_arch_full': 'arm64',
           }],
         ],
       }],
@@ -53,7 +53,7 @@
     'variables': {
       'conditions': [
         ['OS=="win" and buildtype=="Official"', {
-          # Do not set to 'size', as it results in an error on win64. 
+          # Do not set to 'size', as it results in an error on win64.
           'optimize' :'speed',
         }],
       ],
@@ -132,7 +132,7 @@
               ],
             }],
             ['target_arch=="arm64"', {
-              'includes': [ 'libvpx_srcs_generic.gypi', ],
+              'includes': [ 'libvpx_srcs_arm64.gypi', ],
             }],
             ['target_arch=="x64"', {
               'conditions': [
@@ -280,14 +280,6 @@
             'ads2gas_script_path': '<(libvpx_source)/build/make/<(ads2gas_script)',
             'ads2gas_script_include': '<(libvpx_source)/build/make/thumb.pm',
           },
-          # We need to explicitly tell the assembler to look for
-          # .include directive files from the place where they're
-          # generated to.
-          'cflags': [
-             '-Wa,-I,<!(pwd)/source/config/<(OS_CATEGORY)/<(target_arch_full)',
-             '-Wa,-I,<!(pwd)/source/config',
-             '-Wa,-I,<(shared_generated_dir)',
-          ],
           'xcode_settings': {
             'OTHER_CFLAGS': [
               '-I<!(pwd)/source/config/<(OS_CATEGORY)/<(target_arch_full)',
@@ -305,7 +297,21 @@
               '<(libvpx_source)',
             ],
           },
+          # We need to explicitly tell the assembler to look for
+          # .include directive files from the place where they're
+          # generated to.
+          'cflags': [
+             '-Wa,-I,<(shared_generated_dir)',
+          ],
           'conditions': [
+            # For Android WebView, the following pathc are not required and not
+            # allowed, because they generate the absolute path.
+            ['android_webview_build!=1', {
+              'cflags': [
+                '-Wa,-I,<!(pwd)/source/config/<(OS_CATEGORY)/<(target_arch_full)',
+                '-Wa,-I,<!(pwd)/source/config',
+              ],
+            }],
             # Libvpx optimizations for ARMv6 or ARMv7 without NEON.
             ['arm_neon==0', {
               'conditions': [

@@ -71,6 +71,7 @@ MY_DEFS_Debug := \
 	'-DDATA_REDUCTION_DEV_HOST="http://proxy-dev.googlezip.net:80/"' \
 	'-DSPDY_PROXY_AUTH_ORIGIN="https://proxy.googlezip.net:443/"' \
 	'-DDATA_REDUCTION_PROXY_PROBE_URL="http://check.googlezip.net/connect"' \
+	'-DDATA_REDUCTION_PROXY_WARMUP_URL="http://www.gstatic.com/generate_204"' \
 	'-DVIDEO_HOLE=1' \
 	'-DFORCE_PARSE_ELF' \
 	'-DUSE_OPENSSL=1' \
@@ -83,7 +84,7 @@ MY_DEFS_Debug := \
 # Include paths placed before CFLAGS/CPPFLAGS
 LOCAL_C_INCLUDES_Debug := \
 	$(gyp_shared_intermediate_dir) \
-	$(LOCAL_PATH)/third_party/libvpx/source/config/linux/generic \
+	$(LOCAL_PATH)/third_party/libvpx/source/config/linux/arm64 \
 	$(LOCAL_PATH)/third_party/libvpx/source/config \
 	$(LOCAL_PATH)/third_party/libvpx/source/libvpx \
 	$(LOCAL_PATH)/third_party/libvpx/include
@@ -140,6 +141,7 @@ MY_DEFS_Release := \
 	'-DDATA_REDUCTION_DEV_HOST="http://proxy-dev.googlezip.net:80/"' \
 	'-DSPDY_PROXY_AUTH_ORIGIN="https://proxy.googlezip.net:443/"' \
 	'-DDATA_REDUCTION_PROXY_PROBE_URL="http://check.googlezip.net/connect"' \
+	'-DDATA_REDUCTION_PROXY_WARMUP_URL="http://www.gstatic.com/generate_204"' \
 	'-DVIDEO_HOLE=1' \
 	'-DFORCE_PARSE_ELF' \
 	'-DUSE_OPENSSL=1' \
@@ -152,7 +154,7 @@ MY_DEFS_Release := \
 # Include paths placed before CFLAGS/CPPFLAGS
 LOCAL_C_INCLUDES_Release := \
 	$(gyp_shared_intermediate_dir) \
-	$(LOCAL_PATH)/third_party/libvpx/source/config/linux/generic \
+	$(LOCAL_PATH)/third_party/libvpx/source/config/linux/arm64 \
 	$(LOCAL_PATH)/third_party/libvpx/source/config \
 	$(LOCAL_PATH)/third_party/libvpx/source/libvpx \
 	$(LOCAL_PATH)/third_party/libvpx/include

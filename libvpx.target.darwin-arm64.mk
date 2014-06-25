@@ -26,6 +26,22 @@ GYP_COPIED_SOURCE_ORIGIN_DIRS :=
 
 LOCAL_SRC_FILES := \
 	third_party/libvpx/source/libvpx/vp8/common/alloccommon.c \
+	third_party/libvpx/source/libvpx/vp8/common/arm/dequantize_arm.c \
+	third_party/libvpx/source/libvpx/vp8/common/arm/filter_arm.c \
+	third_party/libvpx/source/libvpx/vp8/common/arm/loopfilter_arm.c \
+	third_party/libvpx/source/libvpx/vp8/common/arm/neon/bilinearpredict_neon.c \
+	third_party/libvpx/source/libvpx/vp8/common/arm/neon/copymem_neon.c \
+	third_party/libvpx/source/libvpx/vp8/common/arm/neon/dc_only_idct_add_neon.c \
+	third_party/libvpx/source/libvpx/vp8/common/arm/neon/dequant_idct_neon.c \
+	third_party/libvpx/source/libvpx/vp8/common/arm/neon/dequantizeb_neon.c \
+	third_party/libvpx/source/libvpx/vp8/common/arm/neon/iwalsh_neon.c \
+	third_party/libvpx/source/libvpx/vp8/common/arm/neon/loopfiltersimplehorizontaledge_neon.c \
+	third_party/libvpx/source/libvpx/vp8/common/arm/neon/mbloopfilter_neon.c \
+	third_party/libvpx/source/libvpx/vp8/common/arm/neon/sad_neon.c \
+	third_party/libvpx/source/libvpx/vp8/common/arm/neon/shortidct4x4llm_neon.c \
+	third_party/libvpx/source/libvpx/vp8/common/arm/neon/sixtappredict_neon.c \
+	third_party/libvpx/source/libvpx/vp8/common/arm/neon/variance_neon.c \
+	third_party/libvpx/source/libvpx/vp8/common/arm/variance_arm.c \
 	third_party/libvpx/source/libvpx/vp8/common/blockd.c \
 	third_party/libvpx/source/libvpx/vp8/common/debugmodes.c \
 	third_party/libvpx/source/libvpx/vp8/common/dequantize.c \
@@ -60,6 +76,9 @@ LOCAL_SRC_FILES := \
 	third_party/libvpx/source/libvpx/vp8/decoder/detokenize.c \
 	third_party/libvpx/source/libvpx/vp8/decoder/onyxd_if.c \
 	third_party/libvpx/source/libvpx/vp8/decoder/threading.c \
+	third_party/libvpx/source/libvpx/vp8/encoder/arm/dct_arm.c \
+	third_party/libvpx/source/libvpx/vp8/encoder/arm/neon/denoising_neon.c \
+	third_party/libvpx/source/libvpx/vp8/encoder/arm/quantize_arm.c \
 	third_party/libvpx/source/libvpx/vp8/encoder/bitstream.c \
 	third_party/libvpx/source/libvpx/vp8/encoder/boolhuff.c \
 	third_party/libvpx/source/libvpx/vp8/encoder/dct.c \
@@ -159,6 +178,7 @@ LOCAL_SRC_FILES := \
 	third_party/libvpx/source/libvpx/vpx/src/vpx_image.c \
 	third_party/libvpx/source/libvpx/vpx/src/vpx_psnr.c \
 	third_party/libvpx/source/libvpx/vpx_mem/vpx_mem.c \
+	third_party/libvpx/source/libvpx/vpx_ports/arm_cpudetect.c \
 	third_party/libvpx/source/libvpx/vpx_scale/generic/gen_scalers.c \
 	third_party/libvpx/source/libvpx/vpx_scale/generic/vpx_scale.c \
 	third_party/libvpx/source/libvpx/vpx_scale/generic/yv12config.c \
@@ -222,6 +242,7 @@ MY_DEFS_Debug := \
 	'-DDATA_REDUCTION_DEV_HOST="http://proxy-dev.googlezip.net:80/"' \
 	'-DSPDY_PROXY_AUTH_ORIGIN="https://proxy.googlezip.net:443/"' \
 	'-DDATA_REDUCTION_PROXY_PROBE_URL="http://check.googlezip.net/connect"' \
+	'-DDATA_REDUCTION_PROXY_WARMUP_URL="http://www.gstatic.com/generate_204"' \
 	'-DVIDEO_HOLE=1' \
 	'-DUSE_OPENSSL=1' \
 	'-DUSE_OPENSSL_CERTS=1' \
@@ -238,7 +259,7 @@ MY_DEFS_Debug := \
 # Include paths placed before CFLAGS/CPPFLAGS
 LOCAL_C_INCLUDES_Debug := \
 	$(gyp_shared_intermediate_dir) \
-	$(LOCAL_PATH)/third_party/libvpx/source/config/linux/generic \
+	$(LOCAL_PATH)/third_party/libvpx/source/config/linux/arm64 \
 	$(LOCAL_PATH)/third_party/libvpx/source/config \
 	$(LOCAL_PATH)/third_party/libvpx/source/libvpx \
 	$(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common \
@@ -317,6 +338,7 @@ MY_DEFS_Release := \
 	'-DDATA_REDUCTION_DEV_HOST="http://proxy-dev.googlezip.net:80/"' \
 	'-DSPDY_PROXY_AUTH_ORIGIN="https://proxy.googlezip.net:443/"' \
 	'-DDATA_REDUCTION_PROXY_PROBE_URL="http://check.googlezip.net/connect"' \
+	'-DDATA_REDUCTION_PROXY_WARMUP_URL="http://www.gstatic.com/generate_204"' \
 	'-DVIDEO_HOLE=1' \
 	'-DUSE_OPENSSL=1' \
 	'-DUSE_OPENSSL_CERTS=1' \
@@ -333,7 +355,7 @@ MY_DEFS_Release := \
 # Include paths placed before CFLAGS/CPPFLAGS
 LOCAL_C_INCLUDES_Release := \
 	$(gyp_shared_intermediate_dir) \
-	$(LOCAL_PATH)/third_party/libvpx/source/config/linux/generic \
+	$(LOCAL_PATH)/third_party/libvpx/source/config/linux/arm64 \
 	$(LOCAL_PATH)/third_party/libvpx/source/config \
 	$(LOCAL_PATH)/third_party/libvpx/source/libvpx \
 	$(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common \

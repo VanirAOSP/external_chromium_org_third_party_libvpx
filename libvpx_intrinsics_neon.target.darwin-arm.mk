@@ -29,8 +29,6 @@ LOCAL_SRC_FILES := \
 	third_party/libvpx/source/libvpx/vp8/common/arm/neon/dequant_idct_neon.c \
 	third_party/libvpx/source/libvpx/vp8/common/arm/neon/dequantizeb_neon.c \
 	third_party/libvpx/source/libvpx/vp8/common/arm/neon/idct_blk_neon.c \
-	third_party/libvpx/source/libvpx/vp8/common/arm/neon/idct_dequant_0_2x_neon.c \
-	third_party/libvpx/source/libvpx/vp8/common/arm/neon/idct_dequant_full_2x_neon.c \
 	third_party/libvpx/source/libvpx/vp8/common/arm/neon/iwalsh_neon.c \
 	third_party/libvpx/source/libvpx/vp8/common/arm/neon/loopfiltersimplehorizontaledge_neon.c \
 	third_party/libvpx/source/libvpx/vp8/common/arm/neon/mbloopfilter_neon.c \
@@ -111,6 +109,7 @@ MY_DEFS_Debug := \
 	'-DDATA_REDUCTION_DEV_HOST="http://proxy-dev.googlezip.net:80/"' \
 	'-DSPDY_PROXY_AUTH_ORIGIN="https://proxy.googlezip.net:443/"' \
 	'-DDATA_REDUCTION_PROXY_PROBE_URL="http://check.googlezip.net/connect"' \
+	'-DDATA_REDUCTION_PROXY_WARMUP_URL="http://www.gstatic.com/generate_204"' \
 	'-DVIDEO_HOLE=1' \
 	'-DUSE_OPENSSL=1' \
 	'-DUSE_OPENSSL_CERTS=1' \
@@ -213,6 +212,7 @@ MY_DEFS_Release := \
 	'-DDATA_REDUCTION_DEV_HOST="http://proxy-dev.googlezip.net:80/"' \
 	'-DSPDY_PROXY_AUTH_ORIGIN="https://proxy.googlezip.net:443/"' \
 	'-DDATA_REDUCTION_PROXY_PROBE_URL="http://check.googlezip.net/connect"' \
+	'-DDATA_REDUCTION_PROXY_WARMUP_URL="http://www.gstatic.com/generate_204"' \
 	'-DVIDEO_HOLE=1' \
 	'-DUSE_OPENSSL=1' \
 	'-DUSE_OPENSSL_CERTS=1' \
