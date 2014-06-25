@@ -3,7 +3,7 @@
 include $(CLEAR_VARS)
 
 LOCAL_MODULE_CLASS := STATIC_LIBRARIES
-LOCAL_MODULE := third_party_libvpx_libvpx_intrinsics_sse2_gyp
+LOCAL_MODULE := third_party_libvpx_libvpx_intrinsics_sse4_1_gyp
 LOCAL_MODULE_SUFFIX := .a
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_TARGET_ARCH := $(TARGET_$(GYP_VAR_PREFIX)ARCH)
@@ -23,17 +23,7 @@ LOCAL_GENERATED_SOURCES :=
 GYP_COPIED_SOURCE_ORIGIN_DIRS :=
 
 LOCAL_SRC_FILES := \
-	third_party/libvpx/source/libvpx/vp8/common/x86/idct_blk_sse2.c \
-	third_party/libvpx/source/libvpx/vp8/common/x86/recon_wrapper_sse2.c \
-	third_party/libvpx/source/libvpx/vp8/common/x86/variance_sse2.c \
-	third_party/libvpx/source/libvpx/vp8/encoder/x86/denoising_sse2.c \
-	third_party/libvpx/source/libvpx/vp8/encoder/x86/quantize_sse2.c \
-	third_party/libvpx/source/libvpx/vp8/encoder/x86/vp8_enc_stubs_sse2.c \
-	third_party/libvpx/source/libvpx/vp9/common/x86/vp9_idct_intrin_sse2.c \
-	third_party/libvpx/source/libvpx/vp9/common/x86/vp9_loopfilter_intrin_sse2.c \
-	third_party/libvpx/source/libvpx/vp9/encoder/x86/vp9_dct32x32_sse2.c \
-	third_party/libvpx/source/libvpx/vp9/encoder/x86/vp9_dct_sse2.c \
-	third_party/libvpx/source/libvpx/vp9/encoder/x86/vp9_variance_sse2.c
+	third_party/libvpx/source/libvpx/vp8/encoder/x86/quantize_sse4.c
 
 
 # Flags passed to both C and C++ files.
@@ -48,7 +38,7 @@ MY_CFLAGS_Debug := \
 	-pipe \
 	-fPIC \
 	-Wno-unused-local-typedefs \
-	-msse2 \
+	-msse4.1 \
 	-Wno-format \
 	-m64 \
 	-march=x86-64 \
@@ -148,7 +138,7 @@ MY_CFLAGS_Release := \
 	-pipe \
 	-fPIC \
 	-Wno-unused-local-typedefs \
-	-msse2 \
+	-msse4.1 \
 	-Wno-format \
 	-m64 \
 	-march=x86-64 \
@@ -288,10 +278,10 @@ LOCAL_SHARED_LIBRARIES := \
 
 # Add target alias to "gyp_all_modules" target.
 .PHONY: gyp_all_modules
-gyp_all_modules: third_party_libvpx_libvpx_intrinsics_sse2_gyp
+gyp_all_modules: third_party_libvpx_libvpx_intrinsics_sse4_1_gyp
 
 # Alias gyp target name.
-.PHONY: libvpx_intrinsics_sse2
-libvpx_intrinsics_sse2: third_party_libvpx_libvpx_intrinsics_sse2_gyp
+.PHONY: libvpx_intrinsics_sse4_1
+libvpx_intrinsics_sse4_1: third_party_libvpx_libvpx_intrinsics_sse4_1_gyp
 
 include $(BUILD_STATIC_LIBRARY)
