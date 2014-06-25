@@ -32,7 +32,7 @@
 #include "vp9/decoder/vp9_detokenize.h"
 #include "vp9/decoder/vp9_dthread.h"
 
-void vp9_initialize_dec() {
+static void initialize_dec() {
   static int init_done = 0;
 
   if (!init_done) {
@@ -58,7 +58,7 @@ VP9Decoder *vp9_decoder_create() {
   }
 
   cm->error.setjmp = 1;
-  vp9_initialize_dec();
+  initialize_dec();
 
   vp9_rtcd();
 
@@ -67,7 +67,6 @@ VP9Decoder *vp9_decoder_create() {
 
   cm->current_video_frame = 0;
   pbi->ready_for_new_data = 1;
-  pbi->decoded_key_frame = 0;
 
   // vp9_init_dequantizer() is first called here. Add check in
   // frame_init_dequantizer() to avoid unnecessary calling of
@@ -90,6 +89,7 @@ void vp9_decoder_remove(VP9Decoder *pbi) {
   vp9_remove_common(cm);
   vp9_worker_end(&pbi->lf_worker);
   vpx_free(pbi->lf_worker.data1);
+  vpx_free(pbi->tile_data);
   for (i = 0; i < pbi->num_tile_workers; ++i) {
     VP9Worker *const worker = &pbi->tile_workers[i];
     vp9_worker_end(worker);
@@ -219,8 +219,7 @@ static void swap_frame_buffers(VP9Decoder *pbi) {
 }
 
 int vp9_receive_compressed_data(VP9Decoder *pbi,
-                                size_t size, const uint8_t **psource,
-                                int64_t time_stamp) {
+                                size_t size, const uint8_t **psource) {
   VP9_COMMON *const cm = &pbi->common;
   const uint8_t *source = *psource;
   int retcode = 0;
@@ -256,10 +255,10 @@ int vp9_receive_compressed_data(VP9Decoder *pbi,
     // TODO(jkoleszar): Error concealment is undefined and non-normative
     // at this point, but if it becomes so, [0] may not always be the correct
     // thing to do here.
-    if (cm->frame_refs[0].idx != INT_MAX)
+    if (cm->frame_refs[0].idx != INT_MAX && cm->frame_refs[0].buf != NULL)
       cm->frame_refs[0].buf->corrupted = 1;
 
-    if (cm->frame_bufs[cm->new_fb_idx].ref_count > 0)
+    if (cm->new_fb_idx > 0 && cm->frame_bufs[cm->new_fb_idx].ref_count > 0)
       cm->frame_bufs[cm->new_fb_idx].ref_count--;
 
     return -1;
@@ -267,15 +266,7 @@ int vp9_receive_compressed_data(VP9Decoder *pbi,
 
   cm->error.setjmp = 1;
 
-  retcode = vp9_decode_frame(pbi, source, source + size, psource);
-
-  if (retcode < 0) {
-    cm->error.error_code = VPX_CODEC_ERROR;
-    cm->error.setjmp = 0;
-    if (cm->frame_bufs[cm->new_fb_idx].ref_count > 0)
-      cm->frame_bufs[cm->new_fb_idx].ref_count--;
-    return retcode;
-  }
+  vp9_decode_frame(pbi, source, source + size, psource);
 
   swap_frame_buffers(pbi);
 
@@ -294,14 +285,12 @@ int vp9_receive_compressed_data(VP9Decoder *pbi,
   }
 
   pbi->ready_for_new_data = 0;
-  pbi->last_time_stamp = time_stamp;
 
   cm->error.setjmp = 0;
   return retcode;
 }
 
 int vp9_get_raw_frame(VP9Decoder *pbi, YV12_BUFFER_CONFIG *sd,
-                      int64_t *time_stamp, int64_t *time_end_stamp,
                       vp9_ppflags_t *flags) {
   int ret = -1;
 #if !CONFIG_VP9_POSTPROC
@@ -316,8 +305,6 @@ int vp9_get_raw_frame(VP9Decoder *pbi, YV12_BUFFER_CONFIG *sd,
     return ret;
 
   pbi->ready_for_new_data = 1;
-  *time_stamp = pbi->last_time_stamp;
-  *time_end_stamp = 0;
 
 #if CONFIG_VP9_POSTPROC
   ret = vp9_post_proc_frame(&pbi->common, sd, flags);
