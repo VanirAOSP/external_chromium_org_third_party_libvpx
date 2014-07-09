@@ -138,6 +138,7 @@ LOCAL_SRC_FILES := \
 	third_party/libvpx/source/libvpx/vp9/encoder/vp9_pickmode.c \
 	third_party/libvpx/source/libvpx/vp9/encoder/vp9_quantize.c \
 	third_party/libvpx/source/libvpx/vp9/encoder/vp9_ratectrl.c \
+	third_party/libvpx/source/libvpx/vp9/encoder/vp9_rd.c \
 	third_party/libvpx/source/libvpx/vp9/encoder/vp9_rdopt.c \
 	third_party/libvpx/source/libvpx/vp9/encoder/vp9_resize.c \
 	third_party/libvpx/source/libvpx/vp9/encoder/vp9_sad.c \
