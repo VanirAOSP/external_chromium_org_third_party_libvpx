@@ -108,6 +108,7 @@ LOCAL_SRC_FILES := \
 	third_party/libvpx/source/libvpx/vp9/common/vp9_scale.c \
 	third_party/libvpx/source/libvpx/vp9/common/vp9_scan.c \
 	third_party/libvpx/source/libvpx/vp9/common/vp9_seg_common.c \
+	third_party/libvpx/source/libvpx/vp9/common/vp9_thread.c \
 	third_party/libvpx/source/libvpx/vp9/common/vp9_tile_common.c \
 	third_party/libvpx/source/libvpx/vp9/decoder/vp9_decodeframe.c \
 	third_party/libvpx/source/libvpx/vp9/decoder/vp9_decodemv.c \
@@ -117,7 +118,6 @@ LOCAL_SRC_FILES := \
 	third_party/libvpx/source/libvpx/vp9/decoder/vp9_dthread.c \
 	third_party/libvpx/source/libvpx/vp9/decoder/vp9_read_bit_buffer.c \
 	third_party/libvpx/source/libvpx/vp9/decoder/vp9_reader.c \
-	third_party/libvpx/source/libvpx/vp9/decoder/vp9_thread.c \
 	third_party/libvpx/source/libvpx/vp9/encoder/vp9_aq_complexity.c \
 	third_party/libvpx/source/libvpx/vp9/encoder/vp9_aq_cyclicrefresh.c \
 	third_party/libvpx/source/libvpx/vp9/encoder/vp9_aq_variance.c \
