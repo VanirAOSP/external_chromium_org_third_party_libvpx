@@ -17,23 +17,14 @@ GYP_TARGET_DEPENDENCIES := \
 
 
 ### Generated for rule "third_party_libvpx_libvpx_gyp_libvpx_target_assemble":
-# "{'inputs': ['$(gyp_shared_intermediate_dir)/yasm'], 'extension': 'asm', 'process_outputs_as_sources': '1', 'outputs': ['$(gyp_shared_intermediate_dir)/third_party/libvpx/%(INPUT_ROOT)s.o'], 'rule_name': 'assemble', 'rule_sources': ['source/libvpx/third_party/x86inc/x86inc.asm', 'source/libvpx/vp8/common/x86/dequantize_mmx.asm', 'source/libvpx/vp8/common/x86/idctllm_mmx.asm', 'source/libvpx/vp8/common/x86/idctllm_sse2.asm', 'source/libvpx/vp8/common/x86/iwalsh_mmx.asm', 'source/libvpx/vp8/common/x86/iwalsh_sse2.asm', 'source/libvpx/vp8/common/x86/loopfilter_mmx.asm', 'source/libvpx/vp8/common/x86/loopfilter_sse2.asm', 'source/libvpx/vp8/common/x86/mfqe_sse2.asm', 'source/libvpx/vp8/common/x86/postproc_mmx.asm', 'source/libvpx/vp8/common/x86/postproc_sse2.asm', 'source/libvpx/vp8/common/x86/recon_mmx.asm', 'source/libvpx/vp8/common/x86/recon_sse2.asm', 'source/libvpx/vp8/common/x86/sad_mmx.asm', 'source/libvpx/vp8/common/x86/sad_sse2.asm', 'source/libvpx/vp8/common/x86/sad_sse3.asm', 'source/libvpx/vp8/common/x86/sad_sse4.asm', 'source/libvpx/vp8/common/x86/sad_ssse3.asm', 'source/libvpx/vp8/common/x86/subpixel_mmx.asm', 'source/libvpx/vp8/common/x86/subpixel_sse2.asm', 'source/libvpx/vp8/common/x86/subpixel_ssse3.asm', 'source/libvpx/vp8/common/x86/variance_impl_mmx.asm', 'source/libvpx/vp8/common/x86/variance_impl_sse2.asm', 'source/libvpx/vp8/common/x86/variance_impl_ssse3.asm', 'source/libvpx/vp8/encoder/x86/dct_mmx.asm', 'source/libvpx/vp8/encoder/x86/dct_sse2.asm', 'source/libvpx/vp8/encoder/x86/encodeopt.asm', 'source/libvpx/vp8/encoder/x86/fwalsh_sse2.asm', 'source/libvpx/vp8/encoder/x86/quantize_mmx.asm', 'source/libvpx/vp8/encoder/x86/quantize_sse4.asm', 'source/libvpx/vp8/encoder/x86/subtract_mmx.asm', 'source/libvpx/vp8/encoder/x86/subtract_sse2.asm', 'source/libvpx/vp9/common/x86/vp9_copy_sse2.asm', 'source/libvpx/vp9/common/x86/vp9_intrapred_sse2.asm', 'source/libvpx/vp9/common/x86/vp9_intrapred_ssse3.asm', 'source/libvpx/vp9/common/x86/vp9_loopfilter_mmx.asm', 'source/libvpx/vp9/common/x86/vp9_subpixel_8t_sse2.asm', 'source/libvpx/vp9/common/x86/vp9_subpixel_8t_ssse3.asm', 'source/libvpx/vp9/common/x86/vp9_subpixel_bilinear_sse2.asm', 'source/libvpx/vp9/common/x86/vp9_subpixel_bilinear_ssse3.asm', 'source/libvpx/vp9/encoder/x86/vp9_dct_mmx.asm', 'source/libvpx/vp9/encoder/x86/vp9_error_sse2.asm', 'source/libvpx/vp9/encoder/x86/vp9_sad4d_sse2.asm', 'source/libvpx/vp9/encoder/x86/vp9_sad_mmx.asm', 'source/libvpx/vp9/encoder/x86/vp9_sad_sse2.asm', 'source/libvpx/vp9/encoder/x86/vp9_sad_sse3.asm', 'source/libvpx/vp9/encoder/x86/vp9_sad_sse4.asm', 'source/libvpx/vp9/encoder/x86/vp9_sad_ssse3.asm', 'source/libvpx/vp9/encoder/x86/vp9_subpel_variance.asm', 'source/libvpx/vp9/encoder/x86/vp9_subtract_sse2.asm', 'source/libvpx/vp9/encoder/x86/vp9_temporal_filter_apply_sse2.asm', 'source/libvpx/vp9/encoder/x86/vp9_variance_impl_mmx.asm', 'source/libvpx/vp9/encoder/x86/vp9_variance_impl_sse2.asm', 'source/libvpx/vpx_ports/emms.asm', 'source/libvpx/vpx_ports/x86_abi_support.asm'], 'action': ['$(gyp_shared_intermediate_dir)/yasm', '-D', 'CHROMIUM', '-I', 'source/config/linux/ia32', '-I', 'source/config', '-I', 'source/libvpx', '-I', '$(gyp_shared_intermediate_dir)/third_party/libvpx', '-felf32', '-m', 'x86', '-o', '$(gyp_shared_intermediate_dir)/third_party/libvpx/%(INPUT_ROOT)s.o', '$(RULE_SOURCES)'], 'message': 'Compile assembly $(RULE_SOURCES)'}":
-$(gyp_shared_intermediate_dir)/third_party/libvpx/x86inc.o: gyp_local_path := $(LOCAL_PATH)
-$(gyp_shared_intermediate_dir)/third_party/libvpx/x86inc.o: gyp_var_prefix := $(GYP_VAR_PREFIX)
-$(gyp_shared_intermediate_dir)/third_party/libvpx/x86inc.o: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
-$(gyp_shared_intermediate_dir)/third_party/libvpx/x86inc.o: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
-$(gyp_shared_intermediate_dir)/third_party/libvpx/x86inc.o: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
-$(gyp_shared_intermediate_dir)/third_party/libvpx/x86inc.o: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/third_party/x86inc/x86inc.asm $(gyp_shared_intermediate_dir)/yasm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/x86inc.o" source/libvpx/third_party/x86inc/x86inc.asm
-
-
+# "{'inputs': ['$(gyp_shared_intermediate_dir)/yasm'], 'extension': 'asm', 'process_outputs_as_sources': '1', 'outputs': ['$(gyp_shared_intermediate_dir)/third_party/libvpx/%(INPUT_ROOT)s.o'], 'rule_name': 'assemble', 'rule_sources': ['source/libvpx/vp8/common/x86/dequantize_mmx.asm', 'source/libvpx/vp8/common/x86/idctllm_mmx.asm', 'source/libvpx/vp8/common/x86/idctllm_sse2.asm', 'source/libvpx/vp8/common/x86/iwalsh_mmx.asm', 'source/libvpx/vp8/common/x86/iwalsh_sse2.asm', 'source/libvpx/vp8/common/x86/loopfilter_mmx.asm', 'source/libvpx/vp8/common/x86/loopfilter_sse2.asm', 'source/libvpx/vp8/common/x86/mfqe_sse2.asm', 'source/libvpx/vp8/common/x86/postproc_mmx.asm', 'source/libvpx/vp8/common/x86/postproc_sse2.asm', 'source/libvpx/vp8/common/x86/recon_mmx.asm', 'source/libvpx/vp8/common/x86/recon_sse2.asm', 'source/libvpx/vp8/common/x86/sad_mmx.asm', 'source/libvpx/vp8/common/x86/sad_sse2.asm', 'source/libvpx/vp8/common/x86/sad_sse3.asm', 'source/libvpx/vp8/common/x86/sad_sse4.asm', 'source/libvpx/vp8/common/x86/sad_ssse3.asm', 'source/libvpx/vp8/common/x86/subpixel_mmx.asm', 'source/libvpx/vp8/common/x86/subpixel_sse2.asm', 'source/libvpx/vp8/common/x86/subpixel_ssse3.asm', 'source/libvpx/vp8/common/x86/variance_impl_mmx.asm', 'source/libvpx/vp8/common/x86/variance_impl_sse2.asm', 'source/libvpx/vp8/common/x86/variance_impl_ssse3.asm', 'source/libvpx/vp8/encoder/x86/dct_mmx.asm', 'source/libvpx/vp8/encoder/x86/dct_sse2.asm', 'source/libvpx/vp8/encoder/x86/encodeopt.asm', 'source/libvpx/vp8/encoder/x86/fwalsh_sse2.asm', 'source/libvpx/vp8/encoder/x86/quantize_mmx.asm', 'source/libvpx/vp8/encoder/x86/subtract_mmx.asm', 'source/libvpx/vp8/encoder/x86/subtract_sse2.asm', 'source/libvpx/vp9/common/x86/vp9_copy_sse2.asm', 'source/libvpx/vp9/common/x86/vp9_intrapred_sse2.asm', 'source/libvpx/vp9/common/x86/vp9_intrapred_ssse3.asm', 'source/libvpx/vp9/common/x86/vp9_loopfilter_mmx.asm', 'source/libvpx/vp9/common/x86/vp9_subpixel_8t_sse2.asm', 'source/libvpx/vp9/common/x86/vp9_subpixel_8t_ssse3.asm', 'source/libvpx/vp9/common/x86/vp9_subpixel_bilinear_sse2.asm', 'source/libvpx/vp9/common/x86/vp9_subpixel_bilinear_ssse3.asm', 'source/libvpx/vp9/encoder/x86/vp9_dct_mmx.asm', 'source/libvpx/vp9/encoder/x86/vp9_error_sse2.asm', 'source/libvpx/vp9/encoder/x86/vp9_sad4d_sse2.asm', 'source/libvpx/vp9/encoder/x86/vp9_sad_mmx.asm', 'source/libvpx/vp9/encoder/x86/vp9_sad_sse2.asm', 'source/libvpx/vp9/encoder/x86/vp9_sad_sse3.asm', 'source/libvpx/vp9/encoder/x86/vp9_sad_sse4.asm', 'source/libvpx/vp9/encoder/x86/vp9_sad_ssse3.asm', 'source/libvpx/vp9/encoder/x86/vp9_subpel_variance.asm', 'source/libvpx/vp9/encoder/x86/vp9_subtract_sse2.asm', 'source/libvpx/vp9/encoder/x86/vp9_temporal_filter_apply_sse2.asm', 'source/libvpx/vp9/encoder/x86/vp9_variance_impl_mmx.asm', 'source/libvpx/vp9/encoder/x86/vp9_variance_impl_sse2.asm', 'source/libvpx/vpx_ports/emms.asm', 'source/libvpx/vpx_ports/x86_abi_support.asm'], 'action': ['$(gyp_shared_intermediate_dir)/yasm', '-D', 'CHROMIUM', '-I', 'source/config/linux/ia32', '-I', 'source/config', '-I', 'source/libvpx', '-I', '$(gyp_shared_intermediate_dir)/third_party/libvpx', '-D', '__ANDROID__', '-felf32', '-m', 'x86', '-o', '$(gyp_shared_intermediate_dir)/third_party/libvpx/%(INPUT_ROOT)s.o', '$(RULE_SOURCES)'], 'message': 'Compile assembly $(RULE_SOURCES)'}":
 $(gyp_shared_intermediate_dir)/third_party/libvpx/dequantize_mmx.o: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/dequantize_mmx.o: gyp_var_prefix := $(GYP_VAR_PREFIX)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/dequantize_mmx.o: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/dequantize_mmx.o: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/dequantize_mmx.o: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/dequantize_mmx.o: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/x86/dequantize_mmx.asm $(gyp_shared_intermediate_dir)/yasm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/dequantize_mmx.o" source/libvpx/vp8/common/x86/dequantize_mmx.asm
+	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -D __ANDROID__ -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/dequantize_mmx.o" source/libvpx/vp8/common/x86/dequantize_mmx.asm
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/idctllm_mmx.o: gyp_local_path := $(LOCAL_PATH)
@@ -42,7 +33,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/idctllm_mmx.o: gyp_intermediat
 $(gyp_shared_intermediate_dir)/third_party/libvpx/idctllm_mmx.o: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/idctllm_mmx.o: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/idctllm_mmx.o: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/x86/idctllm_mmx.asm $(gyp_shared_intermediate_dir)/yasm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/idctllm_mmx.o" source/libvpx/vp8/common/x86/idctllm_mmx.asm
+	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -D __ANDROID__ -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/idctllm_mmx.o" source/libvpx/vp8/common/x86/idctllm_mmx.asm
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/idctllm_sse2.o: gyp_local_path := $(LOCAL_PATH)
@@ -51,7 +42,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/idctllm_sse2.o: gyp_intermedia
 $(gyp_shared_intermediate_dir)/third_party/libvpx/idctllm_sse2.o: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/idctllm_sse2.o: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/idctllm_sse2.o: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/x86/idctllm_sse2.asm $(gyp_shared_intermediate_dir)/yasm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/idctllm_sse2.o" source/libvpx/vp8/common/x86/idctllm_sse2.asm
+	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -D __ANDROID__ -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/idctllm_sse2.o" source/libvpx/vp8/common/x86/idctllm_sse2.asm
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/iwalsh_mmx.o: gyp_local_path := $(LOCAL_PATH)
@@ -60,7 +51,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/iwalsh_mmx.o: gyp_intermediate
 $(gyp_shared_intermediate_dir)/third_party/libvpx/iwalsh_mmx.o: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/iwalsh_mmx.o: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/iwalsh_mmx.o: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/x86/iwalsh_mmx.asm $(gyp_shared_intermediate_dir)/yasm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/iwalsh_mmx.o" source/libvpx/vp8/common/x86/iwalsh_mmx.asm
+	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -D __ANDROID__ -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/iwalsh_mmx.o" source/libvpx/vp8/common/x86/iwalsh_mmx.asm
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/iwalsh_sse2.o: gyp_local_path := $(LOCAL_PATH)
@@ -69,7 +60,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/iwalsh_sse2.o: gyp_intermediat
 $(gyp_shared_intermediate_dir)/third_party/libvpx/iwalsh_sse2.o: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/iwalsh_sse2.o: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/iwalsh_sse2.o: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/x86/iwalsh_sse2.asm $(gyp_shared_intermediate_dir)/yasm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/iwalsh_sse2.o" source/libvpx/vp8/common/x86/iwalsh_sse2.asm
+	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -D __ANDROID__ -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/iwalsh_sse2.o" source/libvpx/vp8/common/x86/iwalsh_sse2.asm
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/loopfilter_mmx.o: gyp_local_path := $(LOCAL_PATH)
@@ -78,7 +69,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/loopfilter_mmx.o: gyp_intermed
 $(gyp_shared_intermediate_dir)/third_party/libvpx/loopfilter_mmx.o: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/loopfilter_mmx.o: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/loopfilter_mmx.o: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/x86/loopfilter_mmx.asm $(gyp_shared_intermediate_dir)/yasm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/loopfilter_mmx.o" source/libvpx/vp8/common/x86/loopfilter_mmx.asm
+	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -D __ANDROID__ -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/loopfilter_mmx.o" source/libvpx/vp8/common/x86/loopfilter_mmx.asm
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/loopfilter_sse2.o: gyp_local_path := $(LOCAL_PATH)
@@ -87,7 +78,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/loopfilter_sse2.o: gyp_interme
 $(gyp_shared_intermediate_dir)/third_party/libvpx/loopfilter_sse2.o: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/loopfilter_sse2.o: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/loopfilter_sse2.o: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/x86/loopfilter_sse2.asm $(gyp_shared_intermediate_dir)/yasm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/loopfilter_sse2.o" source/libvpx/vp8/common/x86/loopfilter_sse2.asm
+	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -D __ANDROID__ -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/loopfilter_sse2.o" source/libvpx/vp8/common/x86/loopfilter_sse2.asm
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/mfqe_sse2.o: gyp_local_path := $(LOCAL_PATH)
@@ -96,7 +87,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/mfqe_sse2.o: gyp_intermediate_
 $(gyp_shared_intermediate_dir)/third_party/libvpx/mfqe_sse2.o: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/mfqe_sse2.o: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/mfqe_sse2.o: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/x86/mfqe_sse2.asm $(gyp_shared_intermediate_dir)/yasm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/mfqe_sse2.o" source/libvpx/vp8/common/x86/mfqe_sse2.asm
+	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -D __ANDROID__ -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/mfqe_sse2.o" source/libvpx/vp8/common/x86/mfqe_sse2.asm
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/postproc_mmx.o: gyp_local_path := $(LOCAL_PATH)
@@ -105,7 +96,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/postproc_mmx.o: gyp_intermedia
 $(gyp_shared_intermediate_dir)/third_party/libvpx/postproc_mmx.o: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/postproc_mmx.o: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/postproc_mmx.o: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/x86/postproc_mmx.asm $(gyp_shared_intermediate_dir)/yasm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/postproc_mmx.o" source/libvpx/vp8/common/x86/postproc_mmx.asm
+	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -D __ANDROID__ -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/postproc_mmx.o" source/libvpx/vp8/common/x86/postproc_mmx.asm
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/postproc_sse2.o: gyp_local_path := $(LOCAL_PATH)
@@ -114,7 +105,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/postproc_sse2.o: gyp_intermedi
 $(gyp_shared_intermediate_dir)/third_party/libvpx/postproc_sse2.o: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/postproc_sse2.o: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/postproc_sse2.o: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/x86/postproc_sse2.asm $(gyp_shared_intermediate_dir)/yasm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/postproc_sse2.o" source/libvpx/vp8/common/x86/postproc_sse2.asm
+	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -D __ANDROID__ -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/postproc_sse2.o" source/libvpx/vp8/common/x86/postproc_sse2.asm
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/recon_mmx.o: gyp_local_path := $(LOCAL_PATH)
@@ -123,7 +114,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/recon_mmx.o: gyp_intermediate_
 $(gyp_shared_intermediate_dir)/third_party/libvpx/recon_mmx.o: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/recon_mmx.o: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/recon_mmx.o: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/x86/recon_mmx.asm $(gyp_shared_intermediate_dir)/yasm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/recon_mmx.o" source/libvpx/vp8/common/x86/recon_mmx.asm
+	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -D __ANDROID__ -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/recon_mmx.o" source/libvpx/vp8/common/x86/recon_mmx.asm
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/recon_sse2.o: gyp_local_path := $(LOCAL_PATH)
@@ -132,7 +123,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/recon_sse2.o: gyp_intermediate
 $(gyp_shared_intermediate_dir)/third_party/libvpx/recon_sse2.o: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/recon_sse2.o: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/recon_sse2.o: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/x86/recon_sse2.asm $(gyp_shared_intermediate_dir)/yasm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/recon_sse2.o" source/libvpx/vp8/common/x86/recon_sse2.asm
+	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -D __ANDROID__ -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/recon_sse2.o" source/libvpx/vp8/common/x86/recon_sse2.asm
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/sad_mmx.o: gyp_local_path := $(LOCAL_PATH)
@@ -141,7 +132,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/sad_mmx.o: gyp_intermediate_di
 $(gyp_shared_intermediate_dir)/third_party/libvpx/sad_mmx.o: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/sad_mmx.o: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/sad_mmx.o: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/x86/sad_mmx.asm $(gyp_shared_intermediate_dir)/yasm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/sad_mmx.o" source/libvpx/vp8/common/x86/sad_mmx.asm
+	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -D __ANDROID__ -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/sad_mmx.o" source/libvpx/vp8/common/x86/sad_mmx.asm
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/sad_sse2.o: gyp_local_path := $(LOCAL_PATH)
@@ -150,7 +141,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/sad_sse2.o: gyp_intermediate_d
 $(gyp_shared_intermediate_dir)/third_party/libvpx/sad_sse2.o: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/sad_sse2.o: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/sad_sse2.o: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/x86/sad_sse2.asm $(gyp_shared_intermediate_dir)/yasm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/sad_sse2.o" source/libvpx/vp8/common/x86/sad_sse2.asm
+	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -D __ANDROID__ -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/sad_sse2.o" source/libvpx/vp8/common/x86/sad_sse2.asm
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/sad_sse3.o: gyp_local_path := $(LOCAL_PATH)
@@ -159,7 +150,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/sad_sse3.o: gyp_intermediate_d
 $(gyp_shared_intermediate_dir)/third_party/libvpx/sad_sse3.o: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/sad_sse3.o: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/sad_sse3.o: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/x86/sad_sse3.asm $(gyp_shared_intermediate_dir)/yasm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/sad_sse3.o" source/libvpx/vp8/common/x86/sad_sse3.asm
+	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -D __ANDROID__ -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/sad_sse3.o" source/libvpx/vp8/common/x86/sad_sse3.asm
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/sad_sse4.o: gyp_local_path := $(LOCAL_PATH)
@@ -168,7 +159,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/sad_sse4.o: gyp_intermediate_d
 $(gyp_shared_intermediate_dir)/third_party/libvpx/sad_sse4.o: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/sad_sse4.o: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/sad_sse4.o: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/x86/sad_sse4.asm $(gyp_shared_intermediate_dir)/yasm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/sad_sse4.o" source/libvpx/vp8/common/x86/sad_sse4.asm
+	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -D __ANDROID__ -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/sad_sse4.o" source/libvpx/vp8/common/x86/sad_sse4.asm
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/sad_ssse3.o: gyp_local_path := $(LOCAL_PATH)
@@ -177,7 +168,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/sad_ssse3.o: gyp_intermediate_
 $(gyp_shared_intermediate_dir)/third_party/libvpx/sad_ssse3.o: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/sad_ssse3.o: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/sad_ssse3.o: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/x86/sad_ssse3.asm $(gyp_shared_intermediate_dir)/yasm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/sad_ssse3.o" source/libvpx/vp8/common/x86/sad_ssse3.asm
+	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -D __ANDROID__ -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/sad_ssse3.o" source/libvpx/vp8/common/x86/sad_ssse3.asm
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/subpixel_mmx.o: gyp_local_path := $(LOCAL_PATH)
@@ -186,7 +177,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/subpixel_mmx.o: gyp_intermedia
 $(gyp_shared_intermediate_dir)/third_party/libvpx/subpixel_mmx.o: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/subpixel_mmx.o: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/subpixel_mmx.o: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/x86/subpixel_mmx.asm $(gyp_shared_intermediate_dir)/yasm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/subpixel_mmx.o" source/libvpx/vp8/common/x86/subpixel_mmx.asm
+	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -D __ANDROID__ -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/subpixel_mmx.o" source/libvpx/vp8/common/x86/subpixel_mmx.asm
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/subpixel_sse2.o: gyp_local_path := $(LOCAL_PATH)
@@ -195,7 +186,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/subpixel_sse2.o: gyp_intermedi
 $(gyp_shared_intermediate_dir)/third_party/libvpx/subpixel_sse2.o: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/subpixel_sse2.o: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/subpixel_sse2.o: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/x86/subpixel_sse2.asm $(gyp_shared_intermediate_dir)/yasm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/subpixel_sse2.o" source/libvpx/vp8/common/x86/subpixel_sse2.asm
+	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -D __ANDROID__ -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/subpixel_sse2.o" source/libvpx/vp8/common/x86/subpixel_sse2.asm
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/subpixel_ssse3.o: gyp_local_path := $(LOCAL_PATH)
@@ -204,7 +195,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/subpixel_ssse3.o: gyp_intermed
 $(gyp_shared_intermediate_dir)/third_party/libvpx/subpixel_ssse3.o: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/subpixel_ssse3.o: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/subpixel_ssse3.o: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/x86/subpixel_ssse3.asm $(gyp_shared_intermediate_dir)/yasm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/subpixel_ssse3.o" source/libvpx/vp8/common/x86/subpixel_ssse3.asm
+	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -D __ANDROID__ -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/subpixel_ssse3.o" source/libvpx/vp8/common/x86/subpixel_ssse3.asm
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/variance_impl_mmx.o: gyp_local_path := $(LOCAL_PATH)
@@ -213,7 +204,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/variance_impl_mmx.o: gyp_inter
 $(gyp_shared_intermediate_dir)/third_party/libvpx/variance_impl_mmx.o: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/variance_impl_mmx.o: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/variance_impl_mmx.o: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/x86/variance_impl_mmx.asm $(gyp_shared_intermediate_dir)/yasm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/variance_impl_mmx.o" source/libvpx/vp8/common/x86/variance_impl_mmx.asm
+	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -D __ANDROID__ -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/variance_impl_mmx.o" source/libvpx/vp8/common/x86/variance_impl_mmx.asm
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/variance_impl_sse2.o: gyp_local_path := $(LOCAL_PATH)
@@ -222,7 +213,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/variance_impl_sse2.o: gyp_inte
 $(gyp_shared_intermediate_dir)/third_party/libvpx/variance_impl_sse2.o: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/variance_impl_sse2.o: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/variance_impl_sse2.o: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/x86/variance_impl_sse2.asm $(gyp_shared_intermediate_dir)/yasm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/variance_impl_sse2.o" source/libvpx/vp8/common/x86/variance_impl_sse2.asm
+	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -D __ANDROID__ -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/variance_impl_sse2.o" source/libvpx/vp8/common/x86/variance_impl_sse2.asm
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/variance_impl_ssse3.o: gyp_local_path := $(LOCAL_PATH)
@@ -231,7 +222,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/variance_impl_ssse3.o: gyp_int
 $(gyp_shared_intermediate_dir)/third_party/libvpx/variance_impl_ssse3.o: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/variance_impl_ssse3.o: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/variance_impl_ssse3.o: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/x86/variance_impl_ssse3.asm $(gyp_shared_intermediate_dir)/yasm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/variance_impl_ssse3.o" source/libvpx/vp8/common/x86/variance_impl_ssse3.asm
+	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -D __ANDROID__ -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/variance_impl_ssse3.o" source/libvpx/vp8/common/x86/variance_impl_ssse3.asm
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/dct_mmx.o: gyp_local_path := $(LOCAL_PATH)
@@ -240,7 +231,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/dct_mmx.o: gyp_intermediate_di
 $(gyp_shared_intermediate_dir)/third_party/libvpx/dct_mmx.o: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/dct_mmx.o: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/dct_mmx.o: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/encoder/x86/dct_mmx.asm $(gyp_shared_intermediate_dir)/yasm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/dct_mmx.o" source/libvpx/vp8/encoder/x86/dct_mmx.asm
+	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -D __ANDROID__ -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/dct_mmx.o" source/libvpx/vp8/encoder/x86/dct_mmx.asm
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/dct_sse2.o: gyp_local_path := $(LOCAL_PATH)
@@ -249,7 +240,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/dct_sse2.o: gyp_intermediate_d
 $(gyp_shared_intermediate_dir)/third_party/libvpx/dct_sse2.o: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/dct_sse2.o: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/dct_sse2.o: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/encoder/x86/dct_sse2.asm $(gyp_shared_intermediate_dir)/yasm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/dct_sse2.o" source/libvpx/vp8/encoder/x86/dct_sse2.asm
+	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -D __ANDROID__ -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/dct_sse2.o" source/libvpx/vp8/encoder/x86/dct_sse2.asm
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/encodeopt.o: gyp_local_path := $(LOCAL_PATH)
@@ -258,7 +249,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/encodeopt.o: gyp_intermediate_
 $(gyp_shared_intermediate_dir)/third_party/libvpx/encodeopt.o: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/encodeopt.o: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/encodeopt.o: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/encoder/x86/encodeopt.asm $(gyp_shared_intermediate_dir)/yasm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/encodeopt.o" source/libvpx/vp8/encoder/x86/encodeopt.asm
+	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -D __ANDROID__ -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/encodeopt.o" source/libvpx/vp8/encoder/x86/encodeopt.asm
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/fwalsh_sse2.o: gyp_local_path := $(LOCAL_PATH)
@@ -267,7 +258,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/fwalsh_sse2.o: gyp_intermediat
 $(gyp_shared_intermediate_dir)/third_party/libvpx/fwalsh_sse2.o: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/fwalsh_sse2.o: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/fwalsh_sse2.o: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/encoder/x86/fwalsh_sse2.asm $(gyp_shared_intermediate_dir)/yasm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/fwalsh_sse2.o" source/libvpx/vp8/encoder/x86/fwalsh_sse2.asm
+	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -D __ANDROID__ -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/fwalsh_sse2.o" source/libvpx/vp8/encoder/x86/fwalsh_sse2.asm
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/quantize_mmx.o: gyp_local_path := $(LOCAL_PATH)
@@ -276,16 +267,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/quantize_mmx.o: gyp_intermedia
 $(gyp_shared_intermediate_dir)/third_party/libvpx/quantize_mmx.o: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/quantize_mmx.o: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/quantize_mmx.o: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/encoder/x86/quantize_mmx.asm $(gyp_shared_intermediate_dir)/yasm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/quantize_mmx.o" source/libvpx/vp8/encoder/x86/quantize_mmx.asm
-
-
-$(gyp_shared_intermediate_dir)/third_party/libvpx/quantize_sse4.o: gyp_local_path := $(LOCAL_PATH)
-$(gyp_shared_intermediate_dir)/third_party/libvpx/quantize_sse4.o: gyp_var_prefix := $(GYP_VAR_PREFIX)
-$(gyp_shared_intermediate_dir)/third_party/libvpx/quantize_sse4.o: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
-$(gyp_shared_intermediate_dir)/third_party/libvpx/quantize_sse4.o: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
-$(gyp_shared_intermediate_dir)/third_party/libvpx/quantize_sse4.o: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
-$(gyp_shared_intermediate_dir)/third_party/libvpx/quantize_sse4.o: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/encoder/x86/quantize_sse4.asm $(gyp_shared_intermediate_dir)/yasm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/quantize_sse4.o" source/libvpx/vp8/encoder/x86/quantize_sse4.asm
+	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -D __ANDROID__ -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/quantize_mmx.o" source/libvpx/vp8/encoder/x86/quantize_mmx.asm
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/subtract_mmx.o: gyp_local_path := $(LOCAL_PATH)
@@ -294,7 +276,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/subtract_mmx.o: gyp_intermedia
 $(gyp_shared_intermediate_dir)/third_party/libvpx/subtract_mmx.o: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/subtract_mmx.o: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/subtract_mmx.o: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/encoder/x86/subtract_mmx.asm $(gyp_shared_intermediate_dir)/yasm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/subtract_mmx.o" source/libvpx/vp8/encoder/x86/subtract_mmx.asm
+	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -D __ANDROID__ -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/subtract_mmx.o" source/libvpx/vp8/encoder/x86/subtract_mmx.asm
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/subtract_sse2.o: gyp_local_path := $(LOCAL_PATH)
@@ -303,7 +285,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/subtract_sse2.o: gyp_intermedi
 $(gyp_shared_intermediate_dir)/third_party/libvpx/subtract_sse2.o: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/subtract_sse2.o: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/subtract_sse2.o: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/encoder/x86/subtract_sse2.asm $(gyp_shared_intermediate_dir)/yasm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/subtract_sse2.o" source/libvpx/vp8/encoder/x86/subtract_sse2.asm
+	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -D __ANDROID__ -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/subtract_sse2.o" source/libvpx/vp8/encoder/x86/subtract_sse2.asm
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_copy_sse2.o: gyp_local_path := $(LOCAL_PATH)
@@ -312,7 +294,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_copy_sse2.o: gyp_intermedi
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_copy_sse2.o: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_copy_sse2.o: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_copy_sse2.o: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp9/common/x86/vp9_copy_sse2.asm $(gyp_shared_intermediate_dir)/yasm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_copy_sse2.o" source/libvpx/vp9/common/x86/vp9_copy_sse2.asm
+	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -D __ANDROID__ -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_copy_sse2.o" source/libvpx/vp9/common/x86/vp9_copy_sse2.asm
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_intrapred_sse2.o: gyp_local_path := $(LOCAL_PATH)
@@ -321,7 +303,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_intrapred_sse2.o: gyp_inte
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_intrapred_sse2.o: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_intrapred_sse2.o: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_intrapred_sse2.o: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp9/common/x86/vp9_intrapred_sse2.asm $(gyp_shared_intermediate_dir)/yasm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_intrapred_sse2.o" source/libvpx/vp9/common/x86/vp9_intrapred_sse2.asm
+	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -D __ANDROID__ -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_intrapred_sse2.o" source/libvpx/vp9/common/x86/vp9_intrapred_sse2.asm
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_intrapred_ssse3.o: gyp_local_path := $(LOCAL_PATH)
@@ -330,7 +312,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_intrapred_ssse3.o: gyp_int
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_intrapred_ssse3.o: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_intrapred_ssse3.o: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_intrapred_ssse3.o: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp9/common/x86/vp9_intrapred_ssse3.asm $(gyp_shared_intermediate_dir)/yasm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_intrapred_ssse3.o" source/libvpx/vp9/common/x86/vp9_intrapred_ssse3.asm
+	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -D __ANDROID__ -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_intrapred_ssse3.o" source/libvpx/vp9/common/x86/vp9_intrapred_ssse3.asm
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_loopfilter_mmx.o: gyp_local_path := $(LOCAL_PATH)
@@ -339,7 +321,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_loopfilter_mmx.o: gyp_inte
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_loopfilter_mmx.o: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_loopfilter_mmx.o: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_loopfilter_mmx.o: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp9/common/x86/vp9_loopfilter_mmx.asm $(gyp_shared_intermediate_dir)/yasm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_loopfilter_mmx.o" source/libvpx/vp9/common/x86/vp9_loopfilter_mmx.asm
+	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -D __ANDROID__ -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_loopfilter_mmx.o" source/libvpx/vp9/common/x86/vp9_loopfilter_mmx.asm
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_subpixel_8t_sse2.o: gyp_local_path := $(LOCAL_PATH)
@@ -348,7 +330,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_subpixel_8t_sse2.o: gyp_in
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_subpixel_8t_sse2.o: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_subpixel_8t_sse2.o: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_subpixel_8t_sse2.o: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp9/common/x86/vp9_subpixel_8t_sse2.asm $(gyp_shared_intermediate_dir)/yasm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_subpixel_8t_sse2.o" source/libvpx/vp9/common/x86/vp9_subpixel_8t_sse2.asm
+	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -D __ANDROID__ -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_subpixel_8t_sse2.o" source/libvpx/vp9/common/x86/vp9_subpixel_8t_sse2.asm
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_subpixel_8t_ssse3.o: gyp_local_path := $(LOCAL_PATH)
@@ -357,7 +339,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_subpixel_8t_ssse3.o: gyp_i
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_subpixel_8t_ssse3.o: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_subpixel_8t_ssse3.o: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_subpixel_8t_ssse3.o: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp9/common/x86/vp9_subpixel_8t_ssse3.asm $(gyp_shared_intermediate_dir)/yasm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_subpixel_8t_ssse3.o" source/libvpx/vp9/common/x86/vp9_subpixel_8t_ssse3.asm
+	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -D __ANDROID__ -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_subpixel_8t_ssse3.o" source/libvpx/vp9/common/x86/vp9_subpixel_8t_ssse3.asm
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_subpixel_bilinear_sse2.o: gyp_local_path := $(LOCAL_PATH)
@@ -366,7 +348,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_subpixel_bilinear_sse2.o: 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_subpixel_bilinear_sse2.o: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_subpixel_bilinear_sse2.o: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_subpixel_bilinear_sse2.o: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp9/common/x86/vp9_subpixel_bilinear_sse2.asm $(gyp_shared_intermediate_dir)/yasm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_subpixel_bilinear_sse2.o" source/libvpx/vp9/common/x86/vp9_subpixel_bilinear_sse2.asm
+	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -D __ANDROID__ -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_subpixel_bilinear_sse2.o" source/libvpx/vp9/common/x86/vp9_subpixel_bilinear_sse2.asm
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_subpixel_bilinear_ssse3.o: gyp_local_path := $(LOCAL_PATH)
@@ -375,7 +357,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_subpixel_bilinear_ssse3.o:
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_subpixel_bilinear_ssse3.o: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_subpixel_bilinear_ssse3.o: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_subpixel_bilinear_ssse3.o: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp9/common/x86/vp9_subpixel_bilinear_ssse3.asm $(gyp_shared_intermediate_dir)/yasm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_subpixel_bilinear_ssse3.o" source/libvpx/vp9/common/x86/vp9_subpixel_bilinear_ssse3.asm
+	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -D __ANDROID__ -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_subpixel_bilinear_ssse3.o" source/libvpx/vp9/common/x86/vp9_subpixel_bilinear_ssse3.asm
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_dct_mmx.o: gyp_local_path := $(LOCAL_PATH)
@@ -384,7 +366,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_dct_mmx.o: gyp_intermediat
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_dct_mmx.o: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_dct_mmx.o: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_dct_mmx.o: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp9/encoder/x86/vp9_dct_mmx.asm $(gyp_shared_intermediate_dir)/yasm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_dct_mmx.o" source/libvpx/vp9/encoder/x86/vp9_dct_mmx.asm
+	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -D __ANDROID__ -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_dct_mmx.o" source/libvpx/vp9/encoder/x86/vp9_dct_mmx.asm
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_error_sse2.o: gyp_local_path := $(LOCAL_PATH)
@@ -393,7 +375,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_error_sse2.o: gyp_intermed
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_error_sse2.o: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_error_sse2.o: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_error_sse2.o: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp9/encoder/x86/vp9_error_sse2.asm $(gyp_shared_intermediate_dir)/yasm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_error_sse2.o" source/libvpx/vp9/encoder/x86/vp9_error_sse2.asm
+	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -D __ANDROID__ -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_error_sse2.o" source/libvpx/vp9/encoder/x86/vp9_error_sse2.asm
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_sad4d_sse2.o: gyp_local_path := $(LOCAL_PATH)
@@ -402,7 +384,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_sad4d_sse2.o: gyp_intermed
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_sad4d_sse2.o: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_sad4d_sse2.o: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_sad4d_sse2.o: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp9/encoder/x86/vp9_sad4d_sse2.asm $(gyp_shared_intermediate_dir)/yasm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_sad4d_sse2.o" source/libvpx/vp9/encoder/x86/vp9_sad4d_sse2.asm
+	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -D __ANDROID__ -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_sad4d_sse2.o" source/libvpx/vp9/encoder/x86/vp9_sad4d_sse2.asm
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_sad_mmx.o: gyp_local_path := $(LOCAL_PATH)
@@ -411,7 +393,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_sad_mmx.o: gyp_intermediat
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_sad_mmx.o: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_sad_mmx.o: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_sad_mmx.o: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp9/encoder/x86/vp9_sad_mmx.asm $(gyp_shared_intermediate_dir)/yasm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_sad_mmx.o" source/libvpx/vp9/encoder/x86/vp9_sad_mmx.asm
+	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -D __ANDROID__ -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_sad_mmx.o" source/libvpx/vp9/encoder/x86/vp9_sad_mmx.asm
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_sad_sse2.o: gyp_local_path := $(LOCAL_PATH)
@@ -420,7 +402,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_sad_sse2.o: gyp_intermedia
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_sad_sse2.o: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_sad_sse2.o: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_sad_sse2.o: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp9/encoder/x86/vp9_sad_sse2.asm $(gyp_shared_intermediate_dir)/yasm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_sad_sse2.o" source/libvpx/vp9/encoder/x86/vp9_sad_sse2.asm
+	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -D __ANDROID__ -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_sad_sse2.o" source/libvpx/vp9/encoder/x86/vp9_sad_sse2.asm
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_sad_sse3.o: gyp_local_path := $(LOCAL_PATH)
@@ -429,7 +411,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_sad_sse3.o: gyp_intermedia
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_sad_sse3.o: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_sad_sse3.o: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_sad_sse3.o: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp9/encoder/x86/vp9_sad_sse3.asm $(gyp_shared_intermediate_dir)/yasm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_sad_sse3.o" source/libvpx/vp9/encoder/x86/vp9_sad_sse3.asm
+	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -D __ANDROID__ -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_sad_sse3.o" source/libvpx/vp9/encoder/x86/vp9_sad_sse3.asm
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_sad_sse4.o: gyp_local_path := $(LOCAL_PATH)
@@ -438,7 +420,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_sad_sse4.o: gyp_intermedia
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_sad_sse4.o: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_sad_sse4.o: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_sad_sse4.o: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp9/encoder/x86/vp9_sad_sse4.asm $(gyp_shared_intermediate_dir)/yasm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_sad_sse4.o" source/libvpx/vp9/encoder/x86/vp9_sad_sse4.asm
+	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -D __ANDROID__ -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_sad_sse4.o" source/libvpx/vp9/encoder/x86/vp9_sad_sse4.asm
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_sad_ssse3.o: gyp_local_path := $(LOCAL_PATH)
@@ -447,7 +429,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_sad_ssse3.o: gyp_intermedi
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_sad_ssse3.o: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_sad_ssse3.o: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_sad_ssse3.o: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp9/encoder/x86/vp9_sad_ssse3.asm $(gyp_shared_intermediate_dir)/yasm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_sad_ssse3.o" source/libvpx/vp9/encoder/x86/vp9_sad_ssse3.asm
+	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -D __ANDROID__ -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_sad_ssse3.o" source/libvpx/vp9/encoder/x86/vp9_sad_ssse3.asm
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_subpel_variance.o: gyp_local_path := $(LOCAL_PATH)
@@ -456,7 +438,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_subpel_variance.o: gyp_int
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_subpel_variance.o: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_subpel_variance.o: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_subpel_variance.o: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp9/encoder/x86/vp9_subpel_variance.asm $(gyp_shared_intermediate_dir)/yasm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_subpel_variance.o" source/libvpx/vp9/encoder/x86/vp9_subpel_variance.asm
+	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -D __ANDROID__ -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_subpel_variance.o" source/libvpx/vp9/encoder/x86/vp9_subpel_variance.asm
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_subtract_sse2.o: gyp_local_path := $(LOCAL_PATH)
@@ -465,7 +447,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_subtract_sse2.o: gyp_inter
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_subtract_sse2.o: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_subtract_sse2.o: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_subtract_sse2.o: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp9/encoder/x86/vp9_subtract_sse2.asm $(gyp_shared_intermediate_dir)/yasm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_subtract_sse2.o" source/libvpx/vp9/encoder/x86/vp9_subtract_sse2.asm
+	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -D __ANDROID__ -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_subtract_sse2.o" source/libvpx/vp9/encoder/x86/vp9_subtract_sse2.asm
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_temporal_filter_apply_sse2.o: gyp_local_path := $(LOCAL_PATH)
@@ -474,7 +456,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_temporal_filter_apply_sse2
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_temporal_filter_apply_sse2.o: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_temporal_filter_apply_sse2.o: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_temporal_filter_apply_sse2.o: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp9/encoder/x86/vp9_temporal_filter_apply_sse2.asm $(gyp_shared_intermediate_dir)/yasm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_temporal_filter_apply_sse2.o" source/libvpx/vp9/encoder/x86/vp9_temporal_filter_apply_sse2.asm
+	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -D __ANDROID__ -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_temporal_filter_apply_sse2.o" source/libvpx/vp9/encoder/x86/vp9_temporal_filter_apply_sse2.asm
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_variance_impl_mmx.o: gyp_local_path := $(LOCAL_PATH)
@@ -483,7 +465,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_variance_impl_mmx.o: gyp_i
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_variance_impl_mmx.o: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_variance_impl_mmx.o: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_variance_impl_mmx.o: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp9/encoder/x86/vp9_variance_impl_mmx.asm $(gyp_shared_intermediate_dir)/yasm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_variance_impl_mmx.o" source/libvpx/vp9/encoder/x86/vp9_variance_impl_mmx.asm
+	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -D __ANDROID__ -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_variance_impl_mmx.o" source/libvpx/vp9/encoder/x86/vp9_variance_impl_mmx.asm
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_variance_impl_sse2.o: gyp_local_path := $(LOCAL_PATH)
@@ -492,7 +474,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_variance_impl_sse2.o: gyp_
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_variance_impl_sse2.o: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_variance_impl_sse2.o: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_variance_impl_sse2.o: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp9/encoder/x86/vp9_variance_impl_sse2.asm $(gyp_shared_intermediate_dir)/yasm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_variance_impl_sse2.o" source/libvpx/vp9/encoder/x86/vp9_variance_impl_sse2.asm
+	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -D __ANDROID__ -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_variance_impl_sse2.o" source/libvpx/vp9/encoder/x86/vp9_variance_impl_sse2.asm
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/emms.o: gyp_local_path := $(LOCAL_PATH)
@@ -501,7 +483,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/emms.o: gyp_intermediate_dir :
 $(gyp_shared_intermediate_dir)/third_party/libvpx/emms.o: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/emms.o: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/emms.o: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vpx_ports/emms.asm $(gyp_shared_intermediate_dir)/yasm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/emms.o" source/libvpx/vpx_ports/emms.asm
+	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -D __ANDROID__ -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/emms.o" source/libvpx/vpx_ports/emms.asm
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/x86_abi_support.o: gyp_local_path := $(LOCAL_PATH)
@@ -510,12 +492,11 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/x86_abi_support.o: gyp_interme
 $(gyp_shared_intermediate_dir)/third_party/libvpx/x86_abi_support.o: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/x86_abi_support.o: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/x86_abi_support.o: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vpx_ports/x86_abi_support.asm $(gyp_shared_intermediate_dir)/yasm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/x86_abi_support.o" source/libvpx/vpx_ports/x86_abi_support.asm
+	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/ia32 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -D __ANDROID__ -felf32 -m x86 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/x86_abi_support.o" source/libvpx/vpx_ports/x86_abi_support.asm
 
 
 
 GYP_GENERATED_OUTPUTS := \
-	$(gyp_shared_intermediate_dir)/third_party/libvpx/x86inc.o \
 	$(gyp_shared_intermediate_dir)/third_party/libvpx/dequantize_mmx.o \
 	$(gyp_shared_intermediate_dir)/third_party/libvpx/idctllm_mmx.o \
 	$(gyp_shared_intermediate_dir)/third_party/libvpx/idctllm_sse2.o \
@@ -544,7 +525,6 @@ GYP_GENERATED_OUTPUTS := \
 	$(gyp_shared_intermediate_dir)/third_party/libvpx/encodeopt.o \
 	$(gyp_shared_intermediate_dir)/third_party/libvpx/fwalsh_sse2.o \
 	$(gyp_shared_intermediate_dir)/third_party/libvpx/quantize_mmx.o \
-	$(gyp_shared_intermediate_dir)/third_party/libvpx/quantize_sse4.o \
 	$(gyp_shared_intermediate_dir)/third_party/libvpx/subtract_mmx.o \
 	$(gyp_shared_intermediate_dir)/third_party/libvpx/subtract_sse2.o \
 	$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_copy_sse2.o \
@@ -575,7 +555,6 @@ GYP_GENERATED_OUTPUTS := \
 LOCAL_ADDITIONAL_DEPENDENCIES := $(GYP_TARGET_DEPENDENCIES) $(GYP_GENERATED_OUTPUTS)
 
 LOCAL_GENERATED_SOURCES := \
-	$(gyp_shared_intermediate_dir)/third_party/libvpx/x86inc.o \
 	$(gyp_shared_intermediate_dir)/third_party/libvpx/dequantize_mmx.o \
 	$(gyp_shared_intermediate_dir)/third_party/libvpx/idctllm_mmx.o \
 	$(gyp_shared_intermediate_dir)/third_party/libvpx/idctllm_sse2.o \
@@ -604,7 +583,6 @@ LOCAL_GENERATED_SOURCES := \
 	$(gyp_shared_intermediate_dir)/third_party/libvpx/encodeopt.o \
 	$(gyp_shared_intermediate_dir)/third_party/libvpx/fwalsh_sse2.o \
 	$(gyp_shared_intermediate_dir)/third_party/libvpx/quantize_mmx.o \
-	$(gyp_shared_intermediate_dir)/third_party/libvpx/quantize_sse4.o \
 	$(gyp_shared_intermediate_dir)/third_party/libvpx/subtract_mmx.o \
 	$(gyp_shared_intermediate_dir)/third_party/libvpx/subtract_sse2.o \
 	$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_copy_sse2.o \
@@ -665,7 +643,6 @@ LOCAL_SRC_FILES := \
 	third_party/libvpx/source/libvpx/vp8/common/variance_c.c \
 	third_party/libvpx/source/libvpx/vp8/common/x86/filter_x86.c \
 	third_party/libvpx/source/libvpx/vp8/common/x86/loopfilter_x86.c \
-	third_party/libvpx/source/libvpx/vp8/common/x86/postproc_x86.c \
 	third_party/libvpx/source/libvpx/vp8/common/x86/vp8_asm_stubs.c \
 	third_party/libvpx/source/libvpx/vp8/decoder/dboolhuff.c \
 	third_party/libvpx/source/libvpx/vp8/decoder/decodeframe.c \
@@ -720,6 +697,7 @@ LOCAL_SRC_FILES := \
 	third_party/libvpx/source/libvpx/vp9/common/vp9_scale.c \
 	third_party/libvpx/source/libvpx/vp9/common/vp9_scan.c \
 	third_party/libvpx/source/libvpx/vp9/common/vp9_seg_common.c \
+	third_party/libvpx/source/libvpx/vp9/common/vp9_thread.c \
 	third_party/libvpx/source/libvpx/vp9/common/vp9_tile_common.c \
 	third_party/libvpx/source/libvpx/vp9/common/x86/vp9_asm_stubs.c \
 	third_party/libvpx/source/libvpx/vp9/decoder/vp9_decodeframe.c \
@@ -730,7 +708,6 @@ LOCAL_SRC_FILES := \
 	third_party/libvpx/source/libvpx/vp9/decoder/vp9_dthread.c \
 	third_party/libvpx/source/libvpx/vp9/decoder/vp9_read_bit_buffer.c \
 	third_party/libvpx/source/libvpx/vp9/decoder/vp9_reader.c \
-	third_party/libvpx/source/libvpx/vp9/decoder/vp9_thread.c \
 	third_party/libvpx/source/libvpx/vp9/encoder/vp9_aq_complexity.c \
 	third_party/libvpx/source/libvpx/vp9/encoder/vp9_aq_cyclicrefresh.c \
 	third_party/libvpx/source/libvpx/vp9/encoder/vp9_aq_variance.c \
@@ -751,6 +728,7 @@ LOCAL_SRC_FILES := \
 	third_party/libvpx/source/libvpx/vp9/encoder/vp9_pickmode.c \
 	third_party/libvpx/source/libvpx/vp9/encoder/vp9_quantize.c \
 	third_party/libvpx/source/libvpx/vp9/encoder/vp9_ratectrl.c \
+	third_party/libvpx/source/libvpx/vp9/encoder/vp9_rd.c \
 	third_party/libvpx/source/libvpx/vp9/encoder/vp9_rdopt.c \
 	third_party/libvpx/source/libvpx/vp9/encoder/vp9_resize.c \
 	third_party/libvpx/source/libvpx/vp9/encoder/vp9_sad.c \
@@ -766,7 +744,6 @@ LOCAL_SRC_FILES := \
 	third_party/libvpx/source/libvpx/vp9/encoder/vp9_writer.c \
 	third_party/libvpx/source/libvpx/vp9/vp9_cx_iface.c \
 	third_party/libvpx/source/libvpx/vp9/vp9_dx_iface.c \
-	third_party/libvpx/source/libvpx/vpx/src/svc_encodeframe.c \
 	third_party/libvpx/source/libvpx/vpx/src/vpx_codec.c \
 	third_party/libvpx/source/libvpx/vpx/src/vpx_decoder.c \
 	third_party/libvpx/source/libvpx/vpx/src/vpx_encoder.c \
@@ -814,9 +791,9 @@ MY_CFLAGS_Debug := \
 	-Wno-sequence-point \
 	-Os \
 	-g \
-	-fomit-frame-pointer \
 	-fdata-sections \
 	-ffunction-sections \
+	-fomit-frame-pointer \
 	-funwind-tables
 
 MY_DEFS_Debug := \
@@ -835,6 +812,7 @@ MY_DEFS_Debug := \
 	'-DSYSTEM_NATIVELY_SIGNALS_MEMORY_PRESSURE' \
 	'-DENABLE_EGLIMAGE=1' \
 	'-DCLD_VERSION=1' \
+	'-DCLD_DATA_FROM_STATIC' \
 	'-DENABLE_PRINTING=1' \
 	'-DENABLE_MANAGED_USERS=1' \
 	'-DDATA_REDUCTION_FALLBACK_HOST="http://compress.googlezip.net:80/"' \
@@ -876,6 +854,9 @@ LOCAL_CPPFLAGS_Debug := \
 	-fno-threadsafe-statics \
 	-fvisibility-inlines-hidden \
 	-Wno-deprecated \
+	-std=gnu++11 \
+	-Wno-narrowing \
+	-Wno-literal-suffix \
 	-Wno-non-virtual-dtor \
 	-Wno-sign-promo \
 	-Wno-non-virtual-dtor
@@ -936,6 +917,7 @@ MY_DEFS_Release := \
 	'-DSYSTEM_NATIVELY_SIGNALS_MEMORY_PRESSURE' \
 	'-DENABLE_EGLIMAGE=1' \
 	'-DCLD_VERSION=1' \
+	'-DCLD_DATA_FROM_STATIC' \
 	'-DENABLE_PRINTING=1' \
 	'-DENABLE_MANAGED_USERS=1' \
 	'-DDATA_REDUCTION_FALLBACK_HOST="http://compress.googlezip.net:80/"' \
@@ -977,6 +959,9 @@ LOCAL_CPPFLAGS_Release := \
 	-fno-threadsafe-statics \
 	-fvisibility-inlines-hidden \
 	-Wno-deprecated \
+	-std=gnu++11 \
+	-Wno-narrowing \
+	-Wno-literal-suffix \
 	-Wno-non-virtual-dtor \
 	-Wno-sign-promo \
 	-Wno-non-virtual-dtor

@@ -12,6 +12,7 @@
 
 #include "vp9/encoder/vp9_encoder.h"
 #include "vp9/encoder/vp9_svc_layercontext.h"
+#include "vp9/encoder/vp9_extend.h"
 
 void vp9_init_layer_context(VP9_COMP *const cpi) {
   SVC *const svc = &cpi->svc;
@@ -31,6 +32,7 @@ void vp9_init_layer_context(VP9_COMP *const cpi) {
   for (layer = 0; layer < layer_end; ++layer) {
     LAYER_CONTEXT *const lc = &svc->layer_context[layer];
     RATE_CONTROL *const lrc = &lc->rc;
+    int i;
     lc->current_video_frame_in_layer = 0;
     lrc->avg_frame_qindex[INTER_FRAME] = oxcf->worst_allowed_q;
     lrc->ni_av_qi = oxcf->worst_allowed_q;
@@ -42,20 +44,21 @@ void vp9_init_layer_context(VP9_COMP *const cpi) {
     lrc->ni_frames = 0;
     lrc->decimation_count = 0;
     lrc->decimation_factor = 0;
-    lrc->rate_correction_factor = 1.0;
-    lrc->key_frame_rate_correction_factor = 1.0;
 
-    if (svc->number_temporal_layers > 1) {
-      lc->target_bandwidth = oxcf->ts_target_bitrate[layer] * 1000;
-      lrc->last_q[INTER_FRAME] = oxcf->worst_allowed_q;
-    } else {
-      lc->target_bandwidth = oxcf->ss_target_bitrate[layer] * 1000;
-      lrc->last_q[0] = oxcf->best_allowed_q;
-      lrc->last_q[1] = oxcf->best_allowed_q;
-      lrc->last_q[2] = oxcf->best_allowed_q;
+    for (i = 0; i < RATE_FACTOR_LEVELS; ++i) {
+      lrc->rate_correction_factors[i] = 1.0;
     }
 
-    lrc->buffer_level = vp9_rescale((int)(oxcf->starting_buffer_level),
+    if (svc->number_temporal_layers > 1) {
+      lc->target_bandwidth = oxcf->ts_target_bitrate[layer];
+      lrc->last_q[INTER_FRAME] = oxcf->worst_allowed_q;
+    } else {
+      lc->target_bandwidth = oxcf->ss_target_bitrate[layer];
+      lrc->last_q[KEY_FRAME] = oxcf->best_allowed_q;
+      lrc->last_q[INTER_FRAME] = oxcf->best_allowed_q;
+    }
+
+    lrc->buffer_level = vp9_rescale((int)(oxcf->starting_buffer_level_ms),
                                     lc->target_bandwidth, 1000);
     lrc->bits_off_target = lrc->buffer_level;
   }
@@ -82,20 +85,20 @@ void vp9_update_layer_context_change_config(VP9_COMP *const cpi,
     RATE_CONTROL *const lrc = &lc->rc;
 
     if (svc->number_temporal_layers > 1) {
-      lc->target_bandwidth = oxcf->ts_target_bitrate[layer] * 1000;
+      lc->target_bandwidth = oxcf->ts_target_bitrate[layer];
     } else {
-      lc->target_bandwidth = oxcf->ss_target_bitrate[layer] * 1000;
+      lc->target_bandwidth = oxcf->ss_target_bitrate[layer];
     }
     bitrate_alloc = (float)lc->target_bandwidth / target_bandwidth;
     // Update buffer-related quantities.
-    lc->starting_buffer_level =
-        (int64_t)(oxcf->starting_buffer_level * bitrate_alloc);
-    lc->optimal_buffer_level =
-        (int64_t)(oxcf->optimal_buffer_level * bitrate_alloc);
-    lc->maximum_buffer_size =
-        (int64_t)(oxcf->maximum_buffer_size * bitrate_alloc);
-    lrc->bits_off_target = MIN(lrc->bits_off_target, lc->maximum_buffer_size);
-    lrc->buffer_level = MIN(lrc->buffer_level, lc->maximum_buffer_size);
+    lrc->starting_buffer_level =
+        (int64_t)(rc->starting_buffer_level * bitrate_alloc);
+    lrc->optimal_buffer_level =
+        (int64_t)(rc->optimal_buffer_level * bitrate_alloc);
+    lrc->maximum_buffer_size =
+        (int64_t)(rc->maximum_buffer_size * bitrate_alloc);
+    lrc->bits_off_target = MIN(lrc->bits_off_target, lrc->maximum_buffer_size);
+    lrc->buffer_level = MIN(lrc->buffer_level, lrc->maximum_buffer_size);
     // Update framerate-related quantities.
     if (svc->number_temporal_layers > 1) {
       lc->framerate = oxcf->framerate / oxcf->ts_rate_decimator[layer];
@@ -132,8 +135,7 @@ void vp9_update_temporal_layer_framerate(VP9_COMP *const cpi) {
   } else {
     const double prev_layer_framerate =
         oxcf->framerate / oxcf->ts_rate_decimator[layer - 1];
-    const int prev_layer_target_bandwidth =
-        oxcf->ts_target_bitrate[layer - 1] * 1000;
+    const int prev_layer_target_bandwidth = oxcf->ts_target_bitrate[layer - 1];
     lc->avg_frame_size =
         (int)((lc->target_bandwidth - prev_layer_target_bandwidth) /
               (lc->framerate - prev_layer_framerate));
@@ -151,20 +153,7 @@ void vp9_update_spatial_layer_framerate(VP9_COMP *const cpi, double framerate) {
                                    oxcf->two_pass_vbrmin_section / 100);
   lrc->max_frame_bandwidth = (int)(((int64_t)lrc->avg_frame_bandwidth *
                                    oxcf->two_pass_vbrmax_section) / 100);
-  lrc->max_gf_interval = 16;
-
-  lrc->static_scene_max_gf_interval = cpi->oxcf.key_freq >> 1;
-
-  if (oxcf->play_alternate && oxcf->lag_in_frames) {
-    if (lrc->max_gf_interval > oxcf->lag_in_frames - 1)
-      lrc->max_gf_interval = oxcf->lag_in_frames - 1;
-
-    if (lrc->static_scene_max_gf_interval > oxcf->lag_in_frames - 1)
-      lrc->static_scene_max_gf_interval = oxcf->lag_in_frames - 1;
-  }
-
-  if (lrc->max_gf_interval > lrc->static_scene_max_gf_interval)
-    lrc->max_gf_interval = lrc->static_scene_max_gf_interval;
+  vp9_rc_set_gf_max_interval(oxcf, lrc);
 }
 
 void vp9_restore_layer_context(VP9_COMP *const cpi) {
@@ -175,9 +164,6 @@ void vp9_restore_layer_context(VP9_COMP *const cpi) {
   cpi->rc = lc->rc;
   cpi->twopass = lc->twopass;
   cpi->oxcf.target_bandwidth = lc->target_bandwidth;
-  cpi->oxcf.starting_buffer_level = lc->starting_buffer_level;
-  cpi->oxcf.optimal_buffer_level = lc->optimal_buffer_level;
-  cpi->oxcf.maximum_buffer_size = lc->maximum_buffer_size;
   // Reset the frames_since_key and frames_to_key counters to their values
   // before the layer restore. Keep these defined for the stream (not layer).
   if (cpi->svc.number_temporal_layers > 1) {
@@ -193,9 +179,6 @@ void vp9_save_layer_context(VP9_COMP *const cpi) {
   lc->rc = cpi->rc;
   lc->twopass = cpi->twopass;
   lc->target_bandwidth = (int)oxcf->target_bandwidth;
-  lc->starting_buffer_level = oxcf->starting_buffer_level;
-  lc->optimal_buffer_level = oxcf->optimal_buffer_level;
-  lc->maximum_buffer_size = oxcf->maximum_buffer_size;
 }
 
 void vp9_init_second_pass_spatial_svc(VP9_COMP *cpi) {
@@ -203,7 +186,7 @@ void vp9_init_second_pass_spatial_svc(VP9_COMP *cpi) {
   int i;
 
   for (i = 0; i < svc->number_spatial_layers; ++i) {
-    struct twopass_rc *const twopass = &svc->layer_context[i].twopass;
+    TWO_PASS *const twopass = &svc->layer_context[i].twopass;
 
     svc->spatial_layer_id = i;
     vp9_init_second_pass(cpi);
@@ -226,4 +209,102 @@ int vp9_is_upper_layer_key_frame(const VP9_COMP *const cpi) {
          cpi->svc.number_temporal_layers == 1 &&
          cpi->svc.spatial_layer_id > 0 &&
          cpi->svc.layer_context[cpi->svc.spatial_layer_id].is_key_frame;
+}
+
+int vp9_svc_lookahead_push(const VP9_COMP *const cpi, struct lookahead_ctx *ctx,
+                           YV12_BUFFER_CONFIG *src, int64_t ts_start,
+                           int64_t ts_end, unsigned int flags) {
+  struct lookahead_entry *buf;
+  int i, index;
+
+  if (vp9_lookahead_push(ctx, src, ts_start, ts_end, flags))
+    return 1;
+
+  index = ctx->write_idx - 1;
+  if (index < 0)
+    index += ctx->max_sz;
+
+  buf = ctx->buf + index;
+
+  if (buf == NULL)
+    return 1;
+
+  // Store svc parameters for each layer
+  for (i = 0; i < cpi->svc.number_spatial_layers; ++i)
+    buf->svc_params[i] = cpi->svc.layer_context[i].svc_params_received;
+
+  return 0;
+}
+
+static int copy_svc_params(VP9_COMP *const cpi, struct lookahead_entry *buf) {
+  int layer_id;
+  vpx_svc_parameters_t *layer_param;
+  vpx_enc_frame_flags_t flags;
+
+  // Find the next layer to be encoded
+  for (layer_id = 0; layer_id < cpi->svc.number_spatial_layers; ++layer_id) {
+    if (buf->svc_params[layer_id].spatial_layer >=0)
+      break;
+  }
+
+  if (layer_id == cpi->svc.number_spatial_layers)
+    return 1;
+
+  layer_param = &buf->svc_params[layer_id];
+  buf->flags = flags = layer_param->flags;
+  cpi->svc.spatial_layer_id = layer_param->spatial_layer;
+  cpi->svc.temporal_layer_id = layer_param->temporal_layer;
+  cpi->lst_fb_idx = layer_param->lst_fb_idx;
+  cpi->gld_fb_idx = layer_param->gld_fb_idx;
+  cpi->alt_fb_idx = layer_param->alt_fb_idx;
+
+  if (vp9_set_size_literal(cpi, layer_param->width, layer_param->height) != 0)
+    return VPX_CODEC_INVALID_PARAM;
+
+  cpi->oxcf.worst_allowed_q =
+      vp9_quantizer_to_qindex(layer_param->max_quantizer);
+  cpi->oxcf.best_allowed_q =
+      vp9_quantizer_to_qindex(layer_param->min_quantizer);
+
+  vp9_change_config(cpi, &cpi->oxcf);
+
+  vp9_set_high_precision_mv(cpi, 1);
+
+  // Retrieve the encoding flags for each layer and apply it to encoder.
+  // It includes reference frame flags and update frame flags.
+  vp9_apply_encoding_flags(cpi, flags);
+
+  return 0;
+}
+
+struct lookahead_entry *vp9_svc_lookahead_peek(VP9_COMP *const cpi,
+                                               struct lookahead_ctx *ctx,
+                                               int index, int copy_params) {
+  struct lookahead_entry *buf = vp9_lookahead_peek(ctx, index);
+
+  if (buf != NULL && copy_params != 0) {
+    if (copy_svc_params(cpi, buf) != 0)
+      return NULL;
+  }
+  return buf;
+}
+
+struct lookahead_entry *vp9_svc_lookahead_pop(VP9_COMP *const cpi,
+                                              struct lookahead_ctx *ctx,
+                                              int drain) {
+  struct lookahead_entry *buf = NULL;
+
+  if (ctx->sz && (drain || ctx->sz == ctx->max_sz - MAX_PRE_FRAMES)) {
+    buf = vp9_svc_lookahead_peek(cpi, ctx, 0, 1);
+    if (buf != NULL) {
+      // Only remove the buffer when pop the highest layer. Simply set the
+      // spatial_layer to -1 for lower layers.
+      buf->svc_params[cpi->svc.spatial_layer_id].spatial_layer = -1;
+      if (cpi->svc.spatial_layer_id == cpi->svc.number_spatial_layers - 1) {
+        vp9_lookahead_pop(ctx, drain);
+      }
+    }
+  }
+
+  return buf;
 }

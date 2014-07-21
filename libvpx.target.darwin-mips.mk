@@ -108,6 +108,7 @@ LOCAL_SRC_FILES := \
 	third_party/libvpx/source/libvpx/vp9/common/vp9_scale.c \
 	third_party/libvpx/source/libvpx/vp9/common/vp9_scan.c \
 	third_party/libvpx/source/libvpx/vp9/common/vp9_seg_common.c \
+	third_party/libvpx/source/libvpx/vp9/common/vp9_thread.c \
 	third_party/libvpx/source/libvpx/vp9/common/vp9_tile_common.c \
 	third_party/libvpx/source/libvpx/vp9/decoder/vp9_decodeframe.c \
 	third_party/libvpx/source/libvpx/vp9/decoder/vp9_decodemv.c \
@@ -117,7 +118,6 @@ LOCAL_SRC_FILES := \
 	third_party/libvpx/source/libvpx/vp9/decoder/vp9_dthread.c \
 	third_party/libvpx/source/libvpx/vp9/decoder/vp9_read_bit_buffer.c \
 	third_party/libvpx/source/libvpx/vp9/decoder/vp9_reader.c \
-	third_party/libvpx/source/libvpx/vp9/decoder/vp9_thread.c \
 	third_party/libvpx/source/libvpx/vp9/encoder/vp9_aq_complexity.c \
 	third_party/libvpx/source/libvpx/vp9/encoder/vp9_aq_cyclicrefresh.c \
 	third_party/libvpx/source/libvpx/vp9/encoder/vp9_aq_variance.c \
@@ -138,6 +138,7 @@ LOCAL_SRC_FILES := \
 	third_party/libvpx/source/libvpx/vp9/encoder/vp9_pickmode.c \
 	third_party/libvpx/source/libvpx/vp9/encoder/vp9_quantize.c \
 	third_party/libvpx/source/libvpx/vp9/encoder/vp9_ratectrl.c \
+	third_party/libvpx/source/libvpx/vp9/encoder/vp9_rd.c \
 	third_party/libvpx/source/libvpx/vp9/encoder/vp9_rdopt.c \
 	third_party/libvpx/source/libvpx/vp9/encoder/vp9_resize.c \
 	third_party/libvpx/source/libvpx/vp9/encoder/vp9_sad.c \
@@ -153,7 +154,6 @@ LOCAL_SRC_FILES := \
 	third_party/libvpx/source/libvpx/vp9/encoder/vp9_writer.c \
 	third_party/libvpx/source/libvpx/vp9/vp9_cx_iface.c \
 	third_party/libvpx/source/libvpx/vp9/vp9_dx_iface.c \
-	third_party/libvpx/source/libvpx/vpx/src/svc_encodeframe.c \
 	third_party/libvpx/source/libvpx/vpx/src/vpx_codec.c \
 	third_party/libvpx/source/libvpx/vpx/src/vpx_decoder.c \
 	third_party/libvpx/source/libvpx/vpx/src/vpx_encoder.c \
@@ -201,9 +201,9 @@ MY_CFLAGS_Debug := \
 	-Wno-sequence-point \
 	-Os \
 	-g \
-	-fomit-frame-pointer \
 	-fdata-sections \
 	-ffunction-sections \
+	-fomit-frame-pointer \
 	-funwind-tables
 
 MY_DEFS_Debug := \
@@ -222,6 +222,7 @@ MY_DEFS_Debug := \
 	'-DSYSTEM_NATIVELY_SIGNALS_MEMORY_PRESSURE' \
 	'-DENABLE_EGLIMAGE=1' \
 	'-DCLD_VERSION=1' \
+	'-DCLD_DATA_FROM_STATIC' \
 	'-DENABLE_PRINTING=1' \
 	'-DENABLE_MANAGED_USERS=1' \
 	'-DDATA_REDUCTION_FALLBACK_HOST="http://compress.googlezip.net:80/"' \
@@ -263,6 +264,9 @@ LOCAL_CPPFLAGS_Debug := \
 	-fvisibility-inlines-hidden \
 	-Wno-deprecated \
 	-Wno-uninitialized \
+	-std=gnu++11 \
+	-Wno-narrowing \
+	-Wno-literal-suffix \
 	-Wno-non-virtual-dtor \
 	-Wno-sign-promo \
 	-Wno-non-virtual-dtor
@@ -323,6 +327,7 @@ MY_DEFS_Release := \
 	'-DSYSTEM_NATIVELY_SIGNALS_MEMORY_PRESSURE' \
 	'-DENABLE_EGLIMAGE=1' \
 	'-DCLD_VERSION=1' \
+	'-DCLD_DATA_FROM_STATIC' \
 	'-DENABLE_PRINTING=1' \
 	'-DENABLE_MANAGED_USERS=1' \
 	'-DDATA_REDUCTION_FALLBACK_HOST="http://compress.googlezip.net:80/"' \
@@ -364,6 +369,9 @@ LOCAL_CPPFLAGS_Release := \
 	-fvisibility-inlines-hidden \
 	-Wno-deprecated \
 	-Wno-uninitialized \
+	-std=gnu++11 \
+	-Wno-narrowing \
+	-Wno-literal-suffix \
 	-Wno-non-virtual-dtor \
 	-Wno-sign-promo \
 	-Wno-non-virtual-dtor
