@@ -81,7 +81,6 @@
     '<(libvpx_source)/vp8/common/x86/mfqe_sse2.asm',
     '<(libvpx_source)/vp8/common/x86/postproc_mmx.asm',
     '<(libvpx_source)/vp8/common/x86/postproc_sse2.asm',
-    '<(libvpx_source)/vp8/common/x86/postproc_x86.c',
     '<(libvpx_source)/vp8/common/x86/recon_mmx.asm',
     '<(libvpx_source)/vp8/common/x86/recon_sse2.asm',
     '<(libvpx_source)/vp8/common/x86/sad_mmx.asm',
