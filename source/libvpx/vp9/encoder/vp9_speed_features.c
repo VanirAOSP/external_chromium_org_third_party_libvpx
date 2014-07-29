@@ -88,13 +88,13 @@ static void set_good_speed_feature(VP9_COMP *cpi, VP9_COMMON *cm,
       sf->last_partitioning_redo_frequency = 3;
       sf->disable_split_mask = cm->show_frame ? DISABLE_ALL_SPLIT
                                               : DISABLE_ALL_INTER_SPLIT;
+      sf->adaptive_pred_interp_filter = 0;
     } else {
       sf->disable_split_mask = LAST_AND_INTRA_SPLIT_ONLY;
       sf->last_partitioning_redo_frequency = 2;
       sf->lf_motion_threshold = NO_MOTION_THRESHOLD;
     }
 
-    sf->adaptive_pred_interp_filter = 0;
     sf->reference_masking = 1;
     sf->mode_search_skip_flags = FLAG_SKIP_INTRA_DIRMISMATCH |
                                  FLAG_SKIP_INTRA_BESTINTER |
@@ -114,6 +114,9 @@ static void set_good_speed_feature(VP9_COMP *cpi, VP9_COMMON *cm,
       sf->disable_split_mask = DISABLE_ALL_SPLIT;
     else
       sf->disable_split_mask = DISABLE_ALL_INTER_SPLIT;
+
+    sf->adaptive_pred_interp_filter = 0;
+    sf->cb_pred_filter_search = 1;
 
     sf->lf_motion_threshold = LOW_MOTION_THRESHOLD;
     sf->last_partitioning_redo_frequency = 3;
@@ -294,8 +297,13 @@ static void set_rt_speed_feature(VP9_COMP *cpi, SPEED_FEATURES *sf,
         800 : 300;
     sf->elevate_newmv_thresh = 2500;
   }
-  if (speed >= 8) {
+  if (speed >= 12) {
+    sf->elevate_newmv_thresh = 4000;
+    sf->mv.subpel_force_stop = 2;
+  }
+  if (speed >= 13) {
     int i;
+    sf->max_intra_bsize = BLOCK_32X32;
     for (i = 0; i < BLOCK_SIZES; ++i)
       sf->inter_mode_mask[i] = INTER_NEAREST;
   }
@@ -325,6 +333,7 @@ void vp9_set_speed_features(VP9_COMP *cpi) {
   sf->use_lp32x32fdct = 0;
   sf->adaptive_motion_search = 0;
   sf->adaptive_pred_interp_filter = 0;
+  sf->cb_pred_filter_search = 0;
   sf->use_quant_fp = 0;
   sf->reference_masking = 0;
   sf->partition_search_type = SEARCH_PARTITION;
@@ -367,6 +376,7 @@ void vp9_set_speed_features(VP9_COMP *cpi) {
   sf->elevate_newmv_thresh = 0;
   // Recode loop tolerence %.
   sf->recode_tolerance = 25;
+  sf->default_interp_filter = SWITCHABLE;
 
   switch (oxcf->mode) {
     case ONE_PASS_BEST:

@@ -283,6 +283,9 @@ typedef struct SPEED_FEATURES {
   // was selected, and 2 means we use 8 tap if no 8x8 filter mode was selected.
   int adaptive_pred_interp_filter;
 
+  // Chessboard pattern prediction filter type search
+  int cb_pred_filter_search;
+
   // Fast quantization process path
   int use_quant_fp;
 
@@ -366,6 +369,9 @@ typedef struct SPEED_FEATURES {
 
   // In real time encoding, increase the threshold for NEWMV.
   int elevate_newmv_thresh;
+
+  // default interp filter choice
+  INTERP_FILTER default_interp_filter;
 } SPEED_FEATURES;
 
 struct VP9_COMP;
