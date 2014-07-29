@@ -136,6 +136,7 @@ LOCAL_SRC_FILES := \
 	third_party/libvpx/source/libvpx/vp9/decoder/vp9_dthread.c \
 	third_party/libvpx/source/libvpx/vp9/decoder/vp9_read_bit_buffer.c \
 	third_party/libvpx/source/libvpx/vp9/decoder/vp9_reader.c \
+	third_party/libvpx/source/libvpx/vp9/encoder/arm/neon/vp9_sad_neon.c \
 	third_party/libvpx/source/libvpx/vp9/encoder/vp9_aq_complexity.c \
 	third_party/libvpx/source/libvpx/vp9/encoder/vp9_aq_cyclicrefresh.c \
 	third_party/libvpx/source/libvpx/vp9/encoder/vp9_aq_variance.c \
@@ -235,7 +236,6 @@ MY_DEFS_Debug := \
 	'-DSYSTEM_NATIVELY_SIGNALS_MEMORY_PRESSURE' \
 	'-DENABLE_EGLIMAGE=1' \
 	'-DCLD_VERSION=1' \
-	'-DCLD_DATA_FROM_STATIC' \
 	'-DENABLE_PRINTING=1' \
 	'-DENABLE_MANAGED_USERS=1' \
 	'-DDATA_REDUCTION_FALLBACK_HOST="http://compress.googlezip.net:80/"' \
@@ -334,7 +334,6 @@ MY_DEFS_Release := \
 	'-DSYSTEM_NATIVELY_SIGNALS_MEMORY_PRESSURE' \
 	'-DENABLE_EGLIMAGE=1' \
 	'-DCLD_VERSION=1' \
-	'-DCLD_DATA_FROM_STATIC' \
 	'-DENABLE_PRINTING=1' \
 	'-DENABLE_MANAGED_USERS=1' \
 	'-DDATA_REDUCTION_FALLBACK_HOST="http://compress.googlezip.net:80/"' \
