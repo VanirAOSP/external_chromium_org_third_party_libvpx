@@ -24,7 +24,7 @@ $(gyp_intermediate_dir)/vp8_asm_enc_offsets.o: gyp_shared_intermediate_dir := $(
 $(gyp_intermediate_dir)/vp8_asm_enc_offsets.o: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_intermediate_dir)/vp8_asm_enc_offsets.o: $(LOCAL_PATH)/third_party/libvpx/unpack_lib_posix.sh $(GYP_TARGET_DEPENDENCIES)
 	@echo "Gyp action: third_party_libvpx_libvpx_gyp_gen_asm_offsets_vp8_target_unpack_lib_posix ($@)"
-	$(hide)cd $(gyp_local_path)/third_party/libvpx; mkdir -p $(gyp_intermediate_dir); ../../third_party/libvpx/unpack_lib_posix.sh -d "$(gyp_intermediate_dir)" -f vp8_asm_enc_offsets.o -a "$(gyp_shared_intermediate_dir)/libvpx_asm_offsets_vp8.a" -a "$(obj).$(TOOLSET)/third_party/libvpx/libvpx_asm_offsets_vp8.a" -a "$(obj).$(TOOLSET)/Source/WebKit/chromium/third_party/libvpx/libvpx_asm_offsets_vp8.a" -a "$(abspath $(call intermediates-dir-for,STATIC_LIBRARIES,libvpx_asm_offsets_vp8,,,$(gyp_var_prefix)))/libvpx_asm_offsets_vp8.a" -r "$(abspath $($(gyp_var_prefix)TARGET_AR))"
+	$(hide)cd $(gyp_local_path)/third_party/libvpx; mkdir -p $(gyp_intermediate_dir); ../../third_party/libvpx/unpack_lib_posix.sh -d "$(gyp_intermediate_dir)" -f vp8_asm_enc_offsets.o -a "$(gyp_shared_intermediate_dir)/libvpx_asm_offsets_vp8.a" -a "$(obj).$(TOOLSET)/third_party/libvpx/libvpx_asm_offsets_vp8.a" -a "$(obj).$(TOOLSET)/chromium/src/third_party/libvpx/libvpx_asm_offsets_vp8.a" -a "$(obj).$(TOOLSET)/Source/WebKit/chromium/third_party/libvpx/libvpx_asm_offsets_vp8.a" -a "$(abspath $(call intermediates-dir-for,STATIC_LIBRARIES,libvpx_asm_offsets_vp8,,,$(gyp_var_prefix)))/libvpx_asm_offsets_vp8.a" -r "$(abspath $($(gyp_var_prefix)TARGET_AR))"
 
 
 
@@ -96,7 +96,6 @@ MY_CFLAGS_Debug := \
 
 MY_DEFS_Debug := \
 	'-DV8_DEPRECATION_WARNINGS' \
-	'-DBLINK_SCALE_FILTERS_AT_RECORD_TIME' \
 	'-D_FILE_OFFSET_BITS=64' \
 	'-DNO_TCMALLOC' \
 	'-DDISABLE_NACL' \
@@ -193,7 +192,6 @@ MY_CFLAGS_Release := \
 
 MY_DEFS_Release := \
 	'-DV8_DEPRECATION_WARNINGS' \
-	'-DBLINK_SCALE_FILTERS_AT_RECORD_TIME' \
 	'-D_FILE_OFFSET_BITS=64' \
 	'-DNO_TCMALLOC' \
 	'-DDISABLE_NACL' \
