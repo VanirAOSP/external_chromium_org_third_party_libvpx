@@ -39,7 +39,8 @@ LOCAL_SRC_FILES := \
 	third_party/libvpx/source/libvpx/vp8/encoder/arm/neon/denoising_neon.c \
 	third_party/libvpx/source/libvpx/vp9/common/arm/neon/vp9_convolve_neon.c \
 	third_party/libvpx/source/libvpx/vp9/common/arm/neon/vp9_idct16x16_neon.c \
-	third_party/libvpx/source/libvpx/vp9/common/arm/neon/vp9_loopfilter_16_neon.c
+	third_party/libvpx/source/libvpx/vp9/common/arm/neon/vp9_loopfilter_16_neon.c \
+	third_party/libvpx/source/libvpx/vp9/encoder/arm/neon/vp9_sad_neon.c
 
 
 # Flags passed to both C and C++ files.
@@ -103,7 +104,6 @@ MY_DEFS_Debug := \
 	'-DSYSTEM_NATIVELY_SIGNALS_MEMORY_PRESSURE' \
 	'-DENABLE_EGLIMAGE=1' \
 	'-DCLD_VERSION=1' \
-	'-DCLD_DATA_FROM_STATIC' \
 	'-DENABLE_PRINTING=1' \
 	'-DENABLE_MANAGED_USERS=1' \
 	'-DDATA_REDUCTION_FALLBACK_HOST="http://compress.googlezip.net:80/"' \
@@ -210,7 +210,6 @@ MY_DEFS_Release := \
 	'-DSYSTEM_NATIVELY_SIGNALS_MEMORY_PRESSURE' \
 	'-DENABLE_EGLIMAGE=1' \
 	'-DCLD_VERSION=1' \
-	'-DCLD_DATA_FROM_STATIC' \
 	'-DENABLE_PRINTING=1' \
 	'-DENABLE_MANAGED_USERS=1' \
 	'-DDATA_REDUCTION_FALLBACK_HOST="http://compress.googlezip.net:80/"' \

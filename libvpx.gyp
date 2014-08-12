@@ -99,6 +99,12 @@
                 ],
               }],
             ],
+            'clang_warning_flags': [
+              # libvpx heavily relies on implicit enum casting.
+              '-Wno-conversion',
+              # libvpx does `if ((a == b))` in some places.
+              '-Wno-parentheses-equality',
+            ],
           },
           'dependencies': [
             'gen_asm_offsets_vp8',
@@ -165,28 +171,6 @@
                     #'libvpx_intrinsics_avx2',
                   ],
                 }],
-              ],
-            }],
-            ['clang == 1', {
-              'xcode_settings': {
-                'WARNING_CFLAGS': [
-                  # libvpx heavily relies on implicit enum casting.
-                  '-Wno-conversion',
-                  # libvpx does `if ((a == b))` in some places.
-                  '-Wno-parentheses-equality',
-                ],
-              },
-              'cflags': [
-                '-Wno-conversion',
-                '-Wno-parentheses-equality',
-              ],
-            }],
-            ['chromeos == 1', {
-              # ChromeOS needs these files for animated WebM avatars.
-              'sources': [
-                '<(libvpx_source)/third_party/libmkv/EbmlIDs.h',
-                '<(libvpx_source)/third_party/libmkv/EbmlWriter.c',
-                '<(libvpx_source)/third_party/libmkv/EbmlWriter.h',
               ],
             }],
           ],
@@ -350,14 +334,6 @@
             ['OS == "android"', {
               'includes': [
                 '../../build/android/cpufeatures.gypi',
-              ],
-            }],
-            ['chromeos == 1', {
-              # ChromeOS needs these files for animated WebM avatars.
-              'sources': [
-                '<(libvpx_source)/third_party/libmkv/EbmlIDs.h',
-                '<(libvpx_source)/third_party/libmkv/EbmlWriter.c',
-                '<(libvpx_source)/third_party/libmkv/EbmlWriter.h',
               ],
             }],
             ['OS == "ios"', {
