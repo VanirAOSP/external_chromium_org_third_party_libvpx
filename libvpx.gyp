@@ -475,7 +475,7 @@
                 '-s', '<(ninja_obj_dir)/encoder/libvpx_asm_offsets_vp8.vp8_asm_enc_offsets.obj',
                 '-s', '<(PRODUCT_DIR)/obj/Source/WebKit/chromium/third_party/libvpx/<(libvpx_source)/vp8/encoder/libvpx_asm_offsets_vp8.vp8_asm_enc_offsets.obj',
               ],
-              'process_output_as_sources': 1,
+              'process_outputs_as_sources': 1,
             },
           ],
           'sources': [
@@ -486,6 +486,7 @@
             'unpack_lib_search_path_list': [
               '-a', '<(PRODUCT_DIR)/libvpx_asm_offsets_vp8.a',
               '-a', '<(LIB_DIR)/third_party/libvpx/libvpx_asm_offsets_vp8.a',
+              '-a', '<(LIB_DIR)/chromium/src/third_party/libvpx/libvpx_asm_offsets_vp8.a',
               '-a', '<(LIB_DIR)/Source/WebKit/chromium/third_party/libvpx/libvpx_asm_offsets_vp8.a',
               '-a', '<(lib_intermediate_name)',
             ],
@@ -548,7 +549,7 @@
                 '-s', '<(ninja_obj_dir)/encoder/libvpx_asm_offsets_vpx_scale.vpx_scale_asm_offsets.obj',
                 '-s', '<(PRODUCT_DIR)/obj/Source/WebKit/chromium/third_party/libvpx/<(libvpx_source)/vpx_scale/libvpx_asm_offsets_vpx_scale.vpx_scale_asm_offsets.obj',
               ],
-              'process_output_as_sources': 1,
+              'process_outputs_as_sources': 1,
             },
           ],
           'sources': [
@@ -559,6 +560,7 @@
             'unpack_lib_search_path_list': [
               '-a', '<(PRODUCT_DIR)/libvpx_asm_offsets_vpx_scale.a',
               '-a', '<(LIB_DIR)/third_party/libvpx/libvpx_asm_offsets_vpx_scale.a',
+              '-a', '<(LIB_DIR)/chromium/src/third_party/libvpx/libvpx_asm_offsets_vpx_scale.a',
               '-a', '<(LIB_DIR)/Source/WebKit/chromium/third_party/libvpx/libvpx_asm_offsets_vpx_scale.a',
               '-a', '<(lib_intermediate_name)',
             ],
