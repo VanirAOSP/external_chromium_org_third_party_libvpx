@@ -48,7 +48,8 @@ GYP_GENERATED_OUTPUTS := \
 # Make sure our deps and generated files are built first.
 LOCAL_ADDITIONAL_DEPENDENCIES := $(GYP_TARGET_DEPENDENCIES) $(GYP_GENERATED_OUTPUTS)
 
-LOCAL_GENERATED_SOURCES :=
+LOCAL_GENERATED_SOURCES := \
+	$(gyp_intermediate_dir)/vpx_scale_asm_offsets.o
 
 GYP_COPIED_SOURCE_ORIGIN_DIRS :=
 
