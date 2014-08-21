@@ -78,6 +78,8 @@ LOCAL_SRC_FILES := \
 	third_party/libvpx/source/libvpx/vp8/decoder/threading.c \
 	third_party/libvpx/source/libvpx/vp8/encoder/arm/dct_arm.c \
 	third_party/libvpx/source/libvpx/vp8/encoder/arm/neon/denoising_neon.c \
+	third_party/libvpx/source/libvpx/vp8/encoder/arm/neon/subtract_neon.c \
+	third_party/libvpx/source/libvpx/vp8/encoder/arm/neon/vp8_shortwalsh4x4_neon.c \
 	third_party/libvpx/source/libvpx/vp8/encoder/arm/quantize_arm.c \
 	third_party/libvpx/source/libvpx/vp8/encoder/bitstream.c \
 	third_party/libvpx/source/libvpx/vp8/encoder/boolhuff.c \
