@@ -18,17 +18,8 @@
         '<(libvpx_source)/vp8/encoder/x86/vp8_enc_stubs_mmx.c',
         '<(libvpx_source)/vp9/encoder/x86/vp9_variance_mmx.c',
       ],
-      'conditions': [
-        ['os_posix==1 and OS!="mac" and OS!="ios"', {
-          'cflags!': [ '-mfpu=vfpv3-d16' ],
-          'cflags': [ '-mmmx', ],
-        }],
-        ['OS=="mac" or OS=="ios"', {
-          'xcode_settings': {
-            'OTHER_CFLAGS': [ '-mmmx', ],
-          },
-        }],
-      ],
+      'cflags': [ '-mmmx', ],
+      'xcode_settings': { 'OTHER_CFLAGS': [ '-mmmx' ] },
     },
     {
       'target_name': 'libvpx_intrinsics_sse2',
@@ -50,17 +41,8 @@
         '<(libvpx_source)/vp9/encoder/x86/vp9_dct_sse2.c',
         '<(libvpx_source)/vp9/encoder/x86/vp9_variance_sse2.c',
       ],
-      'conditions': [
-        ['os_posix==1 and OS!="mac" and OS!="ios"', {
-          'cflags!': [ '-mfpu=vfpv3-d16' ],
-          'cflags': [ '-msse2', ],
-        }],
-        ['OS=="mac" or OS=="ios"', {
-          'xcode_settings': {
-            'OTHER_CFLAGS': [ '-msse2', ],
-          },
-        }],
-      ],
+      'cflags': [ '-msse2', ],
+      'xcode_settings': { 'OTHER_CFLAGS': [ '-msse2' ] },
     },
     {
       'target_name': 'libvpx_intrinsics_ssse3',
@@ -75,14 +57,14 @@
         '<(libvpx_source)/vp9/common/x86/vp9_idct_intrin_ssse3.c',
         '<(libvpx_source)/vp9/common/x86/vp9_subpixel_8t_intrin_ssse3.c',
       ],
+      'cflags': [ '-mssse3', ],
+      'xcode_settings': { 'OTHER_CFLAGS': [ '-mssse3' ] },
       'conditions': [
-        ['os_posix==1 and OS!="mac" and OS!="ios"', {
-          'cflags!': [ '-mfpu=vfpv3-d16' ],
-          'cflags': [ '-mssse3', ],
-        }],
-        ['OS=="mac" or OS=="ios"', {
-          'xcode_settings': {
-            'OTHER_CFLAGS': [ '-mssse3', ],
+        ['OS=="win" and clang==1', {
+          # cl.exe's /arch flag doesn't have a setting for SSSE3/4, and cl.exe
+          # doesn't need it for intrinsics. clang-cl does need it, though.
+          'msvs_settings': {
+            'VCCLCompilerTool': { 'AdditionalOptions': [ '-mssse3' ] },
           },
         }],
       ],
@@ -97,14 +79,14 @@
       'sources': [
         '<(libvpx_source)/vp8/encoder/x86/quantize_sse4.c',
       ],
+      'cflags': [ '-msse4.1', ],
+      'xcode_settings': { 'OTHER_CFLAGS': [ '-msse4.1' ] },
       'conditions': [
-        ['os_posix==1 and OS!="mac" and OS!="ios"', {
-          'cflags!': [ '-mfpu=vfpv3-d16' ],
-          'cflags': [ '-msse4.1', ],
-        }],
-        ['OS=="mac" or OS=="ios"', {
-          'xcode_settings': {
-            'OTHER_CFLAGS': [ '-msse4.1', ],
+        ['OS=="win" and clang==1', {
+          # cl.exe's /arch flag doesn't have a setting for SSSE3/4, and cl.exe
+          # doesn't need it for intrinsics. clang-cl does need it, though.
+          'msvs_settings': {
+            'VCCLCompilerTool': { 'AdditionalOptions': [ '-msse4.1' ] },
           },
         }],
       ],

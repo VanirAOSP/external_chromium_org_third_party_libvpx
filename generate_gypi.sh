@@ -78,26 +78,28 @@ function write_target_definition {
     echo "        '<(libvpx_source)/$f'," >> $2
   done
   echo "      ]," >> $2
-  echo "      'conditions': [" >> $2
-  echo "        ['os_posix==1 and OS!=\"mac\" and OS!=\"ios\"', {" >> $2
-  echo "          'cflags!': [ '-mfpu=vfpv3-d16' ]," >> $2
-  echo "          'cflags': [ '-m$4', ]," >> $2
-  echo "        }]," >> $2
-  echo "        ['OS==\"mac\" or OS==\"ios\"', {" >> $2
-  echo "          'xcode_settings': {" >> $2
-  echo "            'OTHER_CFLAGS': [ '-m$4', ]," >> $2
-  echo "          }," >> $2
-  echo "        }]," >> $2
-  if [[ $4 == avx* ]]; then
-  echo "        ['OS==\"win\"', {" >> $2
-  echo "          'msvs_settings': {" >> $2
-  echo "            'VCCLCompilerTool': {" >> $2
-  echo "              'EnableEnhancedInstructionSet': '3', # /arch:AVX" >> $2
-  echo "            }," >> $2
-  echo "          }," >> $2
-  echo "        }]," >> $2
+  if [[ $4 == fpu=neon ]]; then
+  echo "      'cflags!': [ '-mfpu=vfpv3-d16' ]," >> $2
   fi
+  echo "      'cflags': [ '-m$4', ]," >> $2
+  echo "      'xcode_settings': { 'OTHER_CFLAGS': [ '-m$4' ] }," >> $2
+  if [[ $4 == avx* ]]; then
+  echo "      'msvs_settings': {" >> $2
+  echo "        'VCCLCompilerTool': {" >> $2
+  echo "          'EnableEnhancedInstructionSet': '3', # /arch:AVX" >> $2
+  echo "        }," >> $2
+  echo "      }," >> $2
+  elif [[ $4 == ssse3 || $4 == sse4.1 ]]; then
+  echo "      'conditions': [" >> $2
+  echo "        ['OS==\"win\" and clang==1', {" >> $2
+  echo "          # cl.exe's /arch flag doesn't have a setting for SSSE3/4, and cl.exe" >> $2
+  echo "          # doesn't need it for intrinsics. clang-cl does need it, though." >> $2
+  echo "          'msvs_settings': {" >> $2
+  echo "            'VCCLCompilerTool': { 'AdditionalOptions': [ '-m$4' ] }," >> $2
+  echo "          }," >> $2
+  echo "        }]," >> $2
   echo "      ]," >> $2
+  fi
   echo "    }," >> $2
 }
 
