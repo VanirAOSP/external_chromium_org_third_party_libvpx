@@ -37,10 +37,16 @@ LOCAL_SRC_FILES := \
 	third_party/libvpx/source/libvpx/vp8/common/arm/neon/sixtappredict_neon.c \
 	third_party/libvpx/source/libvpx/vp8/common/arm/neon/variance_neon.c \
 	third_party/libvpx/source/libvpx/vp8/encoder/arm/neon/denoising_neon.c \
+	third_party/libvpx/source/libvpx/vp8/encoder/arm/neon/subtract_neon.c \
+	third_party/libvpx/source/libvpx/vp8/encoder/arm/neon/vp8_shortwalsh4x4_neon.c \
 	third_party/libvpx/source/libvpx/vp9/common/arm/neon/vp9_convolve_neon.c \
 	third_party/libvpx/source/libvpx/vp9/common/arm/neon/vp9_idct16x16_neon.c \
 	third_party/libvpx/source/libvpx/vp9/common/arm/neon/vp9_loopfilter_16_neon.c \
-	third_party/libvpx/source/libvpx/vp9/encoder/arm/neon/vp9_sad_neon.c
+	third_party/libvpx/source/libvpx/vp9/encoder/arm/neon/vp9_dct_neon.c \
+	third_party/libvpx/source/libvpx/vp9/encoder/arm/neon/vp9_quantize_neon.c \
+	third_party/libvpx/source/libvpx/vp9/encoder/arm/neon/vp9_sad_neon.c \
+	third_party/libvpx/source/libvpx/vp9/encoder/arm/neon/vp9_subtract_neon.c \
+	third_party/libvpx/source/libvpx/vp9/encoder/arm/neon/vp9_variance_neon.c
 
 
 # Flags passed to both C and C++ files.

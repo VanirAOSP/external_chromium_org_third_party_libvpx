@@ -37,7 +37,7 @@
 #include "vp9/encoder/vp9_svc_layercontext.h"
 #include "vp9/encoder/vp9_tokenize.h"
 #include "vp9/encoder/vp9_variance.h"
-#if CONFIG_DENOISING
+#if CONFIG_VP9_TEMPORAL_DENOISING
 #include "vp9/encoder/vp9_denoiser.h"
 #endif
 
@@ -82,36 +82,19 @@ typedef enum {
 } VPX_SCALING;
 
 typedef enum {
-  // Good Quality Fast Encoding. The encoder balances quality with the
-  // amount of time it takes to encode the output. (speed setting
-  // controls how fast)
-  ONE_PASS_GOOD = 1,
+  // Good Quality Fast Encoding. The encoder balances quality with the amount of
+  // time it takes to encode the output. Speed setting controls how fast.
+  GOOD,
 
-  // One Pass - Best Quality. The encoder places priority on the
-  // quality of the output over encoding speed. The output is compressed
-  // at the highest possible quality. This option takes the longest
-  // amount of time to encode. (speed setting ignored)
-  ONE_PASS_BEST = 2,
+  // The encoder places priority on the quality of the output over encoding
+  // speed. The output is compressed at the highest possible quality. This
+  // option takes the longest amount of time to encode. Speed setting ignored.
+  BEST,
 
-  // Two Pass - First Pass. The encoder generates a file of statistics
-  // for use in the second encoding pass. (speed setting controls how fast)
-  TWO_PASS_FIRST = 3,
-
-  // Two Pass - Second Pass. The encoder uses the statistics that were
-  // generated in the first encoding pass to create the compressed
-  // output. (speed setting controls how fast)
-  TWO_PASS_SECOND_GOOD = 4,
-
-  // Two Pass - Second Pass Best.  The encoder uses the statistics that
-  // were generated in the first encoding pass to create the compressed
-  // output using the highest possible quality, and taking a
-  // longer amount of time to encode. (speed setting ignored)
-  TWO_PASS_SECOND_BEST = 5,
-
-  // Realtime/Live Encoding. This mode is optimized for realtime
-  // encoding (for example, capturing a television signal or feed from
-  // a live camera). (speed setting controls how fast)
-  REALTIME = 6,
+  // Realtime/Live Encoding. This mode is optimized for realtime encoding (for
+  // example, capturing a television signal or feed from a live camera). Speed
+  // setting controls how fast.
+  REALTIME
 } MODE;
 
 typedef enum {
@@ -134,7 +117,7 @@ typedef struct VP9EncoderConfig {
   BIT_DEPTH bit_depth;
   int width;  // width of data passed to the compressor
   int height;  // height of data passed to the compressor
-  double framerate;  // set to passed in framerate
+  double init_framerate;  // set to passed in framerate
   int64_t target_bandwidth;  // bandwidth to be used in kilobits per second
 
   int noise_sensitivity;  // pre processing blur: recommendation 0
@@ -143,6 +126,7 @@ typedef struct VP9EncoderConfig {
   unsigned int rc_max_intra_bitrate_pct;
 
   MODE mode;
+  int pass;
 
   // Key Framing Operations
   int auto_key;  // autodetect cut scenes and set the keyframes
@@ -232,6 +216,7 @@ typedef struct VP9EncoderConfig {
 #endif
 
   vp8e_tuning tuning;
+  vp9e_tune_content content;
 } VP9EncoderConfig;
 
 static INLINE int is_lossless_requested(const VP9EncoderConfig *cfg) {
@@ -239,7 +224,7 @@ static INLINE int is_lossless_requested(const VP9EncoderConfig *cfg) {
 }
 
 static INLINE int is_best_mode(MODE mode) {
-  return mode == ONE_PASS_BEST || mode == TWO_PASS_SECOND_BEST;
+  return mode == BEST;
 }
 
 typedef struct VP9_COMP {
@@ -258,10 +243,6 @@ typedef struct VP9_COMP {
   YV12_BUFFER_CONFIG scaled_source;
   YV12_BUFFER_CONFIG *unscaled_last_source;
   YV12_BUFFER_CONFIG scaled_last_source;
-
-  int gold_is_last;  // gold same as last frame ( short circuit gold searches)
-  int alt_is_last;  // Alt same as last ( short circuit altref search)
-  int gold_is_alt;  // don't do both alt and gold search ( just do gold).
 
   int skippable_frame;
 
@@ -296,14 +277,13 @@ typedef struct VP9_COMP {
 
   int zbin_mode_boost;
   int zbin_mode_boost_enabled;
-  int active_arnr_frames;           // <= cpi->oxcf.arnr_max_frames
-  int active_arnr_strength;         // <= cpi->oxcf.arnr_max_strength
 
   int64_t last_time_stamp_seen;
   int64_t last_end_time_stamp_seen;
   int64_t first_time_stamp_ever;
 
   RATE_CONTROL rc;
+  double framerate;
 
   vp9_coeff_count coef_counts[TX_SIZES][PLANE_TYPES];
 
@@ -312,9 +292,6 @@ typedef struct VP9_COMP {
   MBGRAPH_FRAME_STATS mbgraph_stats[MAX_LAG_BUFFERS];
   int mbgraph_n_frames;             // number of frames filled in the above
   int static_mb_pct;                // % forced skip mbs by segmentation
-
-  int pass;
-
   int ref_frame_flags;
 
   SPEED_FEATURES sf;
@@ -430,7 +407,7 @@ typedef struct VP9_COMP {
   int multi_arf_enabled;
   int multi_arf_last_grp_enabled;
 
-#if CONFIG_DENOISING
+#if CONFIG_VP9_TEMPORAL_DENOISING
   VP9_DENOISER denoiser;
 #endif
 } VP9_COMP;
@@ -461,9 +438,6 @@ void vp9_update_reference(VP9_COMP *cpi, int ref_frame_flags);
 
 int vp9_copy_reference_enc(VP9_COMP *cpi, VP9_REFFRAME ref_frame_flag,
                            YV12_BUFFER_CONFIG *sd);
-
-int vp9_get_reference_enc(VP9_COMP *cpi, int index,
-                          YV12_BUFFER_CONFIG **fb);
 
 int vp9_set_reference_enc(VP9_COMP *cpi, VP9_REFFRAME ref_frame_flag,
                           YV12_BUFFER_CONFIG *sd);
@@ -500,14 +474,6 @@ static INLINE YV12_BUFFER_CONFIG *get_ref_frame_buffer(
       .buf;
 }
 
-// Intra only frames, golden frames (except alt ref overlays) and
-// alt ref frames tend to be coded at a higher than ambient quality
-static INLINE int frame_is_boosted(const VP9_COMP *cpi) {
-  return frame_is_intra_only(&cpi->common) || cpi->refresh_alt_ref_frame ||
-         (cpi->refresh_golden_frame && !cpi->rc.is_src_frame_alt_ref) ||
-         vp9_is_upper_layer_key_frame(cpi);
-}
-
 static INLINE int get_token_alloc(int mb_rows, int mb_cols) {
   // TODO(JBB): double check we can't exceed this token count if we have a
   // 32x32 transform crossing a boundary at a multiple of 16.
@@ -525,8 +491,6 @@ void vp9_scale_references(VP9_COMP *cpi);
 
 void vp9_update_reference_frames(VP9_COMP *cpi);
 
-int64_t vp9_rescale(int64_t val, int64_t num, int denom);
-
 void vp9_set_high_precision_mv(VP9_COMP *cpi, int allow_high_precision_mv);
 
 YV12_BUFFER_CONFIG *vp9_scale_if_required(VP9_COMMON *cm,
@@ -535,10 +499,16 @@ YV12_BUFFER_CONFIG *vp9_scale_if_required(VP9_COMMON *cm,
 
 void vp9_apply_encoding_flags(VP9_COMP *cpi, vpx_enc_frame_flags_t flags);
 
+static INLINE int is_spatial_svc(const struct VP9_COMP *const cpi) {
+  return cpi->use_svc &&
+         cpi->svc.number_temporal_layers == 1 &&
+         cpi->svc.number_spatial_layers > 1;
+}
+
 static INLINE int is_altref_enabled(const VP9_COMP *const cpi) {
   return cpi->oxcf.mode != REALTIME && cpi->oxcf.lag_in_frames > 0 &&
          (cpi->oxcf.play_alternate &&
-          (!(cpi->use_svc && cpi->svc.number_temporal_layers == 1) ||
+          (!is_spatial_svc(cpi) ||
            cpi->oxcf.ss_play_alternate[cpi->svc.spatial_layer_id]));
 }
 
@@ -551,8 +521,8 @@ static INLINE void set_ref_ptrs(VP9_COMMON *cm, MACROBLOCKD *xd,
                                                          : 0];
 }
 
-static INLINE int get_chessboard_index(const VP9_COMMON *cm) {
-  return cm->current_video_frame % 2;
+static INLINE int get_chessboard_index(const int frame_index) {
+  return frame_index & 0x1;
 }
 
 #ifdef __cplusplus

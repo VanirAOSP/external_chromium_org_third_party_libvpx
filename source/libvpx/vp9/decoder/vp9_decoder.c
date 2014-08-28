@@ -123,8 +123,12 @@ vpx_codec_err_t vp9_copy_reference_dec(VP9Decoder *pbi,
    * later commit that adds VP9-specific controls for this functionality.
    */
   if (ref_frame_flag == VP9_LAST_FLAG) {
-    const YV12_BUFFER_CONFIG *const cfg =
-        &cm->frame_bufs[cm->ref_frame_map[0]].buf;
+    const YV12_BUFFER_CONFIG *const cfg = get_ref_frame(cm, 0);
+    if (cfg == NULL) {
+      vpx_internal_error(&cm->error, VPX_CODEC_ERROR,
+                         "No 'last' reference frame");
+      return VPX_CODEC_ERROR;
+    }
     if (!equal_dimensions(cfg, sd))
       vpx_internal_error(&cm->error, VPX_CODEC_ERROR,
                          "Incorrect buffer dimensions");
@@ -179,17 +183,6 @@ vpx_codec_err_t vp9_set_reference_dec(VP9_COMMON *cm,
   }
 
   return cm->error.error_code;
-}
-
-
-int vp9_get_reference_dec(VP9Decoder *pbi, int index, YV12_BUFFER_CONFIG **fb) {
-  VP9_COMMON *cm = &pbi->common;
-
-  if (index < 0 || index >= REF_FRAMES)
-    return -1;
-
-  *fb = &cm->frame_bufs[cm->ref_frame_map[index]].buf;
-  return 0;
 }
 
 /* If any buffer updating is signaled it should be done here. */
@@ -320,4 +313,68 @@ int vp9_get_raw_frame(VP9Decoder *pbi, YV12_BUFFER_CONFIG *sd,
 #endif /*!CONFIG_POSTPROC*/
   vp9_clear_system_state();
   return ret;
+}
+
+vpx_codec_err_t vp9_parse_superframe_index(const uint8_t *data,
+                                           size_t data_sz,
+                                           uint32_t sizes[8], int *count,
+                                           vpx_decrypt_cb decrypt_cb,
+                                           void *decrypt_state) {
+  // A chunk ending with a byte matching 0xc0 is an invalid chunk unless
+  // it is a super frame index. If the last byte of real video compression
+  // data is 0xc0 the encoder must add a 0 byte. If we have the marker but
+  // not the associated matching marker byte at the front of the index we have
+  // an invalid bitstream and need to return an error.
+
+  uint8_t marker;
+
+  assert(data_sz);
+  marker = read_marker(decrypt_cb, decrypt_state, data + data_sz - 1);
+  *count = 0;
+
+  if ((marker & 0xe0) == 0xc0) {
+    const uint32_t frames = (marker & 0x7) + 1;
+    const uint32_t mag = ((marker >> 3) & 0x3) + 1;
+    const size_t index_sz = 2 + mag * frames;
+
+    // This chunk is marked as having a superframe index but doesn't have
+    // enough data for it, thus it's an invalid superframe index.
+    if (data_sz < index_sz)
+      return VPX_CODEC_CORRUPT_FRAME;
+
+    {
+      const uint8_t marker2 = read_marker(decrypt_cb, decrypt_state,
+                                          data + data_sz - index_sz);
+
+      // This chunk is marked as having a superframe index but doesn't have
+      // the matching marker byte at the front of the index therefore it's an
+      // invalid chunk.
+      if (marker != marker2)
+        return VPX_CODEC_CORRUPT_FRAME;
+    }
+
+    {
+      // Found a valid superframe index.
+      uint32_t i, j;
+      const uint8_t *x = &data[data_sz - index_sz + 1];
+
+      // Frames has a maximum of 8 and mag has a maximum of 4.
+      uint8_t clear_buffer[32];
+      assert(sizeof(clear_buffer) >= frames * mag);
+      if (decrypt_cb) {
+        decrypt_cb(decrypt_state, x, clear_buffer, frames * mag);
+        x = clear_buffer;
+      }
+
+      for (i = 0; i < frames; ++i) {
+        uint32_t this_sz = 0;
+
+        for (j = 0; j < mag; ++j)
+          this_sz |= (*x++) << (j * 8);
+        sizes[i] = this_sz;
+      }
+      *count = frames;
+    }
+  }
+  return VPX_CODEC_OK;
 }

@@ -63,7 +63,8 @@ typedef enum {
 typedef enum {
   NOT_IN_USE = 0,
   RELAXED_NEIGHBORING_MIN_MAX = 1,
-  STRICT_NEIGHBORING_MIN_MAX = 2
+  CONSTRAIN_NEIGHBORING_MIN_MAX = 2,
+  STRICT_NEIGHBORING_MIN_MAX = 3
 } AUTO_MIN_MAX_MODE;
 
 typedef enum {
@@ -286,6 +287,12 @@ typedef struct SPEED_FEATURES {
   // Chessboard pattern prediction filter type search
   int cb_pred_filter_search;
 
+  int cb_partition_search;
+
+  int motion_field_mode_search;
+
+  int alt_ref_search_fp;
+
   // Fast quantization process path
   int use_quant_fp;
 
@@ -304,9 +311,6 @@ typedef struct SPEED_FEATURES {
   // The heuristics selected are based on  flags
   // defined in the MODE_SEARCH_SKIP_HEURISTICS enum
   unsigned int mode_search_skip_flags;
-
-  // A source variance threshold below which the split mode is disabled
-  unsigned int disable_split_var_thresh;
 
   // A source variance threshold below which filter search is disabled
   // Choose a very large value (UINT_MAX) to use 8-tap always
@@ -372,6 +376,10 @@ typedef struct SPEED_FEATURES {
 
   // default interp filter choice
   INTERP_FILTER default_interp_filter;
+
+  // Early termination in transform size search, which only applies while
+  // tx_size_search_method is USE_FULL_RD.
+  int tx_size_search_breakout;
 } SPEED_FEATURES;
 
 struct VP9_COMP;

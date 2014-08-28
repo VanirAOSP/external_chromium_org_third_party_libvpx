@@ -78,6 +78,8 @@ LOCAL_SRC_FILES := \
 	third_party/libvpx/source/libvpx/vp8/decoder/threading.c \
 	third_party/libvpx/source/libvpx/vp8/encoder/arm/dct_arm.c \
 	third_party/libvpx/source/libvpx/vp8/encoder/arm/neon/denoising_neon.c \
+	third_party/libvpx/source/libvpx/vp8/encoder/arm/neon/subtract_neon.c \
+	third_party/libvpx/source/libvpx/vp8/encoder/arm/neon/vp8_shortwalsh4x4_neon.c \
 	third_party/libvpx/source/libvpx/vp8/encoder/arm/quantize_arm.c \
 	third_party/libvpx/source/libvpx/vp8/encoder/bitstream.c \
 	third_party/libvpx/source/libvpx/vp8/encoder/boolhuff.c \
@@ -136,7 +138,11 @@ LOCAL_SRC_FILES := \
 	third_party/libvpx/source/libvpx/vp9/decoder/vp9_dthread.c \
 	third_party/libvpx/source/libvpx/vp9/decoder/vp9_read_bit_buffer.c \
 	third_party/libvpx/source/libvpx/vp9/decoder/vp9_reader.c \
+	third_party/libvpx/source/libvpx/vp9/encoder/arm/neon/vp9_dct_neon.c \
+	third_party/libvpx/source/libvpx/vp9/encoder/arm/neon/vp9_quantize_neon.c \
 	third_party/libvpx/source/libvpx/vp9/encoder/arm/neon/vp9_sad_neon.c \
+	third_party/libvpx/source/libvpx/vp9/encoder/arm/neon/vp9_subtract_neon.c \
+	third_party/libvpx/source/libvpx/vp9/encoder/arm/neon/vp9_variance_neon.c \
 	third_party/libvpx/source/libvpx/vp9/encoder/vp9_aq_complexity.c \
 	third_party/libvpx/source/libvpx/vp9/encoder/vp9_aq_cyclicrefresh.c \
 	third_party/libvpx/source/libvpx/vp9/encoder/vp9_aq_variance.c \

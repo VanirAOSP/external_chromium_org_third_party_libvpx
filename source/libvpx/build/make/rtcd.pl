@@ -3,7 +3,7 @@
 no strict 'refs';
 use warnings;
 use Getopt::Long;
-Getopt::Long::Configure("auto_help");
+Getopt::Long::Configure("auto_help") if $Getopt::Long::VERSION > 2.32;
 
 my %ALL_FUNCS = ();
 my @ALL_ARCHS;
@@ -365,13 +365,13 @@ if ($opts{arch} eq 'x86') {
   @REQUIRES = filter(keys %required ? keys %required : qw/mmx sse sse2/);
   &require(@REQUIRES);
   x86;
-} elsif ($opts{arch} eq 'mips32') {
-  @ALL_ARCHS = filter(qw/mips32/);
+} elsif ($opts{arch} eq 'mips32' || $opts{arch} eq 'mips64') {
+  @ALL_ARCHS = filter("$opts{arch}");
   open CONFIG_FILE, $opts{config} or
     die "Error opening config file '$opts{config}': $!\n";
   while (<CONFIG_FILE>) {
     if (/HAVE_DSPR2=yes/) {
-      @ALL_ARCHS = filter(qw/mips32 dspr2/);
+      @ALL_ARCHS = filter("$opts{arch}", qw/dspr2/);
       last;
     }
   }
@@ -385,6 +385,8 @@ if ($opts{arch} eq 'x86') {
   arm;
 } elsif ($opts{arch} eq 'armv7') {
   @ALL_ARCHS = filter(qw/edsp media neon_asm neon/);
+  @REQUIRES = filter(keys %required ? keys %required : qw/media/);
+  &require(@REQUIRES);
   arm;
 } elsif ($opts{arch} eq 'armv8') {
   @ALL_ARCHS = filter(qw/neon/);
