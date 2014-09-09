@@ -25,8 +25,7 @@ GYP_COPIED_SOURCE_ORIGIN_DIRS :=
 LOCAL_SRC_FILES := \
 	third_party/libvpx/source/libvpx/vp8/common/x86/idct_blk_mmx.c \
 	third_party/libvpx/source/libvpx/vp8/common/x86/variance_mmx.c \
-	third_party/libvpx/source/libvpx/vp8/encoder/x86/vp8_enc_stubs_mmx.c \
-	third_party/libvpx/source/libvpx/vp9/encoder/x86/vp9_variance_mmx.c
+	third_party/libvpx/source/libvpx/vp8/encoder/x86/vp8_enc_stubs_mmx.c
 
 
 # Flags passed to both C and C++ files.

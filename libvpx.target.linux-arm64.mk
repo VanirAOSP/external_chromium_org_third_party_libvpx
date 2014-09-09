@@ -34,13 +34,20 @@ LOCAL_SRC_FILES := \
 	third_party/libvpx/source/libvpx/vp8/common/arm/neon/dc_only_idct_add_neon.c \
 	third_party/libvpx/source/libvpx/vp8/common/arm/neon/dequant_idct_neon.c \
 	third_party/libvpx/source/libvpx/vp8/common/arm/neon/dequantizeb_neon.c \
+	third_party/libvpx/source/libvpx/vp8/common/arm/neon/idct_blk_neon.c \
+	third_party/libvpx/source/libvpx/vp8/common/arm/neon/idct_dequant_0_2x_neon.c \
+	third_party/libvpx/source/libvpx/vp8/common/arm/neon/idct_dequant_full_2x_neon.c \
 	third_party/libvpx/source/libvpx/vp8/common/arm/neon/iwalsh_neon.c \
+	third_party/libvpx/source/libvpx/vp8/common/arm/neon/loopfilter_neon.c \
 	third_party/libvpx/source/libvpx/vp8/common/arm/neon/loopfiltersimplehorizontaledge_neon.c \
+	third_party/libvpx/source/libvpx/vp8/common/arm/neon/loopfiltersimpleverticaledge_neon.c \
 	third_party/libvpx/source/libvpx/vp8/common/arm/neon/mbloopfilter_neon.c \
+	third_party/libvpx/source/libvpx/vp8/common/arm/neon/reconintra_neon.c \
 	third_party/libvpx/source/libvpx/vp8/common/arm/neon/sad_neon.c \
 	third_party/libvpx/source/libvpx/vp8/common/arm/neon/shortidct4x4llm_neon.c \
 	third_party/libvpx/source/libvpx/vp8/common/arm/neon/sixtappredict_neon.c \
 	third_party/libvpx/source/libvpx/vp8/common/arm/neon/variance_neon.c \
+	third_party/libvpx/source/libvpx/vp8/common/arm/neon/vp8_subpixelvariance_neon.c \
 	third_party/libvpx/source/libvpx/vp8/common/arm/variance_arm.c \
 	third_party/libvpx/source/libvpx/vp8/common/blockd.c \
 	third_party/libvpx/source/libvpx/vp8/common/debugmodes.c \
@@ -78,6 +85,7 @@ LOCAL_SRC_FILES := \
 	third_party/libvpx/source/libvpx/vp8/decoder/threading.c \
 	third_party/libvpx/source/libvpx/vp8/encoder/arm/dct_arm.c \
 	third_party/libvpx/source/libvpx/vp8/encoder/arm/neon/denoising_neon.c \
+	third_party/libvpx/source/libvpx/vp8/encoder/arm/neon/shortfdct_neon.c \
 	third_party/libvpx/source/libvpx/vp8/encoder/arm/neon/subtract_neon.c \
 	third_party/libvpx/source/libvpx/vp8/encoder/arm/neon/vp8_shortwalsh4x4_neon.c \
 	third_party/libvpx/source/libvpx/vp8/encoder/arm/quantize_arm.c \
