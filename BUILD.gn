@@ -127,6 +127,10 @@ if (cpu_arch == "x86" || cpu_arch == "x64") {
      "//third_party/libvpx/source/libvpx",
       target_gen_dir
     ]
+    deps = [
+      ":gen_asm_offsets_vp8",
+      ":gen_asm_offsets_scale",
+    ]
   }
 }
 
@@ -170,14 +174,51 @@ static_library("libvpx_intrinsics_sse4_1") {
   }
 }
 
-# TOOD(hclam): NEON intrinsics are not building on GN yet.
-#if (cpu_arch_full == "arm-neon-cpu-detect") {
-#  static_library("libvpx_intrinsics_neon") {
-#    configs += [ ":libvpx_config" ]
-#    cflags = [ "-mfpu=neon", "-mfloat-abi=softfp" ]
-#    sources = libvpx_srcs_arm_neon_cpu_detect_neon
-#  }
-#}
+if (cpu_arch_full == "arm-neon-cpu-detect") {
+  static_library("libvpx_intrinsics_neon") {
+    configs -= [ "//build/config/compiler:compiler_arm_fpu" ]
+    configs += [ ":libvpx_config" ]
+    cflags = [ "-mfpu=neon" ]
+    sources = libvpx_srcs_arm_neon_cpu_detect_neon
+  }
+}
+
+# Converts ARM assembly files to GAS style.
+if (cpu_arch == "arm") {
+  action_foreach("convert_arm_assembly") {
+    script = "//third_party/libvpx/run_perl.py"
+    if (cpu_arch_full == "arm-neon") {
+      sources = libvpx_srcs_arm_neon_assembly
+    } else if (cpu_arch_full == "arm-neon-cpu-detect") {
+      sources = libvpx_srcs_arm_neon_cpu_detect_assembly
+    } else {
+      sources = libvpx_srcs_arm_assembly
+    }
+    outputs = [ "$target_gen_dir/{{source_name_part}}.S" ]
+    args = [
+      "-s",
+      rebase_path("//third_party/libvpx/source/libvpx/build/make/ads2gas.pl",
+                  root_build_dir),
+      "-i", "{{source}}",
+      "-o", rebase_path("$target_gen_dir/{{source_name_part}}.S")
+    ]
+  }
+
+  static_library("libvpx_assembly_arm") {
+    sources = get_target_outputs(":convert_arm_assembly")
+    configs -= [ "//build/config/compiler:compiler_arm_fpu" ]
+    configs += [ ":libvpx_config" ]
+    if (cpu_arch_full == "arm-neon" ||
+        cpu_arch_full == "arm-neon-cpu-detect") {
+      cflags = [ "-mfpu=neon" ]
+    }
+    deps = [
+      ":convert_arm_assembly",
+      ":gen_asm_offsets_vp8",
+      ":gen_asm_offsets_scale",
+    ]
+  }
+}
 
 static_library("libvpx") {
   if (!is_debug && is_win && is_official_build) {
@@ -206,11 +247,8 @@ static_library("libvpx") {
   } else if (cpu_arch == "arm64") {
     sources = libvpx_srcs_arm64
   }
-
-  deps = [
-    ":gen_asm_offsets_vp8",
-  ]
   configs += [ ":libvpx_config" ]
+  deps = []
   if (cpu_arch == "x86" || (cpu_arch == "x64" && !is_msan)) {
     deps += [
       ":libvpx_yasm",
@@ -220,14 +258,13 @@ static_library("libvpx") {
       ":libvpx_intrinsics_sse4_1",
     ]
   }
+  if (cpu_arch_full == "arm-neon-cpu-detect") {
+    deps += [ ":libvpx_intrinsics_neon" ]
+  }
   if (is_android) {
-    if (cpu_arch == "arm") {
-      deps += [
-# TODO(hclam): GN build doesn't compile NEON intrinsics because
-# -mfpu=vfpv3-d16 needs to be removed.
-#        ":libvpx_intrinsics_neon"
-      ]
-    }
     deps += [ "//third_party/android_tools:cpu_features" ]
+  }
+  if (cpu_arch == "arm") {
+    deps += [ ":libvpx_assembly_arm" ]
   }
 }
