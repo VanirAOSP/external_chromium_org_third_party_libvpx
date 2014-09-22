@@ -48,6 +48,7 @@ MY_CFLAGS_Debug := \
 	-Wno-deprecated-register \
 	-Os \
 	-g \
+	-gdwarf-4 \
 	-fdata-sections \
 	-ffunction-sections \
 	-fomit-frame-pointer \
