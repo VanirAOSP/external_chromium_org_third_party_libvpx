@@ -5,7 +5,6 @@ include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := STATIC_LIBRARIES
 LOCAL_MODULE := third_party_libvpx_libvpx_gyp
 LOCAL_MODULE_SUFFIX := .a
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_TARGET_ARCH := $(TARGET_$(GYP_VAR_PREFIX)ARCH)
 gyp_intermediate_dir := $(call local-intermediates-dir,,$(GYP_VAR_PREFIX))
 gyp_shared_intermediate_dir := $(call intermediates-dir-for,GYP,shared,,,$(GYP_VAR_PREFIX))
@@ -17,7 +16,7 @@ GYP_TARGET_DEPENDENCIES := \
 
 
 ### Generated for rule "third_party_libvpx_libvpx_gyp_libvpx_target_assemble":
-# "{'inputs': ['$(gyp_shared_intermediate_dir)/yasm'], 'extension': 'asm', 'process_outputs_as_sources': '1', 'outputs': ['$(gyp_shared_intermediate_dir)/third_party/libvpx/%(INPUT_ROOT)s.o'], 'rule_name': 'assemble', 'rule_sources': ['source/libvpx/vp8/common/x86/dequantize_mmx.asm', 'source/libvpx/vp8/common/x86/idctllm_mmx.asm', 'source/libvpx/vp8/common/x86/idctllm_sse2.asm', 'source/libvpx/vp8/common/x86/iwalsh_mmx.asm', 'source/libvpx/vp8/common/x86/iwalsh_sse2.asm', 'source/libvpx/vp8/common/x86/loopfilter_block_sse2_x86_64.asm', 'source/libvpx/vp8/common/x86/loopfilter_mmx.asm', 'source/libvpx/vp8/common/x86/loopfilter_sse2.asm', 'source/libvpx/vp8/common/x86/mfqe_sse2.asm', 'source/libvpx/vp8/common/x86/postproc_mmx.asm', 'source/libvpx/vp8/common/x86/postproc_sse2.asm', 'source/libvpx/vp8/common/x86/recon_mmx.asm', 'source/libvpx/vp8/common/x86/recon_sse2.asm', 'source/libvpx/vp8/common/x86/sad_mmx.asm', 'source/libvpx/vp8/common/x86/sad_sse2.asm', 'source/libvpx/vp8/common/x86/sad_sse3.asm', 'source/libvpx/vp8/common/x86/sad_sse4.asm', 'source/libvpx/vp8/common/x86/sad_ssse3.asm', 'source/libvpx/vp8/common/x86/subpixel_mmx.asm', 'source/libvpx/vp8/common/x86/subpixel_sse2.asm', 'source/libvpx/vp8/common/x86/subpixel_ssse3.asm', 'source/libvpx/vp8/common/x86/variance_impl_mmx.asm', 'source/libvpx/vp8/common/x86/variance_impl_sse2.asm', 'source/libvpx/vp8/common/x86/variance_impl_ssse3.asm', 'source/libvpx/vp8/encoder/x86/dct_mmx.asm', 'source/libvpx/vp8/encoder/x86/dct_sse2.asm', 'source/libvpx/vp8/encoder/x86/encodeopt.asm', 'source/libvpx/vp8/encoder/x86/fwalsh_sse2.asm', 'source/libvpx/vp8/encoder/x86/quantize_mmx.asm', 'source/libvpx/vp8/encoder/x86/ssim_opt_x86_64.asm', 'source/libvpx/vp8/encoder/x86/subtract_mmx.asm', 'source/libvpx/vp8/encoder/x86/subtract_sse2.asm', 'source/libvpx/vp9/common/x86/vp9_copy_sse2.asm', 'source/libvpx/vp9/common/x86/vp9_idct_ssse3_x86_64.asm', 'source/libvpx/vp9/common/x86/vp9_intrapred_sse2.asm', 'source/libvpx/vp9/common/x86/vp9_intrapred_ssse3.asm', 'source/libvpx/vp9/common/x86/vp9_loopfilter_mmx.asm', 'source/libvpx/vp9/common/x86/vp9_subpixel_8t_sse2.asm', 'source/libvpx/vp9/common/x86/vp9_subpixel_8t_ssse3.asm', 'source/libvpx/vp9/common/x86/vp9_subpixel_bilinear_sse2.asm', 'source/libvpx/vp9/common/x86/vp9_subpixel_bilinear_ssse3.asm', 'source/libvpx/vp9/encoder/x86/vp9_dct_mmx.asm', 'source/libvpx/vp9/encoder/x86/vp9_dct_ssse3_x86_64.asm', 'source/libvpx/vp9/encoder/x86/vp9_error_sse2.asm', 'source/libvpx/vp9/encoder/x86/vp9_quantize_ssse3_x86_64.asm', 'source/libvpx/vp9/encoder/x86/vp9_sad4d_sse2.asm', 'source/libvpx/vp9/encoder/x86/vp9_sad_mmx.asm', 'source/libvpx/vp9/encoder/x86/vp9_sad_sse2.asm', 'source/libvpx/vp9/encoder/x86/vp9_sad_sse3.asm', 'source/libvpx/vp9/encoder/x86/vp9_sad_sse4.asm', 'source/libvpx/vp9/encoder/x86/vp9_sad_ssse3.asm', 'source/libvpx/vp9/encoder/x86/vp9_ssim_opt_x86_64.asm', 'source/libvpx/vp9/encoder/x86/vp9_subpel_variance.asm', 'source/libvpx/vp9/encoder/x86/vp9_subtract_sse2.asm', 'source/libvpx/vp9/encoder/x86/vp9_temporal_filter_apply_sse2.asm', 'source/libvpx/vp9/encoder/x86/vp9_variance_impl_mmx.asm', 'source/libvpx/vp9/encoder/x86/vp9_variance_impl_sse2.asm', 'source/libvpx/vpx_ports/emms.asm', 'source/libvpx/vpx_ports/x86_abi_support.asm'], 'action': ['$(gyp_shared_intermediate_dir)/yasm', '-D', 'CHROMIUM', '-I', 'source/config/linux/x64', '-I', 'source/config', '-I', 'source/libvpx', '-I', '$(gyp_shared_intermediate_dir)/third_party/libvpx', '-D', '__ANDROID__', '-DPIC', '-felf64', '-m', 'amd64', '-o', '$(gyp_shared_intermediate_dir)/third_party/libvpx/%(INPUT_ROOT)s.o', '$(RULE_SOURCES)'], 'message': 'Compile assembly $(RULE_SOURCES)'}":
+# "{'inputs': ['$(gyp_shared_intermediate_dir)/yasm'], 'extension': 'asm', 'process_outputs_as_sources': '1', 'outputs': ['$(gyp_shared_intermediate_dir)/third_party/libvpx/%(INPUT_ROOT)s.o'], 'rule_name': 'assemble', 'rule_sources': ['source/libvpx/vp8/common/x86/dequantize_mmx.asm', 'source/libvpx/vp8/common/x86/idctllm_mmx.asm', 'source/libvpx/vp8/common/x86/idctllm_sse2.asm', 'source/libvpx/vp8/common/x86/iwalsh_mmx.asm', 'source/libvpx/vp8/common/x86/iwalsh_sse2.asm', 'source/libvpx/vp8/common/x86/loopfilter_block_sse2_x86_64.asm', 'source/libvpx/vp8/common/x86/loopfilter_mmx.asm', 'source/libvpx/vp8/common/x86/loopfilter_sse2.asm', 'source/libvpx/vp8/common/x86/mfqe_sse2.asm', 'source/libvpx/vp8/common/x86/postproc_mmx.asm', 'source/libvpx/vp8/common/x86/postproc_sse2.asm', 'source/libvpx/vp8/common/x86/recon_mmx.asm', 'source/libvpx/vp8/common/x86/recon_sse2.asm', 'source/libvpx/vp8/common/x86/sad_mmx.asm', 'source/libvpx/vp8/common/x86/sad_sse2.asm', 'source/libvpx/vp8/common/x86/sad_sse3.asm', 'source/libvpx/vp8/common/x86/sad_sse4.asm', 'source/libvpx/vp8/common/x86/sad_ssse3.asm', 'source/libvpx/vp8/common/x86/subpixel_mmx.asm', 'source/libvpx/vp8/common/x86/subpixel_sse2.asm', 'source/libvpx/vp8/common/x86/subpixel_ssse3.asm', 'source/libvpx/vp8/common/x86/variance_impl_mmx.asm', 'source/libvpx/vp8/common/x86/variance_impl_sse2.asm', 'source/libvpx/vp8/common/x86/variance_impl_ssse3.asm', 'source/libvpx/vp8/encoder/x86/dct_mmx.asm', 'source/libvpx/vp8/encoder/x86/dct_sse2.asm', 'source/libvpx/vp8/encoder/x86/encodeopt.asm', 'source/libvpx/vp8/encoder/x86/fwalsh_sse2.asm', 'source/libvpx/vp8/encoder/x86/quantize_mmx.asm', 'source/libvpx/vp8/encoder/x86/ssim_opt_x86_64.asm', 'source/libvpx/vp8/encoder/x86/subtract_mmx.asm', 'source/libvpx/vp8/encoder/x86/subtract_sse2.asm', 'source/libvpx/vp9/common/x86/vp9_copy_sse2.asm', 'source/libvpx/vp9/common/x86/vp9_idct_ssse3_x86_64.asm', 'source/libvpx/vp9/common/x86/vp9_intrapred_sse2.asm', 'source/libvpx/vp9/common/x86/vp9_intrapred_ssse3.asm', 'source/libvpx/vp9/common/x86/vp9_loopfilter_mmx.asm', 'source/libvpx/vp9/common/x86/vp9_subpixel_8t_sse2.asm', 'source/libvpx/vp9/common/x86/vp9_subpixel_8t_ssse3.asm', 'source/libvpx/vp9/common/x86/vp9_subpixel_bilinear_sse2.asm', 'source/libvpx/vp9/common/x86/vp9_subpixel_bilinear_ssse3.asm', 'source/libvpx/vp9/encoder/x86/vp9_dct_mmx.asm', 'source/libvpx/vp9/encoder/x86/vp9_dct_ssse3_x86_64.asm', 'source/libvpx/vp9/encoder/x86/vp9_error_sse2.asm', 'source/libvpx/vp9/encoder/x86/vp9_quantize_ssse3_x86_64.asm', 'source/libvpx/vp9/encoder/x86/vp9_sad4d_sse2.asm', 'source/libvpx/vp9/encoder/x86/vp9_sad_sse2.asm', 'source/libvpx/vp9/encoder/x86/vp9_sad_sse3.asm', 'source/libvpx/vp9/encoder/x86/vp9_sad_sse4.asm', 'source/libvpx/vp9/encoder/x86/vp9_sad_ssse3.asm', 'source/libvpx/vp9/encoder/x86/vp9_ssim_opt_x86_64.asm', 'source/libvpx/vp9/encoder/x86/vp9_subpel_variance.asm', 'source/libvpx/vp9/encoder/x86/vp9_subtract_sse2.asm', 'source/libvpx/vp9/encoder/x86/vp9_temporal_filter_apply_sse2.asm', 'source/libvpx/vpx_ports/emms.asm', 'source/libvpx/vpx_ports/x86_abi_support.asm'], 'action': ['$(gyp_shared_intermediate_dir)/yasm', '-D', 'CHROMIUM', '-I', 'source/config/linux/x64', '-I', 'source/config', '-I', 'source/libvpx', '-I', '$(gyp_shared_intermediate_dir)/third_party/libvpx', '-D', '__ANDROID__', '-DPIC', '-felf64', '-m', 'amd64', '-o', '$(gyp_shared_intermediate_dir)/third_party/libvpx/%(INPUT_ROOT)s.o', '$(RULE_SOURCES)'], 'message': 'Compile assembly $(RULE_SOURCES)'}":
 $(gyp_shared_intermediate_dir)/third_party/libvpx/dequantize_mmx.o: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/dequantize_mmx.o: gyp_var_prefix := $(GYP_VAR_PREFIX)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/dequantize_mmx.o: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -432,15 +431,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_sad4d_sse2.o: $(LOCAL_PATH
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/x64 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -D __ANDROID__ -DPIC -felf64 -m amd64 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_sad4d_sse2.o" source/libvpx/vp9/encoder/x86/vp9_sad4d_sse2.asm
 
 
-$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_sad_mmx.o: gyp_local_path := $(LOCAL_PATH)
-$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_sad_mmx.o: gyp_var_prefix := $(GYP_VAR_PREFIX)
-$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_sad_mmx.o: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
-$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_sad_mmx.o: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
-$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_sad_mmx.o: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
-$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_sad_mmx.o: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp9/encoder/x86/vp9_sad_mmx.asm $(gyp_shared_intermediate_dir)/yasm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/x64 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -D __ANDROID__ -DPIC -felf64 -m amd64 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_sad_mmx.o" source/libvpx/vp9/encoder/x86/vp9_sad_mmx.asm
-
-
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_sad_sse2.o: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_sad_sse2.o: gyp_var_prefix := $(GYP_VAR_PREFIX)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_sad_sse2.o: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -513,24 +503,6 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_temporal_filter_apply_sse2
 	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/x64 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -D __ANDROID__ -DPIC -felf64 -m amd64 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_temporal_filter_apply_sse2.o" source/libvpx/vp9/encoder/x86/vp9_temporal_filter_apply_sse2.asm
 
 
-$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_variance_impl_mmx.o: gyp_local_path := $(LOCAL_PATH)
-$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_variance_impl_mmx.o: gyp_var_prefix := $(GYP_VAR_PREFIX)
-$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_variance_impl_mmx.o: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
-$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_variance_impl_mmx.o: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
-$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_variance_impl_mmx.o: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
-$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_variance_impl_mmx.o: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp9/encoder/x86/vp9_variance_impl_mmx.asm $(gyp_shared_intermediate_dir)/yasm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/x64 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -D __ANDROID__ -DPIC -felf64 -m amd64 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_variance_impl_mmx.o" source/libvpx/vp9/encoder/x86/vp9_variance_impl_mmx.asm
-
-
-$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_variance_impl_sse2.o: gyp_local_path := $(LOCAL_PATH)
-$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_variance_impl_sse2.o: gyp_var_prefix := $(GYP_VAR_PREFIX)
-$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_variance_impl_sse2.o: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
-$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_variance_impl_sse2.o: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
-$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_variance_impl_sse2.o: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
-$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_variance_impl_sse2.o: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp9/encoder/x86/vp9_variance_impl_sse2.asm $(gyp_shared_intermediate_dir)/yasm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; "$(gyp_shared_intermediate_dir)/yasm" -D CHROMIUM -I source/config/linux/x64 -I source/config -I source/libvpx -I "$(gyp_shared_intermediate_dir)/third_party/libvpx" -D __ANDROID__ -DPIC -felf64 -m amd64 -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_variance_impl_sse2.o" source/libvpx/vp9/encoder/x86/vp9_variance_impl_sse2.asm
-
-
 $(gyp_shared_intermediate_dir)/third_party/libvpx/emms.o: gyp_local_path := $(LOCAL_PATH)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/emms.o: gyp_var_prefix := $(GYP_VAR_PREFIX)
 $(gyp_shared_intermediate_dir)/third_party/libvpx/emms.o: gyp_intermediate_dir := $(abspath $(gyp_intermediate_dir))
@@ -597,7 +569,6 @@ GYP_GENERATED_OUTPUTS := \
 	$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_error_sse2.o \
 	$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_quantize_ssse3_x86_64.o \
 	$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_sad4d_sse2.o \
-	$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_sad_mmx.o \
 	$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_sad_sse2.o \
 	$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_sad_sse3.o \
 	$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_sad_sse4.o \
@@ -606,8 +577,6 @@ GYP_GENERATED_OUTPUTS := \
 	$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_subpel_variance.o \
 	$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_subtract_sse2.o \
 	$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_temporal_filter_apply_sse2.o \
-	$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_variance_impl_mmx.o \
-	$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_variance_impl_sse2.o \
 	$(gyp_shared_intermediate_dir)/third_party/libvpx/emms.o \
 	$(gyp_shared_intermediate_dir)/third_party/libvpx/x86_abi_support.o
 
@@ -661,7 +630,6 @@ LOCAL_GENERATED_SOURCES := \
 	$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_error_sse2.o \
 	$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_quantize_ssse3_x86_64.o \
 	$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_sad4d_sse2.o \
-	$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_sad_mmx.o \
 	$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_sad_sse2.o \
 	$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_sad_sse3.o \
 	$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_sad_sse4.o \
@@ -670,8 +638,6 @@ LOCAL_GENERATED_SOURCES := \
 	$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_subpel_variance.o \
 	$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_subtract_sse2.o \
 	$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_temporal_filter_apply_sse2.o \
-	$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_variance_impl_mmx.o \
-	$(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_variance_impl_sse2.o \
 	$(gyp_shared_intermediate_dir)/third_party/libvpx/emms.o \
 	$(gyp_shared_intermediate_dir)/third_party/libvpx/x86_abi_support.o
 
@@ -827,7 +793,6 @@ LOCAL_SRC_FILES := \
 MY_CFLAGS_Debug := \
 	-fstack-protector \
 	--param=ssp-buffer-size=4 \
-	-fno-exceptions \
 	-fno-strict-aliasing \
 	-Wno-unused-parameter \
 	-Wno-missing-field-initializers \
@@ -856,6 +821,7 @@ MY_CFLAGS_Debug := \
 	-Wno-sequence-point \
 	-Os \
 	-g \
+	-gdwarf-4 \
 	-fdata-sections \
 	-ffunction-sections \
 	-fomit-frame-pointer \
@@ -879,11 +845,13 @@ MY_DEFS_Debug := \
 	'-DENABLE_PRINTING=1' \
 	'-DENABLE_MANAGED_USERS=1' \
 	'-DDATA_REDUCTION_FALLBACK_HOST="http://compress.googlezip.net:80/"' \
-	'-DDATA_REDUCTION_DEV_HOST="http://proxy-dev.googlezip.net:80/"' \
+	'-DDATA_REDUCTION_DEV_HOST="https://proxy-dev.googlezip.net:443/"' \
+	'-DDATA_REDUCTION_DEV_FALLBACK_HOST="http://proxy-dev.googlezip.net:80/"' \
 	'-DSPDY_PROXY_AUTH_ORIGIN="https://proxy.googlezip.net:443/"' \
 	'-DDATA_REDUCTION_PROXY_PROBE_URL="http://check.googlezip.net/connect"' \
 	'-DDATA_REDUCTION_PROXY_WARMUP_URL="http://www.gstatic.com/generate_204"' \
 	'-DVIDEO_HOLE=1' \
+	'-DENABLE_LOAD_COMPLETION_HACKS=1' \
 	'-DUSE_OPENSSL=1' \
 	'-DUSE_OPENSSL_CERTS=1' \
 	'-DANDROID' \
@@ -913,6 +881,7 @@ LOCAL_C_INCLUDES_Debug := \
 
 # Flags passed to only C++ (and not C) files.
 LOCAL_CPPFLAGS_Debug := \
+	-fno-exceptions \
 	-fno-rtti \
 	-fno-threadsafe-statics \
 	-fvisibility-inlines-hidden \
@@ -929,7 +898,6 @@ LOCAL_CPPFLAGS_Debug := \
 MY_CFLAGS_Release := \
 	-fstack-protector \
 	--param=ssp-buffer-size=4 \
-	-fno-exceptions \
 	-fno-strict-aliasing \
 	-Wno-unused-parameter \
 	-Wno-missing-field-initializers \
@@ -981,11 +949,13 @@ MY_DEFS_Release := \
 	'-DENABLE_PRINTING=1' \
 	'-DENABLE_MANAGED_USERS=1' \
 	'-DDATA_REDUCTION_FALLBACK_HOST="http://compress.googlezip.net:80/"' \
-	'-DDATA_REDUCTION_DEV_HOST="http://proxy-dev.googlezip.net:80/"' \
+	'-DDATA_REDUCTION_DEV_HOST="https://proxy-dev.googlezip.net:443/"' \
+	'-DDATA_REDUCTION_DEV_FALLBACK_HOST="http://proxy-dev.googlezip.net:80/"' \
 	'-DSPDY_PROXY_AUTH_ORIGIN="https://proxy.googlezip.net:443/"' \
 	'-DDATA_REDUCTION_PROXY_PROBE_URL="http://check.googlezip.net/connect"' \
 	'-DDATA_REDUCTION_PROXY_WARMUP_URL="http://www.gstatic.com/generate_204"' \
 	'-DVIDEO_HOLE=1' \
+	'-DENABLE_LOAD_COMPLETION_HACKS=1' \
 	'-DUSE_OPENSSL=1' \
 	'-DUSE_OPENSSL_CERTS=1' \
 	'-DANDROID' \
@@ -1015,6 +985,7 @@ LOCAL_C_INCLUDES_Release := \
 
 # Flags passed to only C++ (and not C) files.
 LOCAL_CPPFLAGS_Release := \
+	-fno-exceptions \
 	-fno-rtti \
 	-fno-threadsafe-statics \
 	-fvisibility-inlines-hidden \
@@ -1032,46 +1003,6 @@ LOCAL_C_INCLUDES := $(GYP_COPIED_SOURCE_ORIGIN_DIRS) $(LOCAL_C_INCLUDES_$(GYP_CO
 LOCAL_CPPFLAGS := $(LOCAL_CPPFLAGS_$(GYP_CONFIGURATION))
 LOCAL_ASFLAGS := $(LOCAL_CFLAGS)
 ### Rules for final target.
-
-LOCAL_LDFLAGS_Debug := \
-	-Wl,-z,now \
-	-Wl,-z,relro \
-	-Wl,--fatal-warnings \
-	-Wl,-z,noexecstack \
-	-fPIC \
-	-m64 \
-	-fuse-ld=gold \
-	-nostdlib \
-	-Wl,--no-undefined \
-	-Wl,--exclude-libs=ALL \
-	-Wl,--warn-shared-textrel \
-	-Wl,-O1 \
-	-Wl,--as-needed
-
-
-LOCAL_LDFLAGS_Release := \
-	-Wl,-z,now \
-	-Wl,-z,relro \
-	-Wl,--fatal-warnings \
-	-Wl,-z,noexecstack \
-	-fPIC \
-	-m64 \
-	-fuse-ld=gold \
-	-nostdlib \
-	-Wl,--no-undefined \
-	-Wl,--exclude-libs=ALL \
-	-Wl,-O1 \
-	-Wl,--as-needed \
-	-Wl,--gc-sections \
-	-Wl,--warn-shared-textrel
-
-
-LOCAL_LDFLAGS := $(LOCAL_LDFLAGS_$(GYP_CONFIGURATION))
-
-LOCAL_STATIC_LIBRARIES :=
-
-# Enable grouping to fix circular references
-LOCAL_GROUP_STATIC_LIBRARIES := true
 
 LOCAL_SHARED_LIBRARIES := \
 	libstlport \

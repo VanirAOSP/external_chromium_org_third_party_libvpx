@@ -1,5 +1,5 @@
 # This file is generated. Do not edit.
-# Copyright (c) 2013 The Chromium Authors. All rights reserved.
+# Copyright (c) 2014 The Chromium Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -33,13 +33,6 @@
     '<(libvpx_source)/vp8/common/arm/dequantize_arm.c',
     '<(libvpx_source)/vp8/common/arm/filter_arm.c',
     '<(libvpx_source)/vp8/common/arm/loopfilter_arm.c',
-    '<(libvpx_source)/vp8/common/arm/neon/idct_dequant_0_2x_neon.asm',
-    '<(libvpx_source)/vp8/common/arm/neon/idct_dequant_full_2x_neon.asm',
-    '<(libvpx_source)/vp8/common/arm/neon/loopfilter_neon.asm',
-    '<(libvpx_source)/vp8/common/arm/neon/loopfiltersimpleverticaledge_neon.asm',
-    '<(libvpx_source)/vp8/common/arm/neon/vp8_subpixelvariance16x16_neon.asm',
-    '<(libvpx_source)/vp8/common/arm/neon/vp8_subpixelvariance16x16s_neon.asm',
-    '<(libvpx_source)/vp8/common/arm/neon/vp8_subpixelvariance8x8_neon.asm',
     '<(libvpx_source)/vp8/common/arm/variance_arm.c',
     '<(libvpx_source)/vp8/common/blockd.c',
     '<(libvpx_source)/vp8/common/blockd.h',
@@ -118,10 +111,6 @@
     '<(libvpx_source)/vp8/encoder/arm/armv6/walsh_v6.asm',
     '<(libvpx_source)/vp8/encoder/arm/dct_arm.c',
     '<(libvpx_source)/vp8/encoder/arm/neon/fastquantizeb_neon.asm',
-    '<(libvpx_source)/vp8/encoder/arm/neon/picklpf_arm.c',
-    '<(libvpx_source)/vp8/encoder/arm/neon/shortfdct_neon.asm',
-    '<(libvpx_source)/vp8/encoder/arm/neon/vp8_memcpy_neon.asm',
-    '<(libvpx_source)/vp8/encoder/arm/neon/vp8_mse16x16_neon.asm',
     '<(libvpx_source)/vp8/encoder/arm/quantize_arm.c',
     '<(libvpx_source)/vp8/encoder/bitstream.c',
     '<(libvpx_source)/vp8/encoder/bitstream.h',

@@ -42,11 +42,11 @@
 // Use the `simple_decoder` example to decode this sample, and observe
 // the change in the image at frames 22, 33, and 44.
 
+#include <assert.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-#define VPX_CODEC_DISABLE_COMPAT 1
 #include "vpx/vp8cx.h"
 #include "vpx/vpx_encoder.h"
 
@@ -177,9 +177,10 @@ int main(int argc, char **argv) {
   memset(&info, 0, sizeof(info));
 
   encoder = get_vpx_encoder_by_name(argv[1]);
-  if (!encoder)
+  if (encoder == NULL) {
     die("Unsupported codec.");
-
+  }
+  assert(encoder != NULL);
   info.codec_fourcc = encoder->fourcc;
   info.frame_width = strtol(argv[2], NULL, 0);
   info.frame_height = strtol(argv[3], NULL, 0);
