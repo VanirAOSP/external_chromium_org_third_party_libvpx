@@ -36,7 +36,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vpx_scale_asm_offsets.asm: gyp
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vpx_scale_asm_offsets.asm: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vpx_scale_asm_offsets.asm: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vpx_scale_asm_offsets.asm: $(gyp_intermediate_dir)/vpx_scale_asm_offsets.o $(gyp_shared_intermediate_dir)/libvpx_obj_int_extract $(LOCAL_PATH)/third_party/libvpx/obj_int_extract.py $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; python ../../third_party/libvpx/obj_int_extract.py -e "$(gyp_shared_intermediate_dir)/libvpx_obj_int_extract" -f gas -b "$(gyp_intermediate_dir)/vpx_scale_asm_offsets.o" -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/vpx_scale_asm_offsets.asm"
+	@mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; python ../../third_party/libvpx/obj_int_extract.py -e "$(gyp_shared_intermediate_dir)/libvpx_obj_int_extract" -f gas -b "$(gyp_intermediate_dir)/vpx_scale_asm_offsets.o" -o "$(gyp_shared_intermediate_dir)/third_party/libvpx/vpx_scale_asm_offsets.asm"
 
 
 

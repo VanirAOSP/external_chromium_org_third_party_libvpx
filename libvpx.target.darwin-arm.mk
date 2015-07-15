@@ -23,7 +23,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/bilinearfilter_v6.S: gyp_inter
 $(gyp_shared_intermediate_dir)/third_party/libvpx/bilinearfilter_v6.S: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/bilinearfilter_v6.S: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/bilinearfilter_v6.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/armv6/bilinearfilter_v6.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/armv6/bilinearfilter_v6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/bilinearfilter_v6.S"
+	@mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/armv6/bilinearfilter_v6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/bilinearfilter_v6.S"
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/copymem16x16_v6.S: gyp_local_path := $(LOCAL_PATH)
@@ -32,7 +32,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/copymem16x16_v6.S: gyp_interme
 $(gyp_shared_intermediate_dir)/third_party/libvpx/copymem16x16_v6.S: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/copymem16x16_v6.S: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/copymem16x16_v6.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/armv6/copymem16x16_v6.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/armv6/copymem16x16_v6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/copymem16x16_v6.S"
+	@mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/armv6/copymem16x16_v6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/copymem16x16_v6.S"
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/copymem8x4_v6.S: gyp_local_path := $(LOCAL_PATH)
@@ -41,7 +41,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/copymem8x4_v6.S: gyp_intermedi
 $(gyp_shared_intermediate_dir)/third_party/libvpx/copymem8x4_v6.S: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/copymem8x4_v6.S: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/copymem8x4_v6.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/armv6/copymem8x4_v6.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/armv6/copymem8x4_v6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/copymem8x4_v6.S"
+	@mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/armv6/copymem8x4_v6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/copymem8x4_v6.S"
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/copymem8x8_v6.S: gyp_local_path := $(LOCAL_PATH)
@@ -50,7 +50,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/copymem8x8_v6.S: gyp_intermedi
 $(gyp_shared_intermediate_dir)/third_party/libvpx/copymem8x8_v6.S: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/copymem8x8_v6.S: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/copymem8x8_v6.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/armv6/copymem8x8_v6.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/armv6/copymem8x8_v6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/copymem8x8_v6.S"
+	@mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/armv6/copymem8x8_v6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/copymem8x8_v6.S"
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/dc_only_idct_add_v6.S: gyp_local_path := $(LOCAL_PATH)
@@ -59,7 +59,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/dc_only_idct_add_v6.S: gyp_int
 $(gyp_shared_intermediate_dir)/third_party/libvpx/dc_only_idct_add_v6.S: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/dc_only_idct_add_v6.S: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/dc_only_idct_add_v6.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/armv6/dc_only_idct_add_v6.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/armv6/dc_only_idct_add_v6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/dc_only_idct_add_v6.S"
+	@mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/armv6/dc_only_idct_add_v6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/dc_only_idct_add_v6.S"
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/dequant_idct_v6.S: gyp_local_path := $(LOCAL_PATH)
@@ -68,7 +68,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/dequant_idct_v6.S: gyp_interme
 $(gyp_shared_intermediate_dir)/third_party/libvpx/dequant_idct_v6.S: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/dequant_idct_v6.S: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/dequant_idct_v6.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/armv6/dequant_idct_v6.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/armv6/dequant_idct_v6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/dequant_idct_v6.S"
+	@mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/armv6/dequant_idct_v6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/dequant_idct_v6.S"
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/dequantize_v6.S: gyp_local_path := $(LOCAL_PATH)
@@ -77,7 +77,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/dequantize_v6.S: gyp_intermedi
 $(gyp_shared_intermediate_dir)/third_party/libvpx/dequantize_v6.S: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/dequantize_v6.S: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/dequantize_v6.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/armv6/dequantize_v6.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/armv6/dequantize_v6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/dequantize_v6.S"
+	@mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/armv6/dequantize_v6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/dequantize_v6.S"
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/filter_v6.S: gyp_local_path := $(LOCAL_PATH)
@@ -86,7 +86,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/filter_v6.S: gyp_intermediate_
 $(gyp_shared_intermediate_dir)/third_party/libvpx/filter_v6.S: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/filter_v6.S: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/filter_v6.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/armv6/filter_v6.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/armv6/filter_v6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/filter_v6.S"
+	@mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/armv6/filter_v6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/filter_v6.S"
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/idct_v6.S: gyp_local_path := $(LOCAL_PATH)
@@ -95,7 +95,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/idct_v6.S: gyp_intermediate_di
 $(gyp_shared_intermediate_dir)/third_party/libvpx/idct_v6.S: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/idct_v6.S: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/idct_v6.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/armv6/idct_v6.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/armv6/idct_v6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/idct_v6.S"
+	@mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/armv6/idct_v6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/idct_v6.S"
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/intra4x4_predict_v6.S: gyp_local_path := $(LOCAL_PATH)
@@ -104,7 +104,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/intra4x4_predict_v6.S: gyp_int
 $(gyp_shared_intermediate_dir)/third_party/libvpx/intra4x4_predict_v6.S: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/intra4x4_predict_v6.S: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/intra4x4_predict_v6.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/armv6/intra4x4_predict_v6.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/armv6/intra4x4_predict_v6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/intra4x4_predict_v6.S"
+	@mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/armv6/intra4x4_predict_v6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/intra4x4_predict_v6.S"
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/iwalsh_v6.S: gyp_local_path := $(LOCAL_PATH)
@@ -113,7 +113,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/iwalsh_v6.S: gyp_intermediate_
 $(gyp_shared_intermediate_dir)/third_party/libvpx/iwalsh_v6.S: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/iwalsh_v6.S: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/iwalsh_v6.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/armv6/iwalsh_v6.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/armv6/iwalsh_v6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/iwalsh_v6.S"
+	@mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/armv6/iwalsh_v6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/iwalsh_v6.S"
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/loopfilter_v6.S: gyp_local_path := $(LOCAL_PATH)
@@ -122,7 +122,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/loopfilter_v6.S: gyp_intermedi
 $(gyp_shared_intermediate_dir)/third_party/libvpx/loopfilter_v6.S: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/loopfilter_v6.S: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/loopfilter_v6.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/armv6/loopfilter_v6.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/armv6/loopfilter_v6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/loopfilter_v6.S"
+	@mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/armv6/loopfilter_v6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/loopfilter_v6.S"
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/simpleloopfilter_v6.S: gyp_local_path := $(LOCAL_PATH)
@@ -131,7 +131,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/simpleloopfilter_v6.S: gyp_int
 $(gyp_shared_intermediate_dir)/third_party/libvpx/simpleloopfilter_v6.S: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/simpleloopfilter_v6.S: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/simpleloopfilter_v6.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/armv6/simpleloopfilter_v6.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/armv6/simpleloopfilter_v6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/simpleloopfilter_v6.S"
+	@mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/armv6/simpleloopfilter_v6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/simpleloopfilter_v6.S"
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict8x4_v6.S: gyp_local_path := $(LOCAL_PATH)
@@ -140,7 +140,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict8x4_v6.S: gyp_int
 $(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict8x4_v6.S: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict8x4_v6.S: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict8x4_v6.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/armv6/sixtappredict8x4_v6.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/armv6/sixtappredict8x4_v6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict8x4_v6.S"
+	@mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/armv6/sixtappredict8x4_v6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict8x4_v6.S"
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_sad16x16_armv6.S: gyp_local_path := $(LOCAL_PATH)
@@ -149,7 +149,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_sad16x16_armv6.S: gyp_inte
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_sad16x16_armv6.S: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_sad16x16_armv6.S: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_sad16x16_armv6.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/armv6/vp8_sad16x16_armv6.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/armv6/vp8_sad16x16_armv6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_sad16x16_armv6.S"
+	@mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/armv6/vp8_sad16x16_armv6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_sad16x16_armv6.S"
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance16x16_armv6.S: gyp_local_path := $(LOCAL_PATH)
@@ -158,7 +158,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance16x16_armv6.S: gyp
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance16x16_armv6.S: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance16x16_armv6.S: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance16x16_armv6.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/armv6/vp8_variance16x16_armv6.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/armv6/vp8_variance16x16_armv6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance16x16_armv6.S"
+	@mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/armv6/vp8_variance16x16_armv6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance16x16_armv6.S"
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance8x8_armv6.S: gyp_local_path := $(LOCAL_PATH)
@@ -167,7 +167,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance8x8_armv6.S: gyp_i
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance8x8_armv6.S: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance8x8_armv6.S: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance8x8_armv6.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/armv6/vp8_variance8x8_armv6.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/armv6/vp8_variance8x8_armv6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance8x8_armv6.S"
+	@mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/armv6/vp8_variance8x8_armv6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance8x8_armv6.S"
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance_halfpixvar16x16_h_armv6.S: gyp_local_path := $(LOCAL_PATH)
@@ -176,7 +176,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance_halfpixvar16x16_h
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance_halfpixvar16x16_h_armv6.S: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance_halfpixvar16x16_h_armv6.S: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance_halfpixvar16x16_h_armv6.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/armv6/vp8_variance_halfpixvar16x16_h_armv6.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/armv6/vp8_variance_halfpixvar16x16_h_armv6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance_halfpixvar16x16_h_armv6.S"
+	@mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/armv6/vp8_variance_halfpixvar16x16_h_armv6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance_halfpixvar16x16_h_armv6.S"
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance_halfpixvar16x16_hv_armv6.S: gyp_local_path := $(LOCAL_PATH)
@@ -185,7 +185,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance_halfpixvar16x16_h
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance_halfpixvar16x16_hv_armv6.S: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance_halfpixvar16x16_hv_armv6.S: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance_halfpixvar16x16_hv_armv6.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/armv6/vp8_variance_halfpixvar16x16_hv_armv6.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/armv6/vp8_variance_halfpixvar16x16_hv_armv6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance_halfpixvar16x16_hv_armv6.S"
+	@mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/armv6/vp8_variance_halfpixvar16x16_hv_armv6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance_halfpixvar16x16_hv_armv6.S"
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance_halfpixvar16x16_v_armv6.S: gyp_local_path := $(LOCAL_PATH)
@@ -194,7 +194,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance_halfpixvar16x16_v
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance_halfpixvar16x16_v_armv6.S: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance_halfpixvar16x16_v_armv6.S: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance_halfpixvar16x16_v_armv6.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/common/arm/armv6/vp8_variance_halfpixvar16x16_v_armv6.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/armv6/vp8_variance_halfpixvar16x16_v_armv6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance_halfpixvar16x16_v_armv6.S"
+	@mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/common/arm/armv6/vp8_variance_halfpixvar16x16_v_armv6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance_halfpixvar16x16_v_armv6.S"
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_fast_quantize_b_armv6.S: gyp_local_path := $(LOCAL_PATH)
@@ -203,7 +203,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_fast_quantize_b_armv6.S: g
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_fast_quantize_b_armv6.S: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_fast_quantize_b_armv6.S: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_fast_quantize_b_armv6.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/encoder/arm/armv6/vp8_fast_quantize_b_armv6.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/encoder/arm/armv6/vp8_fast_quantize_b_armv6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_fast_quantize_b_armv6.S"
+	@mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/encoder/arm/armv6/vp8_fast_quantize_b_armv6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_fast_quantize_b_armv6.S"
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_mse16x16_armv6.S: gyp_local_path := $(LOCAL_PATH)
@@ -212,7 +212,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_mse16x16_armv6.S: gyp_inte
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_mse16x16_armv6.S: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_mse16x16_armv6.S: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_mse16x16_armv6.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/encoder/arm/armv6/vp8_mse16x16_armv6.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/encoder/arm/armv6/vp8_mse16x16_armv6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_mse16x16_armv6.S"
+	@mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/encoder/arm/armv6/vp8_mse16x16_armv6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_mse16x16_armv6.S"
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_short_fdct4x4_armv6.S: gyp_local_path := $(LOCAL_PATH)
@@ -221,7 +221,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_short_fdct4x4_armv6.S: gyp
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_short_fdct4x4_armv6.S: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_short_fdct4x4_armv6.S: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_short_fdct4x4_armv6.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/encoder/arm/armv6/vp8_short_fdct4x4_armv6.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/encoder/arm/armv6/vp8_short_fdct4x4_armv6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_short_fdct4x4_armv6.S"
+	@mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/encoder/arm/armv6/vp8_short_fdct4x4_armv6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_short_fdct4x4_armv6.S"
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_subtract_armv6.S: gyp_local_path := $(LOCAL_PATH)
@@ -230,7 +230,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_subtract_armv6.S: gyp_inte
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_subtract_armv6.S: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_subtract_armv6.S: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_subtract_armv6.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/encoder/arm/armv6/vp8_subtract_armv6.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/encoder/arm/armv6/vp8_subtract_armv6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_subtract_armv6.S"
+	@mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/encoder/arm/armv6/vp8_subtract_armv6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_subtract_armv6.S"
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/walsh_v6.S: gyp_local_path := $(LOCAL_PATH)
@@ -239,7 +239,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/walsh_v6.S: gyp_intermediate_d
 $(gyp_shared_intermediate_dir)/third_party/libvpx/walsh_v6.S: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/walsh_v6.S: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/walsh_v6.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/encoder/arm/armv6/walsh_v6.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/encoder/arm/armv6/walsh_v6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/walsh_v6.S"
+	@mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/encoder/arm/armv6/walsh_v6.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/walsh_v6.S"
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/fastquantizeb_neon.S: gyp_local_path := $(LOCAL_PATH)
@@ -248,7 +248,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/fastquantizeb_neon.S: gyp_inte
 $(gyp_shared_intermediate_dir)/third_party/libvpx/fastquantizeb_neon.S: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/fastquantizeb_neon.S: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/fastquantizeb_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp8/encoder/arm/neon/fastquantizeb_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/encoder/arm/neon/fastquantizeb_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/fastquantizeb_neon.S"
+	@mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp8/encoder/arm/neon/fastquantizeb_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/fastquantizeb_neon.S"
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_avg_neon.S: gyp_local_path := $(LOCAL_PATH)
@@ -257,7 +257,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_avg_neon.S: gyp_intermedia
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_avg_neon.S: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_avg_neon.S: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_avg_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp9/common/arm/neon/vp9_avg_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp9/common/arm/neon/vp9_avg_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_avg_neon.S"
+	@mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp9/common/arm/neon/vp9_avg_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_avg_neon.S"
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_convolve8_avg_neon.S: gyp_local_path := $(LOCAL_PATH)
@@ -266,7 +266,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_convolve8_avg_neon.S: gyp_
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_convolve8_avg_neon.S: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_convolve8_avg_neon.S: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_convolve8_avg_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp9/common/arm/neon/vp9_convolve8_avg_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp9/common/arm/neon/vp9_convolve8_avg_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_convolve8_avg_neon.S"
+	@mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp9/common/arm/neon/vp9_convolve8_avg_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_convolve8_avg_neon.S"
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_convolve8_neon.S: gyp_local_path := $(LOCAL_PATH)
@@ -275,7 +275,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_convolve8_neon.S: gyp_inte
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_convolve8_neon.S: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_convolve8_neon.S: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_convolve8_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp9/common/arm/neon/vp9_convolve8_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp9/common/arm/neon/vp9_convolve8_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_convolve8_neon.S"
+	@mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp9/common/arm/neon/vp9_convolve8_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_convolve8_neon.S"
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_copy_neon.S: gyp_local_path := $(LOCAL_PATH)
@@ -284,7 +284,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_copy_neon.S: gyp_intermedi
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_copy_neon.S: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_copy_neon.S: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_copy_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp9/common/arm/neon/vp9_copy_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp9/common/arm/neon/vp9_copy_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_copy_neon.S"
+	@mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp9/common/arm/neon/vp9_copy_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_copy_neon.S"
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_dc_only_idct_add_neon.S: gyp_local_path := $(LOCAL_PATH)
@@ -293,7 +293,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_dc_only_idct_add_neon.S: g
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_dc_only_idct_add_neon.S: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_dc_only_idct_add_neon.S: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_dc_only_idct_add_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp9/common/arm/neon/vp9_dc_only_idct_add_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp9/common/arm/neon/vp9_dc_only_idct_add_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_dc_only_idct_add_neon.S"
+	@mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp9/common/arm/neon/vp9_dc_only_idct_add_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_dc_only_idct_add_neon.S"
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct16x16_1_add_neon.S: gyp_local_path := $(LOCAL_PATH)
@@ -302,7 +302,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct16x16_1_add_neon.S: gy
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct16x16_1_add_neon.S: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct16x16_1_add_neon.S: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct16x16_1_add_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp9/common/arm/neon/vp9_idct16x16_1_add_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp9/common/arm/neon/vp9_idct16x16_1_add_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct16x16_1_add_neon.S"
+	@mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp9/common/arm/neon/vp9_idct16x16_1_add_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct16x16_1_add_neon.S"
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct16x16_add_neon.S: gyp_local_path := $(LOCAL_PATH)
@@ -311,7 +311,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct16x16_add_neon.S: gyp_
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct16x16_add_neon.S: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct16x16_add_neon.S: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct16x16_add_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp9/common/arm/neon/vp9_idct16x16_add_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp9/common/arm/neon/vp9_idct16x16_add_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct16x16_add_neon.S"
+	@mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp9/common/arm/neon/vp9_idct16x16_add_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct16x16_add_neon.S"
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct32x32_1_add_neon.S: gyp_local_path := $(LOCAL_PATH)
@@ -320,7 +320,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct32x32_1_add_neon.S: gy
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct32x32_1_add_neon.S: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct32x32_1_add_neon.S: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct32x32_1_add_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp9/common/arm/neon/vp9_idct32x32_1_add_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp9/common/arm/neon/vp9_idct32x32_1_add_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct32x32_1_add_neon.S"
+	@mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp9/common/arm/neon/vp9_idct32x32_1_add_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct32x32_1_add_neon.S"
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct32x32_add_neon.S: gyp_local_path := $(LOCAL_PATH)
@@ -329,7 +329,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct32x32_add_neon.S: gyp_
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct32x32_add_neon.S: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct32x32_add_neon.S: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct32x32_add_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp9/common/arm/neon/vp9_idct32x32_add_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp9/common/arm/neon/vp9_idct32x32_add_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct32x32_add_neon.S"
+	@mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp9/common/arm/neon/vp9_idct32x32_add_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct32x32_add_neon.S"
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct4x4_1_add_neon.S: gyp_local_path := $(LOCAL_PATH)
@@ -338,7 +338,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct4x4_1_add_neon.S: gyp_
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct4x4_1_add_neon.S: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct4x4_1_add_neon.S: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct4x4_1_add_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp9/common/arm/neon/vp9_idct4x4_1_add_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp9/common/arm/neon/vp9_idct4x4_1_add_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct4x4_1_add_neon.S"
+	@mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp9/common/arm/neon/vp9_idct4x4_1_add_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct4x4_1_add_neon.S"
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct4x4_add_neon.S: gyp_local_path := $(LOCAL_PATH)
@@ -347,7 +347,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct4x4_add_neon.S: gyp_in
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct4x4_add_neon.S: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct4x4_add_neon.S: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct4x4_add_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp9/common/arm/neon/vp9_idct4x4_add_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp9/common/arm/neon/vp9_idct4x4_add_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct4x4_add_neon.S"
+	@mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp9/common/arm/neon/vp9_idct4x4_add_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct4x4_add_neon.S"
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct8x8_1_add_neon.S: gyp_local_path := $(LOCAL_PATH)
@@ -356,7 +356,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct8x8_1_add_neon.S: gyp_
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct8x8_1_add_neon.S: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct8x8_1_add_neon.S: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct8x8_1_add_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp9/common/arm/neon/vp9_idct8x8_1_add_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp9/common/arm/neon/vp9_idct8x8_1_add_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct8x8_1_add_neon.S"
+	@mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp9/common/arm/neon/vp9_idct8x8_1_add_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct8x8_1_add_neon.S"
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct8x8_add_neon.S: gyp_local_path := $(LOCAL_PATH)
@@ -365,7 +365,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct8x8_add_neon.S: gyp_in
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct8x8_add_neon.S: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct8x8_add_neon.S: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct8x8_add_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp9/common/arm/neon/vp9_idct8x8_add_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp9/common/arm/neon/vp9_idct8x8_add_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct8x8_add_neon.S"
+	@mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp9/common/arm/neon/vp9_idct8x8_add_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct8x8_add_neon.S"
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_iht4x4_add_neon.S: gyp_local_path := $(LOCAL_PATH)
@@ -374,7 +374,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_iht4x4_add_neon.S: gyp_int
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_iht4x4_add_neon.S: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_iht4x4_add_neon.S: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_iht4x4_add_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp9/common/arm/neon/vp9_iht4x4_add_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp9/common/arm/neon/vp9_iht4x4_add_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_iht4x4_add_neon.S"
+	@mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp9/common/arm/neon/vp9_iht4x4_add_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_iht4x4_add_neon.S"
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_iht8x8_add_neon.S: gyp_local_path := $(LOCAL_PATH)
@@ -383,7 +383,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_iht8x8_add_neon.S: gyp_int
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_iht8x8_add_neon.S: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_iht8x8_add_neon.S: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_iht8x8_add_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp9/common/arm/neon/vp9_iht8x8_add_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp9/common/arm/neon/vp9_iht8x8_add_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_iht8x8_add_neon.S"
+	@mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp9/common/arm/neon/vp9_iht8x8_add_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_iht8x8_add_neon.S"
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_loopfilter_16_neon.S: gyp_local_path := $(LOCAL_PATH)
@@ -392,7 +392,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_loopfilter_16_neon.S: gyp_
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_loopfilter_16_neon.S: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_loopfilter_16_neon.S: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_loopfilter_16_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp9/common/arm/neon/vp9_loopfilter_16_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp9/common/arm/neon/vp9_loopfilter_16_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_loopfilter_16_neon.S"
+	@mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp9/common/arm/neon/vp9_loopfilter_16_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_loopfilter_16_neon.S"
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_loopfilter_neon.S: gyp_local_path := $(LOCAL_PATH)
@@ -401,7 +401,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_loopfilter_neon.S: gyp_int
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_loopfilter_neon.S: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_loopfilter_neon.S: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_loopfilter_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp9/common/arm/neon/vp9_loopfilter_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp9/common/arm/neon/vp9_loopfilter_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_loopfilter_neon.S"
+	@mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp9/common/arm/neon/vp9_loopfilter_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_loopfilter_neon.S"
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_mb_lpf_neon.S: gyp_local_path := $(LOCAL_PATH)
@@ -410,7 +410,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_mb_lpf_neon.S: gyp_interme
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_mb_lpf_neon.S: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_mb_lpf_neon.S: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_mb_lpf_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp9/common/arm/neon/vp9_mb_lpf_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp9/common/arm/neon/vp9_mb_lpf_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_mb_lpf_neon.S"
+	@mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp9/common/arm/neon/vp9_mb_lpf_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_mb_lpf_neon.S"
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_reconintra_neon.S: gyp_local_path := $(LOCAL_PATH)
@@ -419,7 +419,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_reconintra_neon.S: gyp_int
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_reconintra_neon.S: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_reconintra_neon.S: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_reconintra_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp9/common/arm/neon/vp9_reconintra_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp9/common/arm/neon/vp9_reconintra_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_reconintra_neon.S"
+	@mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp9/common/arm/neon/vp9_reconintra_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_reconintra_neon.S"
 
 
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_save_reg_neon.S: gyp_local_path := $(LOCAL_PATH)
@@ -428,7 +428,7 @@ $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_save_reg_neon.S: gyp_inter
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_save_reg_neon.S: gyp_shared_intermediate_dir := $(abspath $(gyp_shared_intermediate_dir))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_save_reg_neon.S: export PATH := $(subst $(ANDROID_BUILD_PATHS),,$(PATH))
 $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_save_reg_neon.S: $(LOCAL_PATH)/third_party/libvpx/source/libvpx/vp9/common/arm/neon/vp9_save_reg_neon.asm $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl $(gyp_shared_intermediate_dir)/third_party/libvpx/thumb.pm $(GYP_TARGET_DEPENDENCIES)
-	mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp9/common/arm/neon/vp9_save_reg_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_save_reg_neon.S"
+	@mkdir -p $(gyp_shared_intermediate_dir)/third_party/libvpx; cd $(gyp_local_path)/third_party/libvpx; bash -c "cat source/libvpx/vp9/common/arm/neon/vp9_save_reg_neon.asm | perl $(gyp_shared_intermediate_dir)/third_party/libvpx/ads2gas.pl -chromium > $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_save_reg_neon.S"
 
 
 
@@ -498,97 +498,97 @@ GYP_GENERATED_OUTPUTS := \
 LOCAL_ADDITIONAL_DEPENDENCIES := $(GYP_TARGET_DEPENDENCIES) $(GYP_GENERATED_OUTPUTS)
 
 $(gyp_intermediate_dir)/bilinearfilter_v6.S: $(gyp_shared_intermediate_dir)/third_party/libvpx/bilinearfilter_v6.S
-	mkdir -p $(@D); cp $< $@
+	@mkdir -p $(@D); cp $< $@
 $(gyp_intermediate_dir)/copymem16x16_v6.S: $(gyp_shared_intermediate_dir)/third_party/libvpx/copymem16x16_v6.S
-	mkdir -p $(@D); cp $< $@
+	@mkdir -p $(@D); cp $< $@
 $(gyp_intermediate_dir)/copymem8x4_v6.S: $(gyp_shared_intermediate_dir)/third_party/libvpx/copymem8x4_v6.S
-	mkdir -p $(@D); cp $< $@
+	@mkdir -p $(@D); cp $< $@
 $(gyp_intermediate_dir)/copymem8x8_v6.S: $(gyp_shared_intermediate_dir)/third_party/libvpx/copymem8x8_v6.S
-	mkdir -p $(@D); cp $< $@
+	@mkdir -p $(@D); cp $< $@
 $(gyp_intermediate_dir)/dc_only_idct_add_v6.S: $(gyp_shared_intermediate_dir)/third_party/libvpx/dc_only_idct_add_v6.S
-	mkdir -p $(@D); cp $< $@
+	@mkdir -p $(@D); cp $< $@
 $(gyp_intermediate_dir)/dequant_idct_v6.S: $(gyp_shared_intermediate_dir)/third_party/libvpx/dequant_idct_v6.S
-	mkdir -p $(@D); cp $< $@
+	@mkdir -p $(@D); cp $< $@
 $(gyp_intermediate_dir)/dequantize_v6.S: $(gyp_shared_intermediate_dir)/third_party/libvpx/dequantize_v6.S
-	mkdir -p $(@D); cp $< $@
+	@mkdir -p $(@D); cp $< $@
 $(gyp_intermediate_dir)/filter_v6.S: $(gyp_shared_intermediate_dir)/third_party/libvpx/filter_v6.S
-	mkdir -p $(@D); cp $< $@
+	@mkdir -p $(@D); cp $< $@
 $(gyp_intermediate_dir)/idct_v6.S: $(gyp_shared_intermediate_dir)/third_party/libvpx/idct_v6.S
-	mkdir -p $(@D); cp $< $@
+	@mkdir -p $(@D); cp $< $@
 $(gyp_intermediate_dir)/intra4x4_predict_v6.S: $(gyp_shared_intermediate_dir)/third_party/libvpx/intra4x4_predict_v6.S
-	mkdir -p $(@D); cp $< $@
+	@mkdir -p $(@D); cp $< $@
 $(gyp_intermediate_dir)/iwalsh_v6.S: $(gyp_shared_intermediate_dir)/third_party/libvpx/iwalsh_v6.S
-	mkdir -p $(@D); cp $< $@
+	@mkdir -p $(@D); cp $< $@
 $(gyp_intermediate_dir)/loopfilter_v6.S: $(gyp_shared_intermediate_dir)/third_party/libvpx/loopfilter_v6.S
-	mkdir -p $(@D); cp $< $@
+	@mkdir -p $(@D); cp $< $@
 $(gyp_intermediate_dir)/simpleloopfilter_v6.S: $(gyp_shared_intermediate_dir)/third_party/libvpx/simpleloopfilter_v6.S
-	mkdir -p $(@D); cp $< $@
+	@mkdir -p $(@D); cp $< $@
 $(gyp_intermediate_dir)/sixtappredict8x4_v6.S: $(gyp_shared_intermediate_dir)/third_party/libvpx/sixtappredict8x4_v6.S
-	mkdir -p $(@D); cp $< $@
+	@mkdir -p $(@D); cp $< $@
 $(gyp_intermediate_dir)/vp8_sad16x16_armv6.S: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_sad16x16_armv6.S
-	mkdir -p $(@D); cp $< $@
+	@mkdir -p $(@D); cp $< $@
 $(gyp_intermediate_dir)/vp8_variance16x16_armv6.S: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance16x16_armv6.S
-	mkdir -p $(@D); cp $< $@
+	@mkdir -p $(@D); cp $< $@
 $(gyp_intermediate_dir)/vp8_variance8x8_armv6.S: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance8x8_armv6.S
-	mkdir -p $(@D); cp $< $@
+	@mkdir -p $(@D); cp $< $@
 $(gyp_intermediate_dir)/vp8_variance_halfpixvar16x16_h_armv6.S: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance_halfpixvar16x16_h_armv6.S
-	mkdir -p $(@D); cp $< $@
+	@mkdir -p $(@D); cp $< $@
 $(gyp_intermediate_dir)/vp8_variance_halfpixvar16x16_hv_armv6.S: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance_halfpixvar16x16_hv_armv6.S
-	mkdir -p $(@D); cp $< $@
+	@mkdir -p $(@D); cp $< $@
 $(gyp_intermediate_dir)/vp8_variance_halfpixvar16x16_v_armv6.S: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_variance_halfpixvar16x16_v_armv6.S
-	mkdir -p $(@D); cp $< $@
+	@mkdir -p $(@D); cp $< $@
 $(gyp_intermediate_dir)/vp8_fast_quantize_b_armv6.S: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_fast_quantize_b_armv6.S
-	mkdir -p $(@D); cp $< $@
+	@mkdir -p $(@D); cp $< $@
 $(gyp_intermediate_dir)/vp8_mse16x16_armv6.S: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_mse16x16_armv6.S
-	mkdir -p $(@D); cp $< $@
+	@mkdir -p $(@D); cp $< $@
 $(gyp_intermediate_dir)/vp8_short_fdct4x4_armv6.S: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_short_fdct4x4_armv6.S
-	mkdir -p $(@D); cp $< $@
+	@mkdir -p $(@D); cp $< $@
 $(gyp_intermediate_dir)/vp8_subtract_armv6.S: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp8_subtract_armv6.S
-	mkdir -p $(@D); cp $< $@
+	@mkdir -p $(@D); cp $< $@
 $(gyp_intermediate_dir)/walsh_v6.S: $(gyp_shared_intermediate_dir)/third_party/libvpx/walsh_v6.S
-	mkdir -p $(@D); cp $< $@
+	@mkdir -p $(@D); cp $< $@
 $(gyp_intermediate_dir)/fastquantizeb_neon.S: $(gyp_shared_intermediate_dir)/third_party/libvpx/fastquantizeb_neon.S
-	mkdir -p $(@D); cp $< $@
+	@mkdir -p $(@D); cp $< $@
 $(gyp_intermediate_dir)/vp9_avg_neon.S: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_avg_neon.S
-	mkdir -p $(@D); cp $< $@
+	@mkdir -p $(@D); cp $< $@
 $(gyp_intermediate_dir)/vp9_convolve8_avg_neon.S: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_convolve8_avg_neon.S
-	mkdir -p $(@D); cp $< $@
+	@mkdir -p $(@D); cp $< $@
 $(gyp_intermediate_dir)/vp9_convolve8_neon.S: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_convolve8_neon.S
-	mkdir -p $(@D); cp $< $@
+	@mkdir -p $(@D); cp $< $@
 $(gyp_intermediate_dir)/vp9_copy_neon.S: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_copy_neon.S
-	mkdir -p $(@D); cp $< $@
+	@mkdir -p $(@D); cp $< $@
 $(gyp_intermediate_dir)/vp9_dc_only_idct_add_neon.S: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_dc_only_idct_add_neon.S
-	mkdir -p $(@D); cp $< $@
+	@mkdir -p $(@D); cp $< $@
 $(gyp_intermediate_dir)/vp9_idct16x16_1_add_neon.S: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct16x16_1_add_neon.S
-	mkdir -p $(@D); cp $< $@
+	@mkdir -p $(@D); cp $< $@
 $(gyp_intermediate_dir)/vp9_idct16x16_add_neon.S: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct16x16_add_neon.S
-	mkdir -p $(@D); cp $< $@
+	@mkdir -p $(@D); cp $< $@
 $(gyp_intermediate_dir)/vp9_idct32x32_1_add_neon.S: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct32x32_1_add_neon.S
-	mkdir -p $(@D); cp $< $@
+	@mkdir -p $(@D); cp $< $@
 $(gyp_intermediate_dir)/vp9_idct32x32_add_neon.S: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct32x32_add_neon.S
-	mkdir -p $(@D); cp $< $@
+	@mkdir -p $(@D); cp $< $@
 $(gyp_intermediate_dir)/vp9_idct4x4_1_add_neon.S: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct4x4_1_add_neon.S
-	mkdir -p $(@D); cp $< $@
+	@mkdir -p $(@D); cp $< $@
 $(gyp_intermediate_dir)/vp9_idct4x4_add_neon.S: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct4x4_add_neon.S
-	mkdir -p $(@D); cp $< $@
+	@mkdir -p $(@D); cp $< $@
 $(gyp_intermediate_dir)/vp9_idct8x8_1_add_neon.S: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct8x8_1_add_neon.S
-	mkdir -p $(@D); cp $< $@
+	@mkdir -p $(@D); cp $< $@
 $(gyp_intermediate_dir)/vp9_idct8x8_add_neon.S: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_idct8x8_add_neon.S
-	mkdir -p $(@D); cp $< $@
+	@mkdir -p $(@D); cp $< $@
 $(gyp_intermediate_dir)/vp9_iht4x4_add_neon.S: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_iht4x4_add_neon.S
-	mkdir -p $(@D); cp $< $@
+	@mkdir -p $(@D); cp $< $@
 $(gyp_intermediate_dir)/vp9_iht8x8_add_neon.S: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_iht8x8_add_neon.S
-	mkdir -p $(@D); cp $< $@
+	@mkdir -p $(@D); cp $< $@
 $(gyp_intermediate_dir)/vp9_loopfilter_16_neon.S: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_loopfilter_16_neon.S
-	mkdir -p $(@D); cp $< $@
+	@mkdir -p $(@D); cp $< $@
 $(gyp_intermediate_dir)/vp9_loopfilter_neon.S: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_loopfilter_neon.S
-	mkdir -p $(@D); cp $< $@
+	@mkdir -p $(@D); cp $< $@
 $(gyp_intermediate_dir)/vp9_mb_lpf_neon.S: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_mb_lpf_neon.S
-	mkdir -p $(@D); cp $< $@
+	@mkdir -p $(@D); cp $< $@
 $(gyp_intermediate_dir)/vp9_reconintra_neon.S: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_reconintra_neon.S
-	mkdir -p $(@D); cp $< $@
+	@mkdir -p $(@D); cp $< $@
 $(gyp_intermediate_dir)/vp9_save_reg_neon.S: $(gyp_shared_intermediate_dir)/third_party/libvpx/vp9_save_reg_neon.S
-	mkdir -p $(@D); cp $< $@
+	@mkdir -p $(@D); cp $< $@
 LOCAL_GENERATED_SOURCES := \
 	$(gyp_intermediate_dir)/bilinearfilter_v6.S \
 	$(gyp_intermediate_dir)/copymem16x16_v6.S \
